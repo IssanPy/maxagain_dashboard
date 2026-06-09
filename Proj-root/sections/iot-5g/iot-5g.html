@@ -1,0 +1,483 @@
+<!-- IoT & 5G Vulnerabilities – The Edge Exploit Academy -->
+<h2 class="section-title">📡 IoT & 5G Vulnerabilities – The Edge Exploit Academy</h2>
+
+<div class="server-tabs" id="iot-tabs">
+  <div class="server-btn active" data-tab="intro">Intro</div>
+  <div class="server-btn" data-tab="embedded">Embedded Internals</div>
+  <div class="server-btn" data-tab="firmware">Firmware Reversing</div>
+  <div class="server-btn" data-tab="secureboot">Secure Boot</div>
+  <div class="server-btn" data-tab="sidechannel">Side‑Channel</div>
+  <div class="server-btn" data-tab="rf">RF Engineering</div>
+  <div class="server-btn" data-tab="sdr">SDR Research</div>
+  <div class="server-btn" data-tab="baseband">Baseband Security</div>
+  <div class="server-btn" data-tab="telecom">Telecom Protocols</div>
+  <div class="server-btn" data-tab="iiot">IIoT & SCADA</div>
+  <div class="server-btn" data-tab="smartcities">Smart Cities</div>
+  <div class="server-btn" data-tab="matter">Matter & Thread</div>
+  <div class="server-btn" data-tab="malware">IoT Malware</div>
+  <div class="server-btn" data-tab="supplychain">Supply Chain</div>
+  <div class="server-btn" data-tab="cloudiot">Cloud IoT</div>
+  <div class="server-btn" data-tab="threatintel">Threat Intel</div>
+  <div class="server-btn" data-tab="attackchains">Attack Chains</div>
+  <div class="server-btn" data-tab="tools">Tools</div>
+  <div class="server-btn" data-tab="mindset">Mindset</div>
+  <div class="server-btn" data-tab="defense">Defense</div>
+  <div class="server-btn" data-tab="labs">Labs</div>
+</div>
+
+<!-- ========== INTRO TAB ========== -->
+<div class="tab-content active" id="tab-intro">
+  <div class="hero-container" style="text-align:center; padding-top:2rem;">
+    <h1 class="hero-title" style="font-size:3.5rem;">WELCOME TO THE <span class="text-cyber-red">EDGE EXPLOIT</span></h1>
+    <p class="hero-subtitle" style="font-size:1.3rem; color:#5ee0fa; margin-bottom:2rem;">
+      41 billion IoT devices and 5G standalone cores run the world. This academy teaches you how embedded systems, firmware, radio protocols, telecom infrastructure, and cloud‑native orchestration fail — and how to break them before attackers do.
+    </p>
+  </div>
+
+  <div class="tools-grid" style="margin-top:2rem;">
+    <div class="glass-card text-center"><h2 class="text-neon-green" style="font-size:2.5rem;">ARM</h2><p>Cortex‑M/RISC‑V<br><span style="font-size:0.8rem; opacity:0.7;">Embedded core internals</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-neon-blue" style="font-size:2.5rem;">SDR</h2><p>HackRF, USRP<br><span style="font-size:0.8rem; opacity:0.7;">RF capture & replay</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-cyber-red" style="font-size:2.5rem;">5G SA</h2><p>Service‑Based Architecture<br><span style="font-size:0.8rem; opacity:0.7;">Slicing, AMF, SMF, UPF</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-neon-green" style="font-size:2.5rem;">Fault Injection</h2><p>Glitching & Side‑Channel<br><span style="font-size:0.8rem; opacity:0.7;">Voltage, EM, laser</span></p></div>
+  </div>
+
+  <div class="sub-section" style="margin-top:3rem;">
+    <div class="glass-card">
+      <h3 class="text-neon-blue" style="font-size:1.6rem;">📋 Today's Edge Mission</h3>
+      <ul style="list-style:none; padding:0; font-size:1.1rem;">
+        <li>✅ <span class="text-neon-green">Embedded Internals & Firmware</span> – ARM Cortex, bootloaders, RTOS, QEMU emulation.</li>
+        <li>✅ <span class="text-neon-green">Secure Boot & Side‑Channel</span> – Trust chain bypass, voltage glitching, DPA, ChipWhisperer.</li>
+        <li>✅ <span class="text-neon-green">RF Engineering & SDR</span> – OFDM, QPSK, GNU Radio, LTE/5G NR capture.</li>
+        <li>✅ <span class="text-neon-green">Baseband & Telecom Protocols</span> – Qualcomm, Samsung Shannon, NGAP, SIP, Diameter.</li>
+        <li>✅ <span class="text-neon-green">IIoT, SCADA & Smart Cities</span> – Modbus, OPC‑UA, EV charging, traffic systems.</li>
+        <li>✅ <span class="text-neon-green">Matter, Thread & IoT Malware</span> – Smart home attacks, Linux/ARM malware, botnet economics.</li>
+        <li>✅ <span class="text-neon-green">Supply Chain, Cloud IoT, Threat Intel</span> – Counterfeit chips, OTA poisoning, SS7 gangs.</li>
+        <li>✅ <span class="text-neon-green">Attack Chains, Tools, Mindset, Defense, Labs</span> – Full hardware‑to‑cloud kill chains, Chipsec, Open5GS, srsRAN.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="text-align:center; margin-top:2rem; font-size:0.9rem; color:#888;">
+    <span class="text-cyber-red">Warning:</span> Tampering with hardware you don't own is criminal. Everything here is for ethical research, red‑team exercises, and securing your own infrastructure.
+  </p>
+</div>
+
+<!-- ========== EMBEDDED INTERNALS TAB ========== -->
+<div class="tab-content" id="tab-embedded">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧠 Embedded Systems Internals – The Silicon Foundation</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">ARM Cortex‑M / A, MIPS, RISC‑V</h3>
+      <p>IoT devices run on microcontrollers (Cortex‑M0/3/4) or application processors (Cortex‑A series). RISC‑V is emerging as an open alternative. Understanding the CPU architecture (registers, memory map, exception vectors) is essential for firmware reversing and exploitation.</p>
+      <div class="code-block"><pre># ARM Cortex‑M vector table
+0x0000: initial SP value
+0x0004: Reset handler
+0x0008: NMI handler
+0x000C: HardFault handler</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Bootloaders, RTOS, and Memory Layout</h3>
+      <p>Devices often use U‑Boot, barebox, or custom bootloaders. Real‑Time Operating Systems (FreeRTOS, Zephyr, ThreadX) handle tasks and interrupts. Memory‑mapped I/O (MMIO) allows peripherals to be controlled via registers. DMA (Direct Memory Access) can be abused to bypass memory protections.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">TrustZone & MPU/MMU</h3>
+      <p>Arm TrustZone divides the CPU into Secure and Non‑secure worlds. The Memory Protection Unit (MPU) or Memory Management Unit (MMU) enforces access control. Breaking TrustZone means full compromise of the device's secrets.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== FIRMWARE REVERSING TAB ========== -->
+<div class="tab-content" id="tab-firmware">
+  <div class="sub-section">
+    <h2 class="sub-section-title">💾 Firmware Reversing & Emulation</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Extracting Filesystems (squashfs, ubifs, cramfs)</h3>
+      <p>Use binwalk to extract the filesystem from firmware images. Commonly found: hardcoded passwords in /etc/passwd, SSH private keys, MQTT broker credentials, and certificate files.</p>
+      <div class="code-block"><pre>binwalk -Me router_firmware.bin
+cd _router_firmware.bin.extracted/squashfs-root
+grep -r "passwd" .</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Dynamic Emulation with QEMU</h3>
+      <p>Run extracted binaries on your host using QEMU user‑mode or full‑system emulation. This allows debugging and fuzzing IoT binaries without the physical hardware. Use QEMU with -g to attach GDB.</p>
+      <div class="code-block"><pre>qemu-arm -L /path/to/sysroot -g 1234 ./vulnerable_binary</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Stripped Binaries & Symbol Recovery</h3>
+      <p>Most firmware binaries are stripped of symbols. Use Ghidra's ARM analysis and function identification scripts. Look for references to standard libraries (libc, libssl) to identify imported functions.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SECURE BOOT TAB ========== -->
+<div class="tab-content" id="tab-secureboot">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔐 Secure Boot & Trust Chain Failures</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Root of Trust & Boot Stages</h3>
+      <p>Secure boot starts with an immutable ROM code that verifies the next stage (usually U‑Boot or a vendor bootloader). Each stage verifies the next using cryptographic signatures. If any verification fails, the device should halt — but implementation bugs allow bypasses.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Rollback & Signature Bypass Attacks</h3>
+      <p>Attackers can downgrade firmware to a vulnerable version if rollback protection is missing. Signature verification may be flawed: accepting self‑signed certificates, ignoring hash mismatches, or verifying only part of the image.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">TPM & Measured Boot in IoT</h3>
+      <p>Trusted Platform Modules (TPMs) store hashes of every boot component. Remote attestation allows a server to verify the device's integrity. Compromising the TPM requires physical access or side‑channel attacks.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SIDE‑CHANNEL TAB ========== -->
+<div class="tab-content" id="tab-sidechannel">
+  <div class="sub-section">
+    <h2 class="sub-section-title">⚡ Hardware Side‑Channel Attacks</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">DPA / CPA – Power Analysis</h3>
+      <p>Differential Power Analysis measures power consumption during encryption. Each key bit correlates with a power trace, allowing full key recovery. ChipWhisperer is the open‑source tool for learning DPA.</p>
+      <div class="code-block"><pre># ChipWhisperer capture
+python capture_trace.py --target aes</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Fault Injection – Voltage, EM, Laser</h3>
+      <p>Voltage glitching temporarily drops the supply voltage to skip instructions. Electromagnetic Fault Injection (EM‑FI) induces faults without physical contact. Laser fault injection targets specific transistors. All can bypass password checks or extract firmware.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Decapping & Silicon Probing</h3>
+      <p>Decapping uses acid to expose the silicon die. A microprobe can read memory buses or inject signals. This is the most advanced hardware attack, requiring a forensic lab.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== RF ENGINEERING TAB ========== -->
+<div class="tab-content" id="tab-rf">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📻 Radio Frequency Engineering for Hackers</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Modulation, OFDM, and Signal Propagation</h3>
+      <p>QPSK, 16‑QAM, 64‑QAM encode bits into phase and amplitude. OFDM divides the channel into subcarriers. Understanding these is essential for baseband analysis and signal spoofing. Multipath fading and Doppler shift affect mobile signals.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Antenna Design, Beamforming, and Spectrum Analysis</h3>
+      <p>Directional antennas (Yagi, panel) focus energy for long‑range attacks. Beamforming uses phased arrays to steer signals. A spectrum analyzer (or SDR) visualizes the RF environment, revealing hidden transmitters.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">RF Fingerprinting & Jamming</h3>
+      <p>Every transmitter has unique imperfections (clock skew, phase noise) that can be used to identify devices. Jamming can be targeted (specific protocol) or broadband. Both are heavily regulated — test only in Faraday cages.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SDR RESEARCH TAB ========== -->
+<div class="tab-content" id="tab-sdr">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📡 Software‑Defined Radio Research</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">GNU Radio, SDRangel, and USRP/HackRF</h3>
+      <p>Build custom signal processing chains with GNU Radio Companion. USRP B210 offers full‑duplex, while HackRF is half‑duplex but affordable. Use SDRangel for multi‑protocol demodulation.</p>
+      <div class="code-block"><pre>gnuradio-companion &</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Replay Attacks & Signal Spoofing</h3>
+      <p>Capture a garage opener signal and replay it to open the door. Spoof a GPS signal to misdirect a drone. Use gr‑gsm or OpenLTE to emulate a base station.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">LTE/5G NR Capture & Decoding</h3>
+      <p>Use srsRAN to capture LTE downlink signals and decode system information blocks (SIBs). 5G NR signals can be analysed with MATLAB's 5G Toolbox or OpenAirInterface.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== BASEBAND SECURITY TAB ========== -->
+<div class="tab-content" id="tab-baseband">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📱 Baseband Security – The Hidden Processor</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Qualcomm, MediaTek, Samsung Shannon</h3>
+      <p>The baseband processor runs its own RTOS and handles all cellular communication. It is the most privileged component on a mobile device. Vulnerabilities allow remote code execution via a malicious SMS or rogue base station.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Baseband Isolation & RRC Parsing</h3>
+      <p>Basebands are supposed to be isolated from the application processor, but shared memory interfaces can be abused. Radio Resource Control (RRC) parsing bugs are the most common entry point — a single malformed packet can compromise the modem.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Tools: MobileInsight, QCSuper, SCAT</h3>
+      <p>Capture and analyse baseband logs with MobileInsight (Qualcomm). Use QCSuper to access the Qualcomm diagnostic interface. These tools are essential for reverse‑engineering baseband protocols.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TELECOM PROTOCOLS TAB ========== -->
+<div class="tab-content" id="tab-telecom">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🌐 Telecom Protocols – The Signaling Backbone</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">NGAP, GTP‑U, PFCP, SIP, Diameter</h3>
+      <p>5G Next Generation Application Protocol (NGAP) between gNB and AMF. GTP‑U tunnels user traffic between RAN and UPF. PFCP controls packet forwarding rules. SIP handles VoLTE/VoNR calls. Diameter is the authentication and charging protocol.</p>
+      <p class="mt-2"><span class="text-cyber-red">Vulnerability:</span> Unauthenticated PFCP messages can redirect user traffic or crash the UPF, disrupting all data plane traffic.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">SS7 & Diameter Attacks</h3>
+      <p>SS7 (Signaling System No. 7) is the backbone of 2G/3G/4G networks. Attackers can intercept SMS for 2FA bypass, track location, or redirect calls. Diameter has similar flaws in LTE. Both require access to the SS7/GRX network, which is available to rogue carriers.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">IMS, VoNR, and Handover Internals</h3>
+      <p>The IP Multimedia Subsystem (IMS) handles voice and video. Handover procedures between 5G, 4G, and Wi‑Fi introduce complex state transitions that can be exploited for DoS or eavesdropping.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== IIoT & SCADA TAB ========== -->
+<div class="tab-content" id="tab-iiot">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🏭 Industrial IoT & SCADA Security</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Modbus, DNP3, OPC‑UA, BACnet, IEC 61850</h3>
+      <p>Industrial protocols were designed for reliability, not security. Modbus has no authentication. DNP3 Secure Authentication is optional. OPC‑UA can be hardened, but misconfigurations are rampant. BACnet and IEC 61850 control building and power systems.</p>
+      <div class="code-block"><pre># Scan Modbus devices with nmap
+nmap -p 502 --script modbus-discover 192.168.1.0/24</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">PLC Exploitation & OT/IT Convergence</h3>
+      <p>Programmable Logic Controllers (PLCs) can be stopped, reprogrammed, or bricked with a single command. The convergence of OT (Operational Technology) and IT networks creates pathways from the internet to the factory floor. Stuxnet demonstrated the power of this chain.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SMART CITIES TAB ========== -->
+<div class="tab-content" id="tab-smartcities">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🏙️ Smart City Attack Surfaces</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Traffic Systems, EV Charging, Smart Grids</h3>
+      <p>Smart traffic lights can be manipulated to cause gridlock. EV charging stations communicate via OCPP (Open Charge Point Protocol), which often lacks authentication. Smart grid meters can be spoofed to under‑report consumption.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Water Systems & Public Surveillance</h3>
+      <p>Industrial water treatment plants use SCADA with decades‑old vulnerabilities. Public IP cameras are routinely exploited by Mirai variants and used for botnets or surveillance.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Example: Oldsmar Water Treatment Attack (2021)</h3>
+      <p>An attacker accessed the plant's TeamViewer, increased the sodium hydroxide dosage by 100x, nearly poisoning the city's water supply. The plant used a shared TeamViewer password and had no 2FA.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MATTER & THREAD TAB ========== -->
+<div class="tab-content" id="tab-matter">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧵 Matter & Thread – The Smart Home Protocol</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Matter Commissioning & Ecosystem Trust</h3>
+      <p>Matter uses a secure commissioning process based on PKI. However, misconfigurations in the Commissioner role or weak onboarding keys can allow rogue devices to join the network. Apple, Google, and Amazon all act as trust anchors.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Thread Mesh Poisoning & Border Router Attacks</h3>
+      <p>Thread networks rely on a border router for external connectivity. A compromised border router can manipulate the entire mesh. Routing protocol attacks can partition the network or redirect traffic.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== IOT MALWARE TAB ========== -->
+<div class="tab-content" id="tab-malware">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🦠 IoT Malware Ecology & Economics</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Linux/ARM Malware & Worm Propagation</h3>
+      <p>Most IoT malware targets BusyBox‑based Linux systems. Worms like Mirai scan for open Telnet ports, brute‑force passwords, and download a payload. Persistence is achieved via crontab, /etc/init.d scripts, or modifying the firmware.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Botnet Monetization – Proxies, DDoS, Credential Stuffing</h3>
+      <p>IoT botnets are rented out for DDoS attacks, residential proxy services (e.g., Faceless, 911.re), or credential stuffing. The botnet‑as‑a‑service economy generates billions of dollars annually.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">OTA Persistence & Supply‑Chain Infections</h3>
+      <p>Attackers can poison Over‑The‑Air updates to install malware persistently. This requires compromising the update server or signing keys. Once infected, the malware survives reboots and factory resets.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SUPPLY CHAIN TAB ========== -->
+<div class="tab-content" id="tab-supplychain">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📦 Hardware Supply Chain Security</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Counterfeit Chips & Malicious Fabs</h3>
+      <p>Counterfeit chips may contain backdoors or lack security features. Rogue foundries can modify the design to insert hardware Trojans. Verification requires X‑ray imaging and electrical testing — both expensive and rare.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Firmware Signing Failures & Implants</h3>
+      <p>If the OEM's signing key is stolen (as in the case of some router manufacturers), attackers can sign malicious firmware. Firmware implants can survive OS reinstallation by residing in the UEFI or bootloader.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CLOUD IOT TAB ========== -->
+<div class="tab-content" id="tab-cloudiot">
+  <div class="sub-section">
+    <h2 class="sub-section-title">☁️ Cloud IoT – Backend Exploitation</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">AWS IoT, Azure IoT Hub, Google Cloud IoT</h3>
+      <p>Misconfigured IoT Core policies can allow unauthorized devices to publish or subscribe to MQTT topics. Shadow device APIs can be abused to overwrite desired states, causing physical damage.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">MQTT Broker Hijacking & OTA Abuse</h3>
+      <p>Publicly exposed MQTT brokers often allow anonymous access. Attackers can inject commands, steal telemetry, or redirect firmware updates. OTA pipelines without signed firmware allow malicious updates.</p>
+      <div class="code-block"><pre>mosquitto_sub -h broker.example.com -t "#" -v</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== THREAT INTEL TAB ========== -->
+<div class="tab-content" id="tab-threatintel">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🌐 Telecom Threat Intelligence</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">SS7 Gangs, SIM Swap Rings, and Rogue Carriers</h3>
+      <p>Criminal groups exploit SS7 and Diameter for SMS interception, 2FA bypass, and subscriber location tracking. SIM swap gangs bribe carrier employees to port a victim's number to a new SIM, hijacking their accounts. Rogue carriers provide access to the global telecom network for fraud and espionage.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Nation‑State Telecom Espionage & IMSI Catchers</h3>
+      <p>Stingrays (IMSI catchers) mimic cell towers to intercept calls and track locations. Nations deploy them at scale. Advanced persistent threats target telecom infrastructure for long‑term intelligence collection.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ATTACK CHAINS TAB ========== -->
+<div class="tab-content" id="tab-attackchains">
+  <div class="sub-section">
+    <h2 class="sub-section-title">⛓️ Hardware‑to‑Cloud Kill Chains</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Chain 1: Firmware → MQTT → OTA Poison → Cloud Pivot</h3>
+      <ol>
+        <li><span class="text-neon-green">Extract firmware</span> via UART or download from vendor.</li>
+        <li><span class="text-neon-green">Recover MQTT broker credentials</span> from /etc/mosquitto.conf.</li>
+        <li><span class="text-neon-green">Subscribe to all topics</span> on the broker to discover update channels.</li>
+        <li><span class="text-neon-green">Publish a fake OTA manifest</span> with a malicious firmware URL.</li>
+        <li><span class="text-neon-green">All devices update</span> and become part of your botnet.</li>
+        <li><span class="text-neon-green">Extract AWS IoT credentials</span> from the firmware and pivot to the cloud backend.</li>
+      </ol>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Chain 2: Fault Injection → Secure Boot Bypass → Firmware Dump → Key Extraction</h3>
+      <ol>
+        <li><span class="text-neon-green">Voltage glitch</span> during secure boot verification to skip the signature check.</li>
+        <li><span class="text-neon-green">Boot an attacker‑controlled firmware</span> that exports the raw flash contents.</li>
+        <li><span class="text-neon-green">Extract device‑unique keys</span> from the secure storage partition.</li>
+        <li><span class="text-neon-green">Clone the device's identity</span> and impersonate it on the cloud platform.</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TOOLS TAB ========== -->
+<div class="tab-content" id="tab-tools">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧰 The Edge Researcher's Workbench</h2>
+    <div class="tools-grid">
+      <div class="glass-card"><h3 class="text-neon-green">Binwalk / FACT</h3><p>Firmware extraction & analysis</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Ghidra / QEMU</h3><p>ARM/MIPS reversing & emulation</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">ChipWhisperer / Riscure</h3><p>Side‑channel & fault injection</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">HackRF / USRP / LimeSDR</h3><p>RF capture, replay, and spoofing</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">GNU Radio / SDRangel</h3><p>SDR signal processing</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">srsRAN / Open5GS / OpenAirInterface</h3><p>4G/5G base station & core emulation</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">MobileInsight / QCSuper</h3><p>Baseband analysis</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Scapy‑radio / gr‑gsm</h3><p>RF protocol fuzzing</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Chipsec / flashrom</h3><p>Low‑level firmware security</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">JTAGulator / Tigard</h3><p>Hardware debug interfaces</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MINDSET TAB ========== -->
+<div class="tab-content" id="tab-mindset">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧠 The Edge Researcher's Mindset</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">“Where is trust established in this device?”</h3>
+      <p>Every device has a trust boundary: the boot ROM, the firmware signature, the OTA update server, the MQTT broker. Find where the chain of trust breaks, and you own the device.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">“What happens before authentication?”</h3>
+      <p>Many protocols exchange capabilities before any authentication. 5G attach procedure, ZigBee network join, and Thread commissioning all have pre‑auth phases that can be exploited.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">“What if two radios talk at the same time?”</h3>
+      <p>Collision, interference, and desense are physical‑layer attacks. A well‑timed jamming signal can break a cryptographic handshake, force a downgrade, or open a window for packet injection.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">The Edge Hacker's Golden Rule</h3>
+      <p>Physical access changes everything. Always secure UART, JTAG, and SWD interfaces. Encrypt your firmware. Verify every update. Assume your device will be torn apart in a lab.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DEFENSE TAB ========== -->
+<div class="tab-content" id="tab-defense">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🛡️ Advanced Edge Defense & Hardening</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Hardware Roots of Trust & Remote Attestation</h3>
+      <p>Use TPMs or Secure Enclaves for secure boot and key storage. Implement remote attestation so that the cloud verifies the device's firmware hash before accepting its data. This detects firmware tampering in real time.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Runtime Integrity & IoT EDR</h3>
+      <p>Monitor device memory and network behavior for anomalies. Use eBPF‑based agents or lightweight EDR solutions on edge devices. Any unexpected process or network connection should trigger an alert.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Signed OTA, SBOM, and Secure Provisioning</h3>
+      <p>All OTA updates must be signed and verified. Maintain a Software Bill of Materials (SBOM) for every device. Secure provisioning injects unique device keys at manufacturing and never stores them in plaintext.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== LABS TAB ========== -->
+<div class="tab-content" id="tab-labs">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧪 Edge Security Labs – From Hardware to Cloud</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Firmware Emulation & Reversing Lab</h3>
+      <p>Download a router firmware image (e.g., from TP‑Link or D‑Link). Extract with binwalk, emulate binaries with QEMU, and find hardcoded credentials. Set up a Ghidra project to reverse the ARM binaries.</p>
+      <div class="code-block"><pre># Download firmware from vendor site, then:
+wget http://download.vendor.com/firmware.bin
+binwalk -Me firmware.bin
+qemu-arm -L ./squashfs-root ./squashfs-root/bin/busybox sh</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">5G Core & RAN Emulation Lab</h3>
+      <p>Deploy Open5GS and srsRAN on two VMs. Connect a programmable SIM (sysmoUSIM) or use ZeroMQ virtual radio. Capture PFCP and NGAP traffic with Wireshark. Fuzz the SMF/AMF with malformed packets.</p>
+      <div class="code-block"><pre># Install Open5GS
+sudo apt install open5gs
+# Configure and start
+sudo systemctl start open5gs-mmed open5gs-sgwcd open5gs-smfd open5gs-upfd</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Side‑Channel Attack Lab (ChipWhisperer)</h3>
+      <p>Use ChipWhisperer‑Lite or Nano to perform a DPA attack on AES. Capture power traces, align them, and recover the key byte‑by‑byte. This teaches you how hardware leaks information.</p>
+      <div class="code-block"><pre># ChipWhisperer capture and attack
+python cw_capture_aes.py
+python cw_analyze.py</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">SDR Replay & Spoofing Lab</h3>
+      <p>Capture a 433 MHz remote control signal with RTL‑SDR, then replay it with HackRF. Use Gqrx to visualise the spectrum. Experiment with GSM/LTE capture using gr‑gsm or srsRAN.</p>
+      <div class="code-block"><pre>rtl_sdr -f 433920000 -s 250000 capture.iq
+hackrf_transfer -t capture.iq -f 433920000 -s 250000</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">IoT Cloud Backend Attack Lab</h3>
+      <p>Set up a local MQTT broker (mosquitto). Practice anonymous subscription and publication. Then configure AWS IoT Core with a test device, and try to abuse overly permissive policies.</p>
+      <div class="code-block"><pre>mosquitto_sub -h localhost -t "#" -v</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">The Lab's Golden Rule</h3>
+      <p>All experiments must be conducted on your own hardware in an isolated environment. Jamming, transmitting on licensed frequencies, and tampering with production devices are illegal without explicit authorization.</p>
+    </div>
+  </div>
+</div>

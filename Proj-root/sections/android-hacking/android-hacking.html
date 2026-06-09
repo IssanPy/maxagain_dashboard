@@ -1,0 +1,482 @@
+<!-- Android Hacking – The Bot Factory: Elite Exploitation Academy -->
+<h2 class="section-title">🤖 Android Hacking – The Bot Factory Academy</h2>
+
+<div class="server-tabs" id="android-tabs">
+  <div class="server-btn active" data-tab="intro">Intro</div>
+  <div class="server-btn" data-tab="aosp">AOSP Internals</div>
+  <div class="server-btn" data-tab="art">ART Runtime</div>
+  <div class="server-btn" data-tab="binder">Binder Exploitation</div>
+  <div class="server-btn" data-tab="selinux">SELinux & Sandbox</div>
+  <div class="server-btn" data-tab="kernel">Kernel Exploitation</div>
+  <div class="server-btn" data-tab="trustzone">TrustZone & TEE</div>
+  <div class="server-btn" data-tab="verifiedboot">Verified Boot</div>
+  <div class="server-btn" data-tab="playintegrity">Play Integrity</div>
+  <div class="server-btn" data-tab="jni">JNI & Native Reversing</div>
+  <div class="server-btn" data-tab="malware">Mobile Malware</div>
+  <div class="server-btn" data-tab="accessibility">Accessibility Abuse</div>
+  <div class="server-btn" data-tab="oem">OEM Attack Surface</div>
+  <div class="server-btn" data-tab="forensics">Android Forensics</div>
+  <div class="server-btn" data-tab="signing">APK Signing</div>
+  <div class="server-btn" data-tab="chains">Exploit Chains</div>
+  <div class="server-btn" data-tab="rasp">RASP & Hardening</div>
+  <div class="server-btn" data-tab="backend">Mobile Backend</div>
+  <div class="server-btn" data-tab="tools">Tools</div>
+  <div class="server-btn" data-tab="cases">Case Studies</div>
+  <div class="server-btn" data-tab="mindset">Mindset</div>
+  <div class="server-btn" data-tab="defense">Defense</div>
+  <div class="server-btn" data-tab="labs">Labs</div>
+</div>
+
+<!-- ========== INTRO TAB ========== -->
+<div class="tab-content active" id="tab-intro">
+  <div class="hero-container" style="text-align:center; padding-top:2rem;">
+    <h1 class="hero-title" style="font-size:3.5rem;">WELCOME TO THE <span class="text-cyber-red">BOT FACTORY</span></h1>
+    <p class="hero-subtitle" style="font-size:1.3rem; color:#5ee0fa; margin-bottom:2rem;">
+      3 billion devices run Android — each a layered fortress of sandboxes, Binder IPC, SELinux policies, and hardware‑backed trust. This academy dissects every boundary: from Zygote to TrustZone, from ART to kernel exploits.
+    </p>
+  </div>
+
+  <div class="tools-grid" style="margin-top:2rem;">
+    <div class="glass-card text-center"><h2 class="text-neon-green" style="font-size:2.5rem;">Binder</h2><p>IPC Exploitation<br><span style="font-size:0.8rem; opacity:0.7;">Transactions, parcels, fuzzing</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-neon-blue" style="font-size:2.5rem;">TrustZone</h2><p>Keymaster & TEE<br><span style="font-size:0.8rem; opacity:0.7;">Secure world bypass</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-cyber-red" style="font-size:2.5rem;">ART</h2><p>Runtime Internals<br><span style="font-size:0.8rem; opacity:0.7;">oat, vdex, JIT</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-neon-green" style="font-size:2.5rem;">Play Integrity</h2><p>Device Attestation<br><span style="font-size:0.8rem; opacity:0.7;">Hardware vs software</span></p></div>
+  </div>
+
+  <div class="sub-section" style="margin-top:3rem;">
+    <div class="glass-card">
+      <h3 class="text-neon-blue" style="font-size:1.6rem;">📋 The Complete Android Exploit Curriculum</h3>
+      <ul style="list-style:none; padding:0; font-size:1.1rem;">
+        <li>✅ <span class="text-neon-green">AOSP, ART, Binder</span> – init, Zygote, JIT/AOT, transaction internals.</li>
+        <li>✅ <span class="text-neon-green">SELinux, Sandbox, Kernel</span> – Policy bypass, privilege escalation.</li>
+        <li>✅ <span class="text-neon-green">TrustZone, Verified Boot, Play Integrity</span> – TEE exploits, rollback attacks.</li>
+        <li>✅ <span class="text-neon-green">JNI, Malware, Accessibility</span> – Native hooks, banking trojans, overlay theft.</li>
+        <li>✅ <span class="text-neon-green">OEM Attack Surface & Forensics</span> – Vendor backdoors, logical extraction.</li>
+        <li>✅ <span class="text-neon-green">APK Signing, Exploit Chains, RASP</span> – Janus, attack flow, anti‑Frida.</li>
+        <li>✅ <span class="text-neon-green">Mobile Backend, Tools, Cases</span> – Firebase, Joker malware, StrandHogg.</li>
+        <li>✅ <span class="text-neon-green">Mindset, Defense, Labs</span> – Trust boundaries, hardware attestation, Binder fuzzing.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="text-align:center; margin-top:2rem; font-size:0.9rem; color:#888;">
+    <span class="text-cyber-red">Warning:</span> Android exploitation requires authorization. All techniques are for ethical research, CTFs, and authorized red‑team exercises.
+  </p>
+</div>
+
+<!-- ========== AOSP INTERNALS TAB ========== -->
+<div class="tab-content" id="tab-aosp">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧱 AOSP Architecture – The Android Operating System</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">The Boot Sequence: init, Zygote, system_server</h3>
+      <p>After the kernel loads, the `init` process parses init.rc and starts native daemons (servicemanager, hwservicemanager, vold). Zygote pre‑loads framework classes and forks every app process. system_server hosts critical services like ActivityManagerService, PackageManagerService, and WindowManagerService.</p>
+      <div class="code-block"><pre># View running services
+adb shell dumpsys activity services</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">HAL & Native Daemons</h3>
+      <p>The Hardware Abstraction Layer (HAL) runs in its own process (or in‑process with the client). Attackers target privileged daemons (e.g., mediacodec, hwcomposer) for kernel escalation. SurfaceFlinger handles compositing; compromising it gives full screen capture.</p>
+      <div class="code-block"><pre># List HAL services
+adb shell lshal</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Framework Services & PackageManagerService</h3>
+      <p>PackageManagerService verifies APK signatures, manages permissions, and handles install flows. Abusing its Binder interface can install apps silently or bypass signature checks.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ART RUNTIME TAB ========== -->
+<div class="tab-content" id="tab-art">
+  <div class="sub-section">
+    <h2 class="sub-section-title">⚡ ART Runtime – The Execution Engine</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">oat/vdex, JIT, and AOT Compilation</h3>
+      <p>ART compiles DEX bytecode to native code (oat). VDEX stores uncompressed DEX for quick verification. JIT profiles optimize hot methods. Attackers can modify oat files to inject code at the native level.</p>
+      <div class="code-block"><pre># Dump ART method mappings
+adb shell cmd package compile -m speed -f com.target.app</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Method Hooking & Inline Caching Abuse</h3>
+      <p>ART maintains a method table in the `ArtMethod` structure. Hooking the entry point (via Frida or custom native code) intercepts every invocation. Inline caching can be poisoned to redirect calls.</p>
+      <div class="code-block"><pre>// Frida: find ArtMethod structure
+var ArtMethod = ...;
+Interceptor.replace(ArtMethod.entry_point, new NativeCallback(...));</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Garbage Collection & Runtime Optimizations</h3>
+      <p>Understanding GC pauses and how ART manages object allocation helps exploit timing windows or leak references. Use `adb shell dumpsys meminfo` to profile runtime memory.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== BINDER EXPLOITATION TAB ========== -->
+<div class="tab-content" id="tab-binder">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔗 Binder IPC – The Heart of Android</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Binder Transaction Internals & Parcel Serialization</h3>
+      <p>Every IPC call is a Binder transaction. The kernel driver (`/dev/binder`) copies data between processes. Parcel objects are serialized and reconstructed. Race conditions in Binder can lead to use‑after‑free or double‑free vulnerabilities.</p>
+      <div class="code-block"><pre># Watch Binder transactions in real‑time
+adb shell cat /d/binder/transactions</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Service Manager Abuse & Capability Leaks</h3>
+      <p>The Service Manager (`servicemanager`) registers all system services. If an attacker can register a fake service with the same name, clients unknowingly connect to a malicious implementation. Binder tokens act as capabilities; stealing a token grants unauthorised access.</p>
+      <div class="code-block"><pre># List registered services
+adb shell service list</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Binder Fuzzing & Driver Exploitation</h3>
+      <p>Fuzz Binder calls with malformed Parcel data. Kernel bugs in the Binder driver can lead to privilege escalation. Use tools like <span class="text-neon-green">binder-fuzz</span> or <span class="text-neon-green">android-fuzzing</span>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SELINUX & SANDBOX TAB ========== -->
+<div class="tab-content" id="tab-selinux">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔒 SELinux & App Sandbox – The Policy Fortress</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">SELinux Domains & Policy Transitions</h3>
+      <p>Every process and file has an SELinux context. Policy rules define which domains can access which resources. Attackers look for misconfigured transitions (e.g., `untrusted_app` to `system_server` via Binder).</p>
+      <div class="code-block"><pre>adb shell getenforce
+# View policy
+adb pull /sys/fs/selinux/policy
+sesearch -A policy</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Policy Bypasses & Sandbox Escapes</h3>
+      <p>App sandboxes isolate file access. Escaping the sandbox often requires exploiting a vulnerable system service or a kernel bug. Dirty Pipe (CVE‑2022‑0847) allowed writing to read‑only files, bypassing SELinux entirely.</p>
+      <div class="code-block"><pre># Dirty Pipe exploit on Android (conceptual)
+./dirtypipe /data/local/tmp/rootfile /etc/passwd</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== KERNEL EXPLOITATION TAB ========== -->
+<div class="tab-content" id="tab-kernel">
+  <div class="sub-section">
+    <h2 class="sub-section-title">💥 Android Kernel Exploitation</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Use‑After‑Free & Race Conditions in the Kernel</h3>
+      <p>Android kernels are based on Linux LTS. Vulnerabilities in the Binder driver, ION allocator, or GPU drivers are prime targets. A UAF in `binder_ioctl` can grant arbitrary kernel read/write.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Privilege Escalation Chains & KASLR Bypass</h3>
+      <p>Combine a kernel bug with a KASLR leak (e.g., reading /proc/kallsyms) to build ROP chains. Common escalation paths: `ptrace` abuse, `suid` binaries, or kernel module injection.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Driver & Vendor Kernel Exploitation</h3>
+      <p>Qualcomm, MediaTek, and Samsung kernels often include closed‑source drivers with known vulnerabilities. Fuzz the `/dev/kgsl-3d0` or `/dev/mtk_cmdq` interfaces.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TRUSTZONE & TEE TAB ========== -->
+<div class="tab-content" id="tab-trustzone">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔐 ARM TrustZone & TEE Security</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Keymaster, Gatekeeper, and StrongBox</h3>
+      <p>Android Keystore uses Keymaster HAL, which communicates with the Trusted Execution Environment (TEE). StrongBox is a dedicated tamper‑resistant hardware module. Compromising the TEE (e.g., via a bug in QSEE) allows extraction of supposedly hardware‑protected keys.</p>
+      <div class="code-block"><pre># Check Keymaster version
+adb shell getprop ro.hardware.keystore</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">QSEE & TEEGRIS Exploitation</h3>
+      <p>Qualcomm's QSEE (Secure Execution Environment) has been exploited multiple times (e.g., CVE‑2020‑36737). Samsung's TEEGRIS is also a target. Exploits typically require a kernel compromise first, then escalate into the secure world.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== VERIFIED BOOT TAB ========== -->
+<div class="tab-content" id="tab-verifiedboot">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔒 Android Verified Boot & dm‑verity</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">vbmeta, Boot Chain, and Rollback Protection</h3>
+      <p>Android Verified Boot (AVB) uses vbmeta to verify each partition (boot, system, vendor). Rollback protection prevents downgrading to a vulnerable version. Attackers exploit OEM implementation flaws, such as missing verification or weak keys.</p>
+      <div class="code-block"><pre># Check AVB status
+adb shell avbctl get-verity</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Unlocking Bootloader & Custom Verified Boot</h3>
+      <p>Unlocking the bootloader disables verified boot, but the device is then marked as "orange state" (untrusted). Magisk patches the boot image to inject root while preserving AVB to a degree.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PLAY INTEGRITY TAB ========== -->
+<div class="tab-content" id="tab-playintegrity">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🛡️ Play Integrity & SafetyNet</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Hardware vs Software Attestation</h3>
+      <p>Play Integrity provides three evaluation types: BASIC (software), HARDWARE_BACKED (TEE), and STRONG (StrongBox). Apps like Google Pay require HARDWARE_BACKED. MagiskHide/Zygisk can bypass basic checks, but hardware attestation is extremely difficult to spoof.</p>
+      <div class="code-block"><pre># Test Play Integrity
+adb shell am start -a android.intent.action.VIEW -d https://play.google.com/store/apps/details?id=com.scottyab.safetynet.sample</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Magisk Zygisk & Universal SafetyNet Fix</h3>
+      <p>Zygisk injects into Zygote to modify system‑level behavior. Modules like USNF (Universal SafetyNet Fix) spoof keystore responses and hide root from apps. This cat‑and‑mouse game is constant.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== JNI & NATIVE REVERSING TAB ========== -->
+<div class="tab-content" id="tab-jni">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧬 JNI & Native Library Reversing</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">JNI Internals & ARM64 ELF Analysis</h3>
+      <p>Java Native Interface (JNI) allows calling C/C++ code from Java. The `libnative.so` file is an ELF binary. Use Ghidra or IDA to reverse it. Look for unsafe JNI functions like `NewStringUTF` that can be hooked.</p>
+      <div class="code-block"><pre># Extract native library
+adb pull /data/app/com.app/lib/arm64/libnative.so
+file libnative.so</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Native Hooks & ptrace Anti‑Debugging</h3>
+      <p>Frida can hook native functions via `Interceptor.attach`. Apps detect debuggers via `ptrace(PTRACE_TRACEME, ...)`. Bypass with Frida's `--realm=emulated` or by patching the native code.</p>
+      <div class="code-block"><pre>// Frida hook native function
+var func = Module.findExportByName("libnative.so", "check_root");
+Interceptor.attach(func, { onLeave: function(retval) { retval.replace(0); } });</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MOBILE MALWARE TAB ========== -->
+<div class="tab-content" id="tab-malware">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🦠 Android Malware – Banking Trojans, RATs, Spyware</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Accessibility Service Abuse & Overlay Attacks</h3>
+      <p>Banking trojans like Anubis and Cerberus use Accessibility Services to perform automatic clicks, steal credentials, and intercept OTPs. Overlay attacks show a fake login screen above the legitimate app.</p>
+      <div class="code-block"><pre>// Accessibility service config
+&lt;accessibility-service android:canPerformGestures="true" android:canRetrieveWindowContent="true"/&gt;</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Persistence & C2 Communication</h3>
+      <p>Malware persists via BroadcastReceivers, AlarmManager, or by abusing the device admin API. C2 channels include Firebase Realtime Database, Telegram bots, or encrypted HTTP. Tools like <span class="text-neon-green">MobSF</span> and <span class="text-neon-green">Quark Engine</span> help detect them.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ACCESSIBILITY ABUSE TAB ========== -->
+<div class="tab-content" id="tab-accessibility">
+  <div class="sub-section">
+    <h2 class="sub-section-title">♿ Accessibility Service – The Silent Hijacker</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Click Automation & Screen Scraping</h3>
+      <p>Accessibility Services can simulate user taps, read screen content, and even grant permissions without user consent (on older Android versions). This is the backbone of Android banking malware.</p>
+      <div class="code-block"><pre>// Simulate a click
+accessibilityEvent.performAction(AccessibilityNodeInfo.ACTION_CLICK);</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Detection & Mitigation</h3>
+      <p>Android 12+ restricts which apps can use Accessibility Services. Users must manually enable them. Apps can detect enabled accessibility services using `AccessibilityManager.getEnabledAccessibilityServiceList()`, but malware often uses generic names to evade this.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== OEM ATTACK SURFACE TAB ========== -->
+<div class="tab-content" id="tab-oem">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🏭 OEM & Vendor Attack Surfaces</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Samsung Knox, Xiaomi, and Qualcomm Services</h3>
+      <p>OEMs add custom services that often run with elevated privileges. Qualcomm's `com.qualcomm.qti.*` services have been exploited for kernel escalation. Samsung Knox offers a secure container, but bypasses exist via kernel exploits.</p>
+      <div class="code-block"><pre># List running services with their UID
+adb shell dumpsys package | grep -A 5 "Service"</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Pre‑installed Apps & Vendor Daemons</h3>
+      <p>Carrier‑bloatware and system apps often have excessive permissions or debug interfaces. Use `adb shell pm list packages -f` to find hidden packages.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ANDROID FORENSICS TAB ========== -->
+<div class="tab-content" id="tab-forensics">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔎 Android Forensics & Data Extraction</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Logical & Physical Acquisition</h3>
+      <p>Logical acquisition uses `adb backup` (if allowed) or content providers. Physical acquisition requires a forensic tool (e.g., Cellebrite) or a kernel exploit for a full memory dump.</p>
+      <div class="code-block"><pre>adb backup -apk -shared -all -system -f backup.ab</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">SQLite Forensics & Keystore Artifacts</h3>
+      <p>Extract `mmssms.db`, `contacts2.db`, and application databases. The Android Keystore stores keys in `/data/misc/keystore/`. Each key file is encrypted, but a kernel exploit can dump them from memory.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== APK SIGNING TAB ========== -->
+<div class="tab-content" id="tab-signing">
+  <div class="sub-section">
+    <h2 class="sub-section-title">✍️ APK Signing & Trust Model</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Signature Schemes v1‑v4 & Janus Vulnerability</h3>
+      <p>Android supports multiple signature schemes. v1 (JAR signing) is vulnerable to the Janus attack (CVE‑2017‑13156), where a DEX file is added to an APK without invalidating the signature. Use <span class="text-neon-green">apksigner</span> to verify.</p>
+      <div class="code-block"><pre>apksigner verify --verbose app.apk</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Signature Spoofing & Downgrade Attacks</h3>
+      <p>Some custom ROMs support signature spoofing for microG. Attackers can exploit this to install malicious updates. Always verify the certificate chain.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== EXPLOIT CHAINS TAB ========== -->
+<div class="tab-content" id="tab-chains">
+  <div class="sub-section">
+    <h2 class="sub-section-title">⛓️ Android Exploit Chains – The Full Workflow</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Dirty Pipe → App Sandbox Escape → Kernel R/W → SELinux Bypass</h3>
+      <p>Dirty Pipe (CVE‑2022‑0847) allowed writing to any file, including root‑owned files, from an untrusted app. This was chained with a kernel R/W primitive to disable SELinux, gaining full root access.</p>
+      <div class="code-block"><pre>./exploit.sh  # CVE‑2022‑0847 PoC</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Accessibility Abuse → Overlay Attack → Credential Theft → Persistent Malware</h3>
+      <p>A malicious app requests Accessibility permissions. Once enabled, it overlays a fake login screen on top of the banking app, captures credentials, and installs a persistent backdoor via a BroadcastReceiver.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== RASP & HARDENING TAB ========== -->
+<div class="tab-content" id="tab-rasp">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🛡️ RASP & App Hardening Techniques</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Runtime Application Self‑Protection (RASP)</h3>
+      <p>RASP libraries detect tampering, hooking, and emulation at runtime. They check for Frida artifacts, jailbreak files, and debugger attachment. Use <span class="text-neon-green">DexGuard</span> or <span class="text-neon-green">Arxan</span> for commercial RASP.</p>
+      <div class="code-block"><pre>// Check for Frida port (conceptual)
+if (socket.connect("127.0.0.1", 27042)) { abort(); }</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Anti‑Frida & Anti‑Hooking Bypasses</h3>
+      <p>Frida can be detected by scanning memory for its agent strings or by checking open ports. To bypass RASP, patch the detection functions using Frida itself or use a modified Frida server.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MOBILE BACKEND TAB ========== -->
+<div class="tab-content" id="tab-backend">
+  <div class="sub-section">
+    <h2 class="sub-section-title">☁️ Mobile Backend & API Security</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Firebase Exploitation & Token Lifecycle Abuse</h3>
+      <p>Misconfigured Firestore rules allow unauthenticated read/write. Test with <code>curl https://project.firebaseio.com/.json</code>. JWT tokens can be intercepted and replayed if short‑lived or improperly validated.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">GraphQL & REST API Mobile Attacks</h3>
+      <p>Mobile apps often use the same APIs as the web version. Bypass SSL pinning with Frida, intercept traffic, and test for BOLA, excessive data exposure, and auth flaws just as you would on a web API.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TOOLS TAB ========== -->
+<div class="tab-content" id="tab-tools">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧰 Elite Android Hacking Toolkit</h2>
+    <div class="tools-grid">
+      <div class="glass-card"><h3 class="text-neon-green">Frida / Objection</h3><p>Dynamic instrumentation</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Ghidra / IDA Pro / JEB</h3><p>Native & Dalvik reversing</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">MobSF / Quark Engine</h3><p>Automated static/dynamic analysis</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">APKTool / jadx / bytecode‑viewer</h3><p>Smali & Java decompilation</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Magisk / Zygisk</h3><p>Root & module framework</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Wireshark / mitmproxy</h3><p>Traffic interception</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">adb / fastboot / heimdall</h3><p>Android Debug Bridge</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">SQLiteBrowser / DB Browser</h3><p>Database forensics</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CASE STUDIES TAB ========== -->
+<div class="tab-content" id="tab-cases">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📖 Real‑World Android Exploit Cases</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">StrandHogg (2019‑2020)</h3>
+      <p>Task hijacking vulnerability that allowed malicious apps to overlay a fake login screen when the user tapped a legitimate app icon. It exploited Android's task affinity and `onTaskRemoved` handling. Affected all Android versions at the time. Fixed by introducing lockscreen verification for task switching.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Joker Malware (2017‑2022)</h3>
+      <p>Stealthy malware that subscribed victims to premium SMS services. It bypassed Play Store protections by using DEX bytecode manipulation and executing in stages. It abused notifications to hide subscription confirmations. Google removed over 1,700 Joker‑infected apps from the Play Store.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Dirty Pipe (2022)</h3>
+      <p>A kernel vulnerability (CVE‑2022‑0847) that allowed overwriting read‑only files, including root‑owned files. On Android, it was used to gain root access by overwriting `/etc/passwd` or injecting into system processes. Patched in Linux 5.16.11.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Lessons Learned</h3>
+      <p>Layer your defenses. A single kernel bug or IPC flaw can defeat all higher‑level protections. Assume your app runs on a compromised device.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MINDSET TAB ========== -->
+<div class="tab-content" id="tab-mindset">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧠 The Android Exploit Researcher's Mindset</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">“Where does Android place its trust?”</h3>
+      <p>Trust in Android is layered: the kernel trusts the vendor, Binder trusts the caller, ART trusts the DEX bytecode, OEM services trust system privileges. Break any one of those, and you own the layer above.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">“What if I spoof the caller's UID?”</h3>
+      <p>Binder provides `getCallingUid()`. Some system services forget to validate it, allowing privilege escalation. Always check: does this endpoint trust the caller's identity implicitly?</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">The Golden Rule</h3>
+      <p>Never test on a device you don't own. Never deploy exploits against live targets without explicit permission. Android security research is a serious responsibility.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DEFENSE TAB ========== -->
+<div class="tab-content" id="tab-defense">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🛡️ Advanced Android Defense & Hardening</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">SELinux Hardening & Hardware Attestation</h3>
+      <p>Enforce SELinux in enforcing mode. Use hardware‑backed attestation for critical transactions. Never trust software‑only integrity checks. Implement app‑specific SELinux policies for system services.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Anti‑Hooking, RASP, and Secure IPC</h3>
+      <p>Integrate RASP libraries that detect Frida, Xposed, and emulators. Use encrypted and signed Binder transactions where possible. Rotate secrets frequently.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== LABS TAB ========== -->
+<div class="tab-content" id="tab-labs">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧪 Android Exploitation Labs</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Binder Fuzzing Lab</h3>
+      <p>Write a Python script using `frida` to call system services with malformed parcels and observe crashes in logcat. Focus on vendor‑specific services.</p>
+      <div class="code-block"><pre>adb logcat -b crash | grep "binder"</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Magisk Internals Lab</h3>
+      <p>Patch a boot image manually with Magisk, understand the init hijacking process, and write a simple Zygisk module that hooks a system method.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">SELinux Policy Analysis Lab</h3>
+      <p>Extract the SELinux policy from a rooted device, decompile it with `sesearch`, and identify permissive domains that can be exploited.</p>
+      <div class="code-block"><pre>adb pull /sys/fs/selinux/policy
+sesearch -A policy | grep permissive</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">JNI Reversing & Exploitation Lab</h3>
+      <p>Extract a native library from a target app, load it in Ghidra, find a vulnerable JNI function, and write a Frida hook to exploit it.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Lab Safety Rule</h3>
+      <p>Use only dedicated test devices. Never connect a compromised device to a production network. Always wipe after experimentation.</p>
+    </div>
+  </div>
+</div>

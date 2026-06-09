@@ -1,0 +1,575 @@
+<!-- Wireless Security Research Platform – 2026 Edition -->
+<h2 class="section-title">🌐 Wireless Security Research Platform</h2>
+
+<div class="server-tabs" id="wifi-tabs">
+  <div class="server-btn active" data-tab="intro">Intro</div>
+  <div class="server-btn" data-tab="rf">RF Fundamentals</div>
+  <div class="server-btn" data-tab="80211">802.11 Internals</div>
+  <div class="server-btn" data-tab="protocols">Protocols</div>
+  <div class="server-btn" data-tab="enterprise">Enterprise</div>
+  <div class="server-btn" data-tab="wpa3">WPA3 Deep Dive</div>
+  <div class="server-btn" data-tab="attacks">Attacks</div>
+  <div class="server-btn" data-tab="rogue">Rogue AP & MITM</div>
+  <div class="server-btn" data-tab="sdr">SDR & Signal</div>
+  <div class="server-btn" data-tab="bluetooth">Bluetooth/BLE</div>
+  <div class="server-btn" data-tab="nfc">NFC/RFID</div>
+  <div class="server-btn" data-tab="iot">IoT Wireless</div>
+  <div class="server-btn" data-tab="wifi67">Wi‑Fi 6/6E/7</div>
+  <div class="server-btn" data-tab="packets">Packet Analysis</div>
+  <div class="server-btn" data-tab="firmware">Firmware</div>
+  <div class="server-btn" data-tab="tools">Tools</div>
+  <div class="server-btn" data-tab="chains">Attack Chains</div>
+  <div class="server-btn" data-tab="defense">Defense</div>
+  <div class="server-btn" data-tab="cases">Case Studies</div>
+  <div class="server-btn" data-tab="mindset">Mindset</div>
+  <div class="server-btn" data-tab="labs">Labs</div>
+  <div class="server-btn" data-tab="opsec">Legal & OPSEC</div>
+</div>
+
+<!-- ========== INTRO TAB ========== -->
+<div class="tab-content active" id="tab-intro">
+  <div class="hero-container" style="text-align:center; padding-top:2rem;">
+    <h1 class="hero-title" style="font-size:3.5rem;">WELCOME TO THE <span class="text-cyber-red">SIGNAL STORM</span></h1>
+    <p class="hero-subtitle" style="font-size:1.3rem; color:#5ee0fa; margin-bottom:2rem;">Wireless is invisible warfare. From PHY layer to enterprise RADIUS, from BLE to Wi‑Fi 7 — this is your complete research arsenal.</p>
+  </div>
+
+  <div class="tools-grid" style="margin-top:2rem;">
+    <div class="glass-card text-center"><h2 class="text-neon-green" style="font-size:2.5rem;">PHY/MAC</h2><p>OFDM, MIMO, beamforming, frame control</p></div>
+    <div class="glass-card text-center"><h2 class="text-neon-blue" style="font-size:2.5rem;">WPA3</h2><p>SAE, Dragonfly, transition mode attacks</p></div>
+    <div class="glass-card text-center"><h2 class="text-cyber-red" style="font-size:2.5rem;">SDR</h2><p>HackRF, GNU Radio, custom frame crafting</p></div>
+    <div class="glass-card text-center"><h2 class="text-neon-green" style="font-size:2.5rem;">22+</h2><p>Attack Chains & Methodology</p></div>
+  </div>
+
+  <div class="sub-section" style="margin-top:3rem;">
+    <div class="glass-card">
+      <h3 class="text-neon-blue" style="font-size:1.6rem;">📋 Today’s Frequency Plan</h3>
+      <ul style="list-style:none; padding:0; font-size:1.1rem;">
+        <li>✅ <span class="text-neon-green">RF Fundamentals</span> – Antennas, propagation, SNR, dBm, spectrum analysis.</li>
+        <li>✅ <span class="text-neon-green">802.11 Internals</span> – OFDM, frame types, MAC layer, CSMA/CA.</li>
+        <li>✅ <span class="text-neon-green">Protocols & WPA3</span> – WEP to WPA3, SAE handshake, Dragonblood.</li>
+        <li>✅ <span class="text-neon-green">Enterprise Wi‑Fi</span> – 802.1X, RADIUS, EAP methods, rogue RADIUS.</li>
+        <li>✅ <span class="text-neon-green">Attacks, Rogue AP, MITM</span> – Deauth internals, KARMA, hostapd-wpe, captive portals.</li>
+        <li>✅ <span class="text-neon-green">SDR, Bluetooth, NFC, IoT</span> – HackRF, BLE spoofing, Zigbee, LoRa, Thread.</li>
+        <li>✅ <span class="text-neon-green">Wi‑Fi 6/7, Packet Analysis, Firmware</span> – OFDMA, BSS coloring, binwalk, router backdoors.</li>
+        <li>✅ <span class="text-neon-green">Tools, Attack Chains, Defense, Labs, OPSEC</span> – Elite arsenal, methodology, labs, and legal.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:2.5rem;">
+    <button class="server-btn cta-button" onclick="document.querySelector('#wifi-tabs .server-btn[data-tab=\'tools\']').click()" style="padding:1rem 3rem; font-size:1.3rem;">⚡ ENTER THE ARSENAL ⚡</button>
+  </div>
+
+  <p style="text-align:center; margin-top:2rem; font-size:0.9rem; color:#888;">
+    <span class="text-cyber-red">Warning:</span> Unauthorized wireless testing is illegal. Always have permission. Use your skills ethically.
+  </p>
+</div>
+
+<!-- ========== RF FUNDAMENTALS TAB ========== -->
+<div class="tab-content" id="tab-rf">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📡 Radio Frequency Physics & Engineering</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Antennas, Gain, and Propagation</h3>
+      <p>Antenna types: omnidirectional, directional (Yagi, panel), parabolic. Gain measured in dBi/dBd. Polarization (vertical/horizontal) affects signal reception. Fresnel zones impact link quality.</p>
+      <p class="mt-3"><span class="text-neon-green">Example:</span> A high‑gain directional antenna can extend attack range from 100m to 1km.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Signal Strength and Noise</h3>
+      <p>RSSI (Received Signal Strength Indicator) in dBm. SNR (Signal‑to‑Noise Ratio) affects throughput. Attenuation from walls, interference from other networks, and multipath fading degrade signals.</p>
+      <div class="code-block"><pre># Linux: check signal strength
+iwconfig wlan0 | grep Signal</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Modulation and Coding Schemes (MCS)</h3>
+      <p>OFDM uses sub‑carriers (52 for 802.11a/g, 114 for 802.11n/ac). QAM (64‑QAM, 256‑QAM) encodes bits per symbol. Beamforming focuses energy toward clients.</p>
+      <p>Understanding modulation helps in jamming and signal analysis.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">RF Hardware & Adapters</h3>
+      <p>Alfa AWUS036ACH, TP‑Link Archer T3U Plus, Panda PAU09 — known for monitor mode + injection. Chipsets: Realtek RTL8812AU/RTL8812BU, MediaTek MT7612U. Always check chipset compatibility before buying.</p>
+      <div class="code-block"><pre>lsusb
+# Identify chipset, install appropriate driver (morrownr/88x2bu, aircrack-ng/rtl8812au)</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Spectrum Analysis</h3>
+      <p>Visualize RF spectrum with tools like <span class="text-neon-green">Gqrx</span>, <span class="text-neon-green">SDR#</span>, or <span class="text-neon-green">RTL‑SDR</span>. Identify interference, rogue APs, and hidden channels.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 802.11 INTERNALS TAB ========== -->
+<div class="tab-content" id="tab-80211">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔬 802.11 Protocol Deep Dive</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Frame Types and Subtypes</h3>
+      <p>Management frames: Beacon (0x08), Probe Request (0x04), Probe Response (0x05), Authentication (0x0B), Association (0x00), Deauthentication (0x0C), Action (0x0D). Control frames: RTS, CTS, ACK. Data frames: QoS Data, Null Data.</p>
+      <p>Each frame has a Frame Control field, duration, addresses, and body. Understanding every field enables frame forging and precise attacks.</p>
+      <div class="code-block"><pre># Wireshark filter: wlan.fc.type_subtype == 0x0c  (deauth frames)</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">MAC Layer & CSMA/CA</h3>
+      <p>Carrier Sense Multiple Access with Collision Avoidance. Network Allocation Vector (NAV) prevents collisions. RTS/CTS handshake for hidden node problem.</p>
+      <p>Sequence numbers and fragment numbers reassemble fragments. Retransmissions occur on ACK timeout. Understanding this helps in packet injection and DoS attacks.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">MIMO and Spatial Streams</h3>
+      <p>Multiple Input Multiple Output uses multiple antennas for parallel data streams. Beamforming improves signal. MU‑MIMO (Multi‑User) allows simultaneous transmission to multiple clients.</p>
+      <p>Attackers can exploit MIMO for rogue AP capacity or jamming multiple streams.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PROTOCOLS TAB (expanded) ========== -->
+<div class="tab-content" id="tab-protocols">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔐 Encryption & Authentication Protocols</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">WEP: The Broken Legacy</h3>
+      <p>RC4 with 24‑bit IV. IV reuse + weak key scheduling = crackable in minutes. Tools: aircrack‑ng, Wifite.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-green">WPA/WPA2: The Workhorse</h3>
+      <p>4‑way handshake: ANonce, SNonce, MIC, PTK derivation using PBKDF2. PMKID can be extracted from RSN IE in association frames. TKIP (deprecated) and CCMP (AES).</p>
+      <div class="code-block"><pre># PMKID capture
+hcxdumptool -i wlan0mon -o pmkid.pcapng --enable_status=1</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">WPA3: The Future</h3>
+      <p>Simultaneous Authentication of Equals (SAE/Dragonfly). Anti‑clogging tokens prevent DoS. Forward secrecy. Transition mode (WPA2+WPA3) vulnerable to downgrade.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Protected Management Frames (802.11w)</h3>
+      <p>PMF prevents deauth/disassoc forgery. Not enabled by default on many networks. Check with <code>airodump‑ng --wps</code> output.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ENTERPRISE WI‑FI TAB ========== -->
+<div class="tab-content" id="tab-enterprise">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🏢 Enterprise Wireless Security</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">802.1X & RADIUS</h3>
+      <p>Authentication via Extensible Authentication Protocol (EAP) over LAN (EAPoL). The supplicant (client) authenticates to a RADIUS server. Common methods: PEAP, EAP‑TLS, EAP‑TTLS, MSCHAPv2.</p>
+      <p class="mt-2"><span class="text-cyber-red">Vulnerability:</span> If clients don’t validate the RADIUS server certificate, attackers can set up a rogue RADIUS to harvest credentials.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Rogue RADIUS & Credential Harvesting</h3>
+      <p>Use <span class="text-neon-green">hostapd-wpe</span> to create a fake enterprise AP. It captures MSCHAPv2 challenge/response, which can be cracked with <span class="text-neon-green">asleap</span> or <span class="text-neon-green">hashcat</span>.</p>
+      <div class="code-block"><pre>hostapd-wpe hostapd-wpe.conf
+# then crack captured hashes
+asleap -C challenge -R response -W wordlist.txt</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">EAP‑TLS Hardening</h3>
+      <p>Mutual certificate authentication prevents rogue RADIUS attacks. Ensure clients are configured to verify server certificates and not accept untrusted CAs.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">FreeRADIUS Lab</h3>
+      <p>Set up a FreeRADIUS server for testing. Integrate with hostapd for full enterprise WPA2/WPA3 simulation. Essential for learning enterprise attacks.</p>
+      <div class="code-block"><pre>sudo apt install freeradius freeradius-mysql</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== WPA3 DEEP DIVE TAB ========== -->
+<div class="tab-content" id="tab-wpa3">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔐 WPA3: Internals & Attacks</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">SAE Handshake (Dragonfly)</h3>
+      <p>Uses a Password Authenticated Key Exchange (PAKE) resistant to offline dictionary attacks. Commit and Confirm phases. Anti‑clogging mechanism prevents DoS.</p>
+      <p>Vulnerabilities: timing side‑channels during encoding of the password element. Dragonblood research uncovered downgrade and information leakage flaws.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Transition Mode Attacks</h3>
+      <p>When WPA3 AP supports WPA2 fallback, attackers can force clients to downgrade to WPA2 and capture the handshake. Use <span class="text-neon-green">airgeddon</span> or manual tools.</p>
+      <div class="code-block"><pre># WPA3 downgrade with hostapd-mana
+hostapd-mana /etc/hostapd-mana.conf
+# Captured WPA2 handshake can be cracked</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Side‑Channel & Timing Attacks</h3>
+      <p>Differences in SAE processing time can leak password information. Patched in recent firmware. Always test with <span class="text-neon-green">dragontool</span>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ATTACKS TAB (expanded) ========== -->
+<div class="tab-content" id="tab-attacks">
+  <div class="sub-section">
+    <h2 class="sub-section-title">💀 Advanced Attack Techniques</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Deauthentication Internals</h3>
+      <p>Deauth frames use reason codes (e.g., 7 = Class 3 frame received from nonassociated station). Can be broadcast or targeted. PMF (802.11w) protects against forgery.</p>
+      <div class="code-block"><pre># Craft custom deauth with mdk4
+mdk4 wlan0mon d -B AA:BB:CC:DD:EE:FF -S FF:FF:FF:FF:FF:FF</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">KARMA / MANA Attack</h3>
+      <p>Rogue AP responds to all probe requests, tricking clients into connecting. <span class="text-neon-green">hostapd‑mana</span> implements the attack. Captures handshakes and credentials.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">PMKID Attack (No Clients)</h3>
+      <p>Some APs include PMKID in RSN IE of association response or beacon. Use <span class="text-neon-green">hcxdumptool</span> + <span class="text-neon-green">hashcat</span> mode 22000.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Fragmentation & Replay</h3>
+      <p>Attack sequence: obtain a keystream fragment, use it to encrypt arbitrary packets. Tools: <span class="text-neon-green">fragrouter</span>, <span class="text-neon-green">aireplay‑ng -5</span>.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Client Isolation Bypass</h3>
+      <p>Enterprise networks often isolate clients. ARP poisoning or forcing traffic through attacker’s AP can bypass restrictions.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ROGUE AP & MITM TAB ========== -->
+<div class="tab-content" id="tab-rogue">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🕸️ Rogue AP & MITM Infrastructure</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">hostapd + dnsmasq + iptables</h3>
+      <p>Create a full rogue AP with internet passthrough for transparent MITM. Use <span class="text-neon-green">bettercap</span> for SSL stripping and credential sniffing.</p>
+      <div class="code-block"><pre>sudo apt install hostapd dnsmasq
+# Configure hostapd.conf and dnsmasq.conf
+sudo hostapd /etc/hostapd/hostapd.conf
+sudo dnsmasq -C /etc/dnsmasq.conf
+sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Captive Portal Phishing</h3>
+      <p>Use <span class="text-neon-green">nodogsplash</span> or custom Flask app to show a fake login page. When victim enters password, you capture it and grant internet access.</p>
+      <div class="code-block"><pre>git clone https://github.com/nodogsplash/nodogsplash.git
+# Customize splash.html to mimic target captive portal</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">ARP Spoofing & DNS Poisoning</h3>
+      <p>Bettercap automates ARP spoofing and DNS hijacking. Redirect victims to attacker‑controlled servers.</p>
+      <div class="code-block"><pre>sudo bettercap -iface wlan0 -eval "set arp.spoof.targets 192.168.1.5; arp.spoof on; net.sniff on; set dns.spoof.domains facebook.com; dns.spoof on"</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SDR TAB ========== -->
+<div class="tab-content" id="tab-sdr">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📻 Software Defined Radio & Signal Analysis</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">SDR Hardware & Tools</h3>
+      <p>HackRF One, RTL‑SDR, USRP B210. Use GNU Radio Companion to build custom RF processing chains. Gqrx for spectrum visualization.</p>
+      <div class="code-block"><pre>sudo apt install gnuradio gqrx-sdr rtl-sdr hackrf</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Signal Replay & Jamming</h3>
+      <p>Record and replay RF signals (garage openers, key fobs). Sweep jamming using HackRF to DoS Wi‑Fi bands.</p>
+      <div class="code-block"><pre>hackrf_transfer -r capture.iq -f 315000000 -s 2000000
+hackrf_transfer -t capture.iq -f 315000000 -s 2000000</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Custom Frame Crafting</h3>
+      <p>Use <span class="text-neon-green">Scapy</span> (Python) to craft arbitrary 802.11 frames. Inject them with <span class="text-neon-green">Lorcon2</span>.</p>
+      <div class="code-block"><pre>from scapy.all import *
+dot11 = Dot11(addr1="ff:ff:ff:ff:ff:ff", addr2="00:11:22:33:44:55", type=0, subtype=12)
+frame = RadioTap()/dot11/Raw(load="Hello")
+sendp(frame, iface="wlan0mon", loop=1, inter=0.1)</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== BLUETOOTH/BLE TAB ========== -->
+<div class="tab-content" id="tab-bluetooth">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🦷 Bluetooth & BLE Attacks</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">BLE Sniffing & Spoofing</h3>
+      <p>Use <span class="text-neon-green">Ubertooth One</span> or <span class="text-neon-green">nRF52840</span> for BLE sniffing. <span class="text-neon-green">GATTacker</span> for spoofing services.</p>
+      <div class="code-block"><pre>sudo hcitool lescan
+sudo gatttool -b AA:BB:CC:DD:EE:FF --char-read -a 0x002a</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">KNOB Attack & Pairing Downgrade</h3>
+      <p>Force Bluetooth pairing to use weak encryption. Tools: <span class="text-neon-green">internalblue</span>, <span class="text-neon-green">btlejuice</span>.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">BlueBorne & RCE</h3>
+      <p>Exploit Bluetooth stack vulnerabilities (CVE‑2017‑0781). Check devices with <span class="text-neon-green">blueborne-vuln-check</span>.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Flipper Zero BLE Abuse</h3>
+      <p>Use Flipper Zero for BLE spam, virtual badges, and HID attacks. It’s a portable wireless hacking tool.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== NFC/RFID TAB ========== -->
+<div class="tab-content" id="tab-nfc">
+  <div class="sub-section">
+    <h2 class="sub-section-title">💳 NFC & RFID Attacks</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Proxmark3 & Badge Cloning</h3>
+      <p>Read, clone, and emulate MIFARE Classic, DESFire, and HID badges. Use <span class="text-neon-green">Proxmark3</span> with <span class="text-neon-green">Iceman firmware</span>.</p>
+      <div class="code-block"><pre>proxmark3> hf mf autopwn</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Relay Attacks & Payment Cards</h3>
+      <p>Relay NFC communication between a victim’s card and a terminal over a distance. Tools: <span class="text-neon-green">ChameleonMini</span>, <span class="text-neon-green">Proxmark3</span>.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">RFID Frequency Basics</h3>
+      <p>LF (125 kHz) for access control, HF (13.56 MHz) for NFC, UHF for logistics. Each requires different antennas and tools.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== IoT WIRELESS TAB ========== -->
+<div class="tab-content" id="tab-iot">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📡 IoT Wireless Protocols</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Zigbee & Z‑Wave</h3>
+      <p>Zigbee network key extraction via <span class="text-neon-green">KillerBee</span>. Z‑Wave S2 downgrade attacks. Both used in smart home devices.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">LoRa & LoRaWAN</h3>
+      <p>Long‑range, low‑power. Spoofing join requests, bit‑flipping attacks. Use <span class="text-neon-green">gr‑lora</span> with SDR.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Thread & Matter</h3>
+      <p>IPv6‑based mesh. Matter adds application layer security. Still emerging attack surface.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">ESP32 & IoT Firmware</h3>
+      <p>Extract firmware from ESP32 via UART. Analyze with <span class="text-neon-green">esptool.py</span> and <span class="text-neon-green">Ghidra</span>. Hardcoded credentials are common.</p>
+      <div class="code-block"><pre>esptool.py read_flash 0 0x400000 firmware.bin</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== WI‑FI 6/6E/7 TAB ========== -->
+<div class="tab-content" id="tab-wifi67">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🚀 Wi‑Fi 6, 6E, and 7 Security</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">OFDMA & BSS Coloring</h3>
+      <p>Orthogonal Frequency Division Multiple Access increases efficiency. BSS coloring reduces co‑channel interference. New potential side‑channels for traffic analysis.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">6 GHz Band & Target Wake Time</h3>
+      <p>Wi‑Fi 6E uses 6 GHz, requiring new adapters. TWT saves power but may be abused for DoS.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Multi‑Link Operation (Wi‑Fi 7)</h3>
+      <p>Simultaneous transmission across multiple bands. Attack surface: MAC layer complexity, roaming attacks.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PACKET ANALYSIS TAB ========== -->
+<div class="tab-content" id="tab-packets">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔍 Wireless Packet Analysis</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Wireshark Filters & Radiotap Headers</h3>
+      <p>Radiotap header contains signal strength, data rate, channel. Use <code>wlan.fc.type_subtype</code>, <code>wlan.addr</code>, <code>eapol</code>, <code>wlan_radio.signal_dbm</code>.</p>
+      <div class="code-block"><pre># Wireshark display filter: show all deauth frames
+wlan.fc.type_subtype == 0x0c</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Beacon & Probe Analysis</h3>
+      <p>Beacon frames leak SSID, channel, supported rates, RSN IE. Probe requests reveal client’s saved networks. Use <span class="text-neon-green">airodump‑ng</span> or <span class="text-neon-green">Kismet</span> to log them.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Handshake Verification</h3>
+      <p>Use <code>cowpatty</code> or <code>tshark</code> to confirm a complete 4‑way handshake. Look for M1, M2, M3, M4 EAPOL frames.</p>
+      <div class="code-block"><pre>tshark -r capture.cap -Y "eapol"</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== FIRMWARE TAB ========== -->
+<div class="tab-content" id="tab-firmware">
+  <div class="sub-section">
+    <h2 class="sub-section-title">💾 Router Firmware Reversing & Backdoors</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Extracting Firmware</h3>
+      <p>Download firmware from vendor site. Use <span class="text-neon-green">binwalk</span> to extract filesystem, <span class="text-neon-green">firmwalker</span> to find credentials, and <span class="text-neon-green">Ghidra</span> to reverse binaries.</p>
+      <div class="code-block"><pre>binwalk -Me router_firmware.bin
+cd _router_firmware.bin.extracted/squashfs-root
+grep -r "passwd" .</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Hardcoded Credentials & Backdoors</h3>
+      <p>Many routers have hardcoded admin accounts, SSH keys, or debug backdoors. Example: <code>admin:admin</code>, <code>root:12345</code>, or a hidden service on port 5555.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">UART & JTAG Access</h3>
+      <p>Identify UART pins with a multimeter. Connect a USB‑TTL adapter to get a root shell. JTAG can read/write flash memory. Use <span class="text-neon-green">flashrom</span> to dump firmware.</p>
+      <div class="code-block"><pre>sudo screen /dev/ttyUSB0 115200</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TOOLS TAB (expanded) ========== -->
+<div class="tab-content" id="tab-tools">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧰 The Elite Wireless Arsenal</h2>
+    <div class="tools-grid">
+      <div class="glass-card"><h3 class="text-neon-green">Aircrack‑ng Suite</h3><p>Monitor mode, capture, crack</p><div class="code-block"><pre>sudo apt install aircrack-ng</pre></div></div>
+      <div class="glass-card"><h3 class="text-neon-green">hcxdumptool / hashcat</h3><p>PMKID capture, WPA cracking</p><div class="code-block"><pre>sudo apt install hcxdumptool hashcat</pre></div></div>
+      <div class="glass-card"><h3 class="text-neon-green">Kismet / airodump‑ng</h3><p>Passive reconnaissance & IDS</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">hostapd‑wpe / hostapd‑mana</h3><p>Rogue AP for credential harvesting</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Bettercap / mitmproxy</h3><p>MITM, ARP spoofing, SSL strip</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Airgeddon / Wifite</h3><p>Automated attacks</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">MDK4 / Scapy</h3><p>Frame injection & crafting</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">SDR: HackRF, RTL‑SDR, GNU Radio</h3><p>RF analysis, replay, jamming</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Bluetooth: Ubertooth, GATTacker</h3><p>BLE sniffing & spoofing</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Proxmark3 / ChameleonMini</h3><p>NFC/RFID cloning</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Firmware: binwalk, firmwalker, Ghidra</h3><p>Reverse engineering</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Wireshark / TShark</h3><p>Deep packet analysis</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ATTACK CHAINS TAB ========== -->
+<div class="tab-content" id="tab-chains">
+  <div class="sub-section">
+    <h2 class="sub-section-title">⛓️ Attack Chains & Methodology</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">The Professional Wireless Pentest Workflow</h3>
+      <ol style="margin-left:1.5rem;">
+        <li><span class="text-neon-green">Recon</span>: passive scanning, hidden SSIDs, client enumeration, vendor fingerprinting.</li>
+        <li><span class="text-neon-green">Signal Analysis</span>: RSSI mapping, channel utilization, interference detection.</li>
+        <li><span class="text-neon-green">Attack Vector Selection</span>: based on encryption type, WPS presence, enterprise vs PSK.</li>
+        <li><span class="text-neon-green">Execution</span>: handshake capture, PMKID, Evil Twin, rogue RADIUS, firmware exploitation.</li>
+        <li><span class="text-neon-green">Post‑Exploitation</span>: MITM, credential theft, lateral movement, network pivoting.</li>
+        <li><span class="text-neon-green">Cleanup & Reporting</span>: remove rogue APs, restore settings, deliver findings.</li>
+      </ol>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Example Chain: Public Wi‑Fi Takeover</h3>
+      <p>1) Deauth legitimate AP. 2) Start rogue AP with same SSID. 3) DHCP to victim. 4) Captive portal phishing. 5) Capture credentials. 6) MITM to inject malware or steal cookies.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Example Chain: Enterprise Network Access</h3>
+      <p>1) Identify WPA2‑Enterprise with weak EAP (PEAP). 2) Set up rogue RADIUS with hostapd‑wpe. 3) Deauth users. 4) Capture MSCHAPv2 challenge. 5) Crack password. 6) Use credentials for VPN/Email access.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DEFENSE TAB (expanded) ========== -->
+<div class="tab-content" id="tab-defense">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🛡️ Advanced Defense & Hardening</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">WIDS/WIPS Deployment</h3>
+      <p>Use Kismet as a Wireless Intrusion Detection System. Configure alerts for rogue APs, deauth floods, and channel anomalies. Integrate with SIEM.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Enterprise Hardening</h3>
+      <p>Enforce EAP‑TLS, disable legacy EAP methods, enable PMF, implement NAC, segment guest/corporate VLANs.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">RF Monitoring & Physical Security</h3>
+      <p>Regular site surveys to detect unauthorized devices. Use directional antennas for containment. Educate users about Wi‑Fi phishing.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Firmware & Patch Management</h3>
+      <p>Routinely update AP and controller firmware. Remove default credentials. Disable unused services (Telnet, SSH, HTTP).</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CASE STUDIES TAB ========== -->
+<div class="tab-content" id="tab-cases">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📖 Real‑World Exploit Case Studies</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">KRACK (2017)</h3>
+      <p>Key Reinstallation Attack against WPA2. Exploited 4‑way handshake retransmission to reset nonces. Affected almost all Wi‑Fi clients. Patched in updates.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Dragonblood (2019)</h3>
+      <p>Series of WPA3 vulnerabilities: downgrade to WPA2, side‑channel leaks, DoS. Led to improvements in SAE implementation.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Broadpwn (2017)</h3>
+      <p>Remote code execution in Broadcom Wi‑Fi chips via malformed WME element. Impacted millions of Android and iOS devices.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">FragAttacks (2021)</h3>
+      <p>Fragmentation and aggregation attacks against 802.11. Flaws in frame reassembly allowed injection of plaintext frames.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Lessons Learned</h3>
+      <p>Protocol design flaws can persist for decades. Always update, use PMF, and prefer WPA3 where possible.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== RESEARCHER MINDSET TAB ========== -->
+<div class="tab-content" id="tab-mindset">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧠 Wireless Researcher Mindset</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Think About Trust & Assumptions</h3>
+      <p>“What if the client auto‑connects without verifying the BSSID?” “What if PMF is not enforced?” “What if the RADIUS server certificate is not validated?” Question every default behavior.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Roaming & Handoff Exploitation</h3>
+      <p>Clients roam between APs. Attackers can force roams to a rogue AP by sending disassociation frames from the real AP.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Signal Strength Manipulation</h3>
+      <p>Adjust TX power to make your rogue AP appear stronger, tricking clients into connecting. Monitor RSSI to understand client behavior.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== LABS TAB ========== -->
+<div class="tab-content" id="tab-labs">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧪 Wireless Security Lab Setup</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Essential Hardware</h3>
+      <p>At least two compatible wireless adapters (one for monitor mode, one for MITM). Alfa AWUS036ACH, TP‑Link Archer T3U Plus. Optional: HackRF, Ubertooth, Proxmark3.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">VM Configuration</h3>
+      <p>Kali Linux in VirtualBox with USB passthrough. Enable EFI if needed. Install <span class="text-neon-green">VirtualBox Extension Pack</span> for USB 3.0 support.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Testing Environment</h3>
+      <p>Use a dedicated router/AP for testing. Create both WPA2‑PSK and WPA2‑Enterprise (with FreeRADIUS) networks. Isolate from production networks.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Online Labs & CTFs</h3>
+      <p>Practice with <span class="text-neon-green">Wi‑Fi Challenge</span> labs on Hack The Box, or set up your own vulnerable AP with <span class="text-neon-green">airgeddon</span>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== LEGAL & OPSEC TAB ========== -->
+<div class="tab-content" id="tab-opsec">
+  <div class="sub-section">
+    <h2 class="sub-section-title">⚖️ Legal Frameworks & Operational Security</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Radio Frequency Laws</h3>
+      <p>Jamming is illegal in most countries. Transmitting on unauthorized frequencies can violate FCC/ETSI regulations. Always use approved channels and power levels.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Authorized Testing & Contracts</h3>
+      <p>Obtain written permission before testing. Define scope, tools, and limitations. Use a <span class="text-neon-green">Rules of Engagement</span> document.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Operational Security</h3>
+      <p>Use encrypted drives, VPNs, and anonymization (Tor) when conducting research. Log everything. Never store client passwords in plaintext.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Disclosure Ethics</h3>
+      <p>Follow responsible disclosure: report vulnerabilities to vendor first. Provide 90‑day deadline. Publish after patch.</p>
+    </div>
+  </div>
+</div>

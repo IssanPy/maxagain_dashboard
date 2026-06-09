@@ -1,0 +1,562 @@
+<!-- iOS Hacking – The Forbidden Orchard Academy -->
+<h2 class="section-title">🍎 iOS Hacking – The Forbidden Orchard Academy</h2>
+
+<div class="server-tabs" id="ios-tabs">
+  <div class="server-btn active" data-tab="intro">Intro</div>
+  <div class="server-btn" data-tab="xnu">XNU Kernel</div>
+  <div class="server-btn" data-tab="pac">ARM64 & PAC</div>
+  <div class="server-btn" data-tab="memory">Memory Corruption</div>
+  <div class="server-btn" data-tab="webkit">WebKit Exploit</div>
+  <div class="server-btn" data-tab="sep">Secure Enclave</div>
+  <div class="server-btn" data-tab="sandbox">Sandbox & Entitlements</div>
+  <div class="server-btn" data-tab="jailbreak">Jailbreak Internals</div>
+  <div class="server-btn" data-tab="frida">Frida Masterclass</div>
+  <div class="server-btn" data-tab="reversing">App Reversing</div>
+  <div class="server-btn" data-tab="mach-o">Mach-O Format</div>
+  <div class="server-btn" data-tab="malware">iOS Malware</div>
+  <div class="server-btn" data-tab="network">Network Security</div>
+  <div class="server-btn" data-tab="runtime">Runtime Protections</div>
+  <div class="server-btn" data-tab="coretrust">CoreTrust & Code Sign</div>
+  <div class="server-btn" data-tab="chains">Exploit Chains</div>
+  <div class="server-btn" data-tab="forensics">Forensics</div>
+  <div class="server-btn" data-tab="pentest">Pentest Methodology</div>
+  <div class="server-btn" data-tab="swift">Swift & ObjC Reversing</div>
+  <div class="server-btn" data-tab="hardware">Hardware Security</div>
+  <div class="server-btn" data-tab="ecosystem">Apple Ecosystem</div>
+  <div class="server-btn" data-tab="tools">Tools</div>
+  <div class="server-btn" data-tab="cases">Case Studies</div>
+  <div class="server-btn" data-tab="mindset">Mindset</div>
+  <div class="server-btn" data-tab="defense">Defense</div>
+  <div class="server-btn" data-tab="labs">Labs</div>
+</div>
+
+<!-- ========== INTRO TAB ========== -->
+<div class="tab-content active" id="tab-intro">
+  <div class="hero-container" style="text-align:center; padding-top:2rem;">
+    <h1 class="hero-title" style="font-size:3.5rem;">WELCOME TO THE <span class="text-cyber-red">FORBIDDEN ORCHARD</span></h1>
+    <p class="hero-subtitle" style="font-size:1.3rem; color:#5ee0fa; margin-bottom:2rem;">
+      Every iPhone is a fortress of silicon, software, and secrets. But every fortress has a blueprint. This academy covers XNU kernel exploitation, PAC bypasses, WebKit chains, SEP architecture, jailbreak internals, and the spyware tradecraft that makes the world's most secure consumer device fall.
+    </p>
+  </div>
+
+  <div class="tools-grid" style="margin-top:2rem;">
+    <div class="glass-card text-center"><h2 class="text-neon-green" style="font-size:2.5rem;">XNU</h2><p>Kernel & Mach<br><span style="font-size:0.8rem; opacity:0.7;">IPC, memory zones, launchd</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-neon-blue" style="font-size:2.5rem;">PAC</h2><p>Pointer Authentication<br><span style="font-size:0.8rem; opacity:0.7;">ARM64e, BTI, return signing</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-cyber-red" style="font-size:2.5rem;">WebKit</h2><p>Safari RCE<br><span style="font-size:0.8rem; opacity:0.7;">JIT, DFG, sandbox escape</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-neon-green" style="font-size:2.5rem;">Pegasus</h2><p>Spyware Ecosystem<br><span style="font-size:0.8rem; opacity:0.7;">Zero‑click, iMessage, FORCEDENTRY</span></p></div>
+  </div>
+
+  <div class="sub-section" style="margin-top:3rem;">
+    <div class="glass-card">
+      <h3 class="text-neon-blue" style="font-size:1.6rem;">📋 The Complete Exploit Curriculum</h3>
+      <ul style="list-style:none; padding:0; font-size:1.1rem;">
+        <li>✅ <span class="text-neon-green">XNU Kernel & ARM64</span> – Mach microkernel, syscalls, PAC, memory management.</li>
+        <li>✅ <span class="text-neon-green">Memory Corruption & WebKit</span> – UAF, type confusion, JIT exploitation, sandbox escapes.</li>
+        <li>✅ <span class="text-neon-green">SEP, Sandbox, Entitlements</span> – Secure Enclave processor, seatbelt profiles, capability abuse.</li>
+        <li>✅ <span class="text-neon-green">Jailbreak & Frida</span> – bootrom exploits, AMFI bypass, hooking, SSL pinning kill.</li>
+        <li>✅ <span class="text-neon-green">Reversing & Mach-O</span> – Objective‑C runtime, Swift mangling, class‑dump, Ghidra.</li>
+        <li>✅ <span class="text-neon-green">Malware & Spyware</span> – Pegasus, Triangulation, persistence, enterprise cert abuse.</li>
+        <li>✅ <span class="text-neon-green">Network, Runtime, CoreTrust</span> – ATS, certificate validation, AMFI, code signatures.</li>
+        <li>✅ <span class="text-neon-green">Exploit Chains, Forensics, Pentest</span> – Full attack workflows, logical acquisition, keychain dumping.</li>
+        <li>✅ <span class="text-neon-green">Hardware, Ecosystem, Tools, Cases</span> – SecureROM, iMessage, Corellium, checkm8, FORCEDENTRY.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="text-align:center; margin-top:2rem; font-size:0.9rem; color:#888;">
+    <span class="text-cyber-red">Warning:</span> iOS exploitation without authorization is illegal. This knowledge is for researchers, pentesters, and defenders.
+  </p>
+</div>
+
+<!-- ========== XNU KERNEL TAB ========== -->
+<div class="tab-content" id="tab-xnu">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧠 XNU – The Core of Apple’s Operating System</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Mach Microkernel & BSD Layer</h3>
+      <p>XNU (X is Not Unix) combines a Mach microkernel with a BSD subsystem. Mach handles tasks, threads, ports, and IPC. BSD provides the POSIX layer: file descriptors, sockets, and process management. IOKit is the device driver framework.</p>
+      <p class="mt-2">Attackers exploit Mach ports to transfer memory between processes, or use IOKit for kernel memory r/w. The <code>task_for_pid()</code> API is a prime target — it grants full task control if the attacker can bypass entitlement checks.</p>
+      <div class="code-block"><pre>// Get task port for another process (requires entitlement)
+task_for_pid(mach_task_self(), pid, &task_port);</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Memory Zones, Launchd, and Syscalls</h3>
+      <p>XNU's zone allocator manages kernel memory pools. Zone corruption can lead to kernel privilege escalation. Launchd (PID 1) spawns all processes; exploiting it can hijack the entire boot chain. Syscalls are the gateway from userland to kernel — many exploits start by finding a broken system call.</p>
+      <div class="code-block"><pre># List available syscalls
+syscallbypid.pid 1</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ARM64 & PAC TAB ========== -->
+<div class="tab-content" id="tab-pac">
+  <div class="sub-section">
+    <h2 class="sub-section-title">💪 ARM64 & Pointer Authentication</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">ARM64 Architecture for iOS</h3>
+      <p>All modern iPhones run on ARM64 (A7+). Registers: X0‑X30, SP, PC, LR. Calling conventions: first 8 arguments in X0‑X7, return value in X0. Understanding stack frames and exception levels (EL0 user, EL1 kernel, EL3 Secure Monitor) is crucial for writing shellcode.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">PAC (Pointer Authentication Codes)</h3>
+      <p>Apple’s ARM64e extension adds cryptographic signing to pointers. The <code>PACIASP</code> instruction signs the return address and stack frame. Any tampering causes a fault. PAC is the main reason ROP chains are no longer trivial on iOS.</p>
+      <p class="mt-2">Bypasses: pointer spraying (guessing a valid PAC), signing gadgets (finding code that signs an attacker‑controlled pointer), or using a key leakage. Pangu team demonstrated a PAC bypass in 2019 by abusing an unauthenticated load.</p>
+      <div class="code-block"><pre>; Signing the return address
+PACIASP
+; Verifying before return
+AUTIASP</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">BTI & Kernel Mitigations</h3>
+      <p>Branch Target Identification prevents arbitrary indirect jumps. KTRR (Kernel Text Readonly Region) makes kernel code immutable. SKEL (System Kernel Extension Library) virtualises kernel extensions. These are layers you must peel in a modern chain.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MEMORY CORRUPTION TAB ========== -->
+<div class="tab-content" id="tab-memory">
+  <div class="sub-section">
+    <h2 class="sub-section-title">💥 Memory Corruption – The Heart of Exploitation</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Use‑After‑Free, Type Confusion, OOB</h3>
+      <p>Use‑after‑free (UAF) is the most common exploit primitive in WebKit and kernel. Type confusion (e.g., treating a JSCell as a different type) leads to arbitrary r/w. Out‑of‑bounds reads/writes in image parsers (ImageIO) or audio codecs can leak and corrupt memory.</p>
+      <div class="code-block"><pre>// Pseudo‑exploit: dangling pointer after free
+let obj = new Uint8Array(1024);
+let dangling = obj; // reference kept
+obj = null; // freed, but dangling still points to old memory</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Race Conditions & Heap Grooming</h3>
+      <p>Race conditions in XNU’s semaphore or file handling can be triggered by multiple threads. Heap grooming carefully allocates and frees objects to place a victim object next to a controlled overflow. This is the foundation of every modern browser exploit.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== WEBKIT EXPLOITATION TAB ========== -->
+<div class="tab-content" id="tab-webkit">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🌐 WebKit / Safari Exploitation</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">JavaScriptCore (JSC) & JIT Compilation</h3>
+      <p>WebKit’s JavaScript engine has multiple tiers: LLInt (interpreter), Baseline JIT, DFG (Data Flow Graph) JIT, and FTL (Faster Than Light). Exploits often target the DFG JIT’s optimisations — a single incorrect type inference can lead to arbitrary code execution.</p>
+      <div class="code-block"><pre>// Triggering JIT type confusion (simplified)
+function jit_trigger(controlled) {
+    let arr = [1.1, 2.2, 3.3]; // map as double array
+    arr[controlled] = {}; // transition to object array
+    return arr[0]; // type confusion if accessed as double
+}</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Sandbox Escape & BlastDoor Bypass</h3>
+      <p>After RCE in the renderer, you’re still inside the WebContent sandbox. The next step is to escape to the kernel. This often involves exploiting another bug in a service reachable from the sandbox (e.g., IOSurface, Kernel Task). Apple’s BlastDoor service was introduced to filter iMessage content; bypassing it is a key step in zero‑click chains.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SEP TAB ========== -->
+<div class="tab-content" id="tab-sep">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔐 Secure Enclave Processor (SEP)</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Architecture & Key Management</h3>
+      <p>The SEP is a separate ARM processor with its own OS (SEPOS). It handles Touch ID, Face ID, passcode validation, and cryptographic keys. It stores the device UID key (burned at manufacture) and GID key (shared across models). No software running on the AP (Application Processor) can read these keys — only the SEP can access them.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">SEP Exploitation History</h3>
+      <p>In 2017, the pangu team demonstrated the first known SEP attack by exploiting a heap overflow in the SEP’s firmware. In 2020, checkm8 (bootrom exploit) was combined with a SEP firmware vulnerability to extract passcode‑protected data from iPhone X. These attacks require physical access and sophisticated hardware.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SANDBOX & ENTITLEMENTS TAB ========== -->
+<div class="tab-content" id="tab-sandbox">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📦 Sandbox Profiles & Entitlements</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Seatbelt (Sandboxd)</h3>
+      <p>Every iOS process has a sandbox profile enforced by the kernel. It restricts file access, syscalls, and IPC. Profiles are written in SBPL (Sandbox Profile Language) and stored in <code>/usr/share/sandbox/</code>.</p>
+      <div class="code-block"><pre>(allow file-read* (path "/private/var/mobile/Containers"))</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Entitlements & TCC</h3>
+      <p>Entitlements are XML‑like dictionaries embedded in app signatures. They grant capabilities like <code>com.apple.security.exception.files.absolute-path.read</code>. TCC (Transparency, Consent, and Control) manages privacy prompts (camera, contacts). Attackers abuse misplaced entitlements to escape the sandbox.</p>
+      <div class="code-block"><pre># Check entitlements of an app
+codesign -d --entitlements - /path/to/app.app</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== JAILBREAK INTERNALS TAB ========== -->
+<div class="tab-content" id="tab-jailbreak">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔓 Jailbreak Internals – Breaking the Chain</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">bootrom, iBoot, and Kernel Patches</h3>
+      <p>A bootrom exploit (like checkm8) is unpatchable because it’s in hardware ROM. iBoot is the second‑stage bootloader; it loads the kernel, which verifies AMFI (Apple Mobile File Integrity). Jailbreaks patch the kernel to disable AMFI, load unsigned code, and remount the root filesystem as read‑write.</p>
+      <div class="code-block"><pre>// Kernel patch: disable code signing (conceptual)
+patch_kernel_amfi();         // allow unsigned code
+patch_kernel_sandbox();      // relax sandbox
+remount_rootfs_rw();         // access full filesystem</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Trust Cache Injection & Substrate</h3>
+      <p>The trust cache is a list of allowed code hashes. Jailbreaks inject their own hashes to load tweak libraries (Substrate, Substitute, libhooker). Semi‑tethered jailbreaks require a sideloaded app to re‑exploit after each reboot; untethered ones persist across boots.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== FRIDA MASTERCLASS TAB ========== -->
+<div class="tab-content" id="tab-frida">
+  <div class="sub-section">
+    <h2 class="sub-section-title">⚡ Frida Masterclass – Instrumentation & Bypass</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-green">Objective‑C & Swift Hooking</h3>
+      <p>Frida injects a JavaScript runtime into the target process. Hook Objective‑C methods with <code>ObjC.classes</code>, Swift methods with <code>Module.findExportByName</code>. Override implementations to bypass jailbreak detection, SSL pinning, or extract secrets.</p>
+      <div class="code-block"><pre>// Frida script: bypass SSL pinning (generic)
+Java.perform(() => { /* Android only; iOS uses ObjC */ });
+// iOS ObjC hook
+ObjC.classes.NSURLSession['- dataTaskWithRequest:completionHandler:'].implementation = function() {
+    console.log("Intercepted request: " + arguments[0]);
+    return this.dataTaskWithRequest_completionHandler_(arguments[0], arguments[1]);
+};</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-green">Keychain Dumping & Anti‑Frida Detection</h3>
+      <p>Apps can detect Frida by scanning memory for Frida’s agent strings or by checking for open ports. Bypass these checks by patching the detection functions with Frida itself. Dump the keychain using <code>security dumper</code> or <code>Objection</code>.</p>
+      <div class="code-block"><pre>objection -g com.app explore
+ios keychain dump</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== APP REVERSING TAB ========== -->
+<div class="tab-content" id="tab-reversing">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔬 iOS App Reverse Engineering</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">IPA Structure, Info.plist, and Mach-O Binaries</h3>
+      <p>An IPA is a ZIP containing a Payload folder with the .app bundle. Info.plist holds the app’s entitlements, supported devices, and URL schemes. The main binary is a Mach‑O file. Use <span class="text-neon-green">class‑dump</span> to extract Objective‑C headers.</p>
+      <div class="code-block"><pre>class-dump -H /path/to/app.app/app -o headers/</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Hopper, Ghidra, and Strings Analysis</h3>
+      <p>Disassemble the binary with Hopper or Ghidra. Look for hardcoded URLs, API keys, and crypto constants. Use <code>strings</code> on the binary to find readable secrets.</p>
+      <div class="code-block"><pre>strings ./app_binary | grep -i "http\|api\|secret\|token"</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MACH-O TAB ========== -->
+<div class="tab-content" id="tab-mach-o">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📄 Mach-O – The iOS Executable Format</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Headers, Load Commands, and Sections</h3>
+      <p>A Mach‑O file starts with a magic number (<code>MH_MAGIC_64</code>). The header defines the CPU type and file type. Load commands describe the layout: segments (__TEXT, __DATA), symbol table, dynamic linker info. The <code>__LINKEDIT</code> segment holds the code signature.</p>
+      <div class="code-block"><pre>otool -l /bin/ls   # list load commands
+jtool --sig /path/to/app   # check code signature</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Encryption & Code Signatures</h3>
+      <p>App Store apps are encrypted (FairPlay). They must be decrypted before analysis using tools like <span class="text-neon-green">dumpdecrypted</span> or <span class="text-neon-green">bagbak</span>. The code signature (LC_CODE_SIGNATURE) is verified by AMFI at runtime.</p>
+      <div class="code-block"><pre># Decrypt an app on a jailbroken device
+dumpdecrypted /var/mobile/Containers/Bundle/Application/.../app.app</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== IOS MALWARE TAB ========== -->
+<div class="tab-content" id="tab-malware">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🦠 iOS Malware & Spyware Ecosystem</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Pegasus (NSO Group)</h3>
+      <p>Pegasus is the most advanced iOS spyware. It uses zero‑click exploits (FORCEDENTRY) to inject code via iMessage. Once installed, it can read messages, listen to calls, activate the camera, and exfiltrate data. It uses rootless persistence to survive reboots without a jailbreak.</p>
+      <div class="code-block"><pre># Indicators of Pegasus infection (research)
+# - com.apple.mobilemail.plist modifications
+# - Suspicious dylibs in /var/db/dyld/
+# - Repeated "imagent" crashes in logs</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Operation Triangulation & Supply‑Chain Abuse</h3>
+      <p>Kaspersky discovered an iOS zero‑click chain in 2023 that used an iMessage vulnerability to deploy spyware. Attackers also abuse enterprise certificates to distribute apps outside the App Store, bypassing Apple’s review process.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== NETWORK SECURITY TAB ========== -->
+<div class="tab-content" id="tab-network">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📡 iOS Network Security & Interception</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">ATS, SSL Pinning, and Proxy Detection</h3>
+      <p>App Transport Security (ATS) forces HTTPS by default. Apps can implement SSL pinning to prevent MITM attacks. However, many still don’t. Use <span class="text-neon-green">mitmproxy</span> or <span class="text-neon-green">Burp Suite</span> with a self‑signed CA on a jailbroken device to intercept traffic. Frida can bypass pinning at runtime.</p>
+      <div class="code-block"><pre># mitmproxy setup for iOS
+mitmproxy --ssl-insecure
+# Set iOS proxy to <your-ip>:8080, install CA</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">HTTP/2, WebSockets, and Background Traffic</h3>
+      <p>iOS apps often use long‑lived connections. Monitor background network activity with <span class="text-neon-green">rvictl</span> (iOS remote virtual interface) combined with Wireshark. This captures all traffic without a proxy.</p>
+      <div class="code-block"><pre>rvictl -s <device-udid>
+# Now sniff on the created rvi interface with Wireshark</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== RUNTIME PROTECTIONS TAB ========== -->
+<div class="tab-content" id="tab-runtime">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🛡️ Runtime Protections & How to Bypass</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Jailbreak Detection Techniques</h3>
+      <p>Apps check for jailbreak files (<code>/Applications/Cydia.app</code>), use <code>sysctl</code> to detect new process flags, or attempt to write to system directories. Frida hooks into these checks and forces them to return false.</p>
+      <div class="code-block"><pre>// Frida: bypass a file‑based jailbreak check
+var NSFileManager = ObjC.classes.NSFileManager.defaultManager();
+Interceptor.attach(NSFileManager['- fileExistsAtPath:'].implementation, {
+    onLeave: function(retval) {
+        if (ObjC.Object(args[2]).toString().includes('Cydia')) {
+            retval.replace(0);
+        }
+    }
+});</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Anti‑Debugging & Integrity Checks</h3>
+      <p>ptrace(PT_DENY_ATTACH) prevents debuggers from attaching. Patch it or use <span class="text-neon-green">debugserver</span> on a jailbroken device. Integrity checks hash the app’s binary; bypass by hooking the hash function.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CORETRUST & CODE SIGNING TAB ========== -->
+<div class="tab-content" id="tab-coretrust">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔏 CoreTrust, AMFI & Code Signing</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">AMFI (Apple Mobile File Integrity)</h3>
+      <p>AMFI enforces code signatures. It uses a kernel extension to verify every executable page load. Trust caches (static and dynamic) allow known hashes. CoreTrust is the daemon that manages trust evaluations for AppleID‑signed apps.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Enterprise Certificate Abuse & Sideloading</h3>
+      <p>Attackers obtain enterprise certificates to sign malicious apps, bypassing the App Store. These certificates can be revoked by Apple, but not before thousands of devices are infected. AltStore and similar tools use this technique legitimately.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== EXPLOIT CHAINS TAB ========== -->
+<div class="tab-content" id="tab-chains">
+  <div class="sub-section">
+    <h2 class="sub-section-title">⛓️ Exploit Chains – The Full Attack Workflow</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">The Zero‑Click iMessage Chain</h3>
+      <ol>
+        <li><span class="text-cyber-red">WebKit RCE</span> via a malicious PDF or image in iMessage.</li>
+        <li><span class="text-cyber-red">Sandbox Escape</span> exploiting a kernel extension vulnerability.</li>
+        <li><span class="text-cyber-red">Kernel Exploit</span> for arbitrary kernel r/w.</li>
+        <li><span class="text-cyber-red">PAC Bypass</span> using signing gadgets.</li>
+        <li><span class="text-cyber-red">Persistence</span> via a launch daemon or dylib injection.</li>
+        <li><span class="text-cyber-red">Payload Deployment</span> – spyware, credential theft, surveillance.</li>
+      </ol>
+      <p class="mt-2">Real chains like FORCEDENTRY (NSO Group) executed this entire sequence with no user interaction.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== FORENSICS TAB ========== -->
+<div class="tab-content" id="tab-forensics">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔎 iOS Forensics & Data Extraction</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Logical & Filesystem Acquisition</h3>
+      <p>Logical acquisition uses iTunes backup (encrypted or unencrypted) to extract messages, photos, and app data. Filesystem acquisition requires a jailbreak or checkm8‑based exploit to access the full raw disk.</p>
+      <div class="code-block"><pre># Pull encrypted backup on macOS
+idevicebackup2 backup /path/to/backup</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Keychain, SQLite, and Crash Logs</h3>
+      <p>The iOS keychain stores passwords, tokens, and certificates. Tools like <span class="text-neon-green">Keychain Dumper</span> extract them on jailbroken devices. SQLite databases (sms.db, call_history.db) contain communication records. Crash logs (.ips) can leak function addresses for ASLR bypass.</p>
+      <div class="code-block"><pre># Extract sms.db from backup
+cp ~/Library/Application\ Support/MobileSync/Backup/<udid>/.../3d0d7e5fb2ce288813306e4d4636395e047a3d28 sms.db</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PENTEST METHODOLOGY TAB ========== -->
+<div class="tab-content" id="tab-pentest">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🗺️ iOS Pentesting Methodology</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Static → Runtime → Network → Storage</h3>
+      <ol>
+        <li><span class="text-neon-green">Static Analysis</span>: IPA extraction, Info.plist, entitlements, class‑dump, strings, Ghidra.</li>
+        <li><span class="text-neon-green">Runtime Analysis</span>: Frida/Objection, jailbreak detection bypass, keychain dump, method tracing.</li>
+        <li><span class="text-neon-green">Network Interception</span>: mitmproxy, SSL pinning bypass, Wireshark with rvictl.</li>
+        <li><span class="text-neon-green">Storage Analysis</span>: Plist files, SQLite databases, UserDefaults, Core Data, temp files.</li>
+        <li><span class="text-neon-green">Authentication Testing</span>: Biometric bypass attempts, credential reuse, session management.</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SWIFT & OBJC REVERSING TAB ========== -->
+<div class="tab-content" id="tab-swift">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧬 Swift & Objective‑C Runtime Reversing</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Objective‑C Messaging & Selectors</h3>
+      <p>ObjC uses a dynamic messaging system: <code>[object method:argument]</code> becomes <code>objc_msgSend(object, selector, argument)</code>. Selectors are referenced by unique IDs. You can swizzle methods (replace implementations) at runtime, which is a powerful technique for hooking and analysis.</p>
+      <div class="code-block"><pre># Dump ObjC classes and methods
+class-dump -H /path/to/app.app/app</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Swift Metadata & Demangling</h3>
+      <p>Swift uses name mangling: a method like <code>AppDelegate.application(_:didFinishLaunchingWithOptions:)</code> becomes <code>_$s11AppDelegateC11application_29didFinishLaunchingWithOptionsSbSo13UIApplicationC_SDySo0mF0aGSgSgtF</code>. Use <span class="text-neon-green">swift demangle</span> to restore readability.</p>
+      <div class="code-block"><pre>xcrun swift-demangle _\$s11AppDelegateC11application_29didFinishLaunchingWithOptionsSbSo13UIApplicationC_SDySo0mF0aGSgSgtF</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== HARDWARE SECURITY TAB ========== -->
+<div class="tab-content" id="tab-hardware">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔧 Hardware Security & Physical Attacks</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">SecureROM, Boot Chain, & DFU</h3>
+      <p>SecureROM (bootrom) is the first code executed. It’s immutable — vulnerabilities here (like checkm8) are forever. DFU (Device Firmware Upgrade) mode allows low‑level flashing. Attackers use checkm8 to bypass the secure boot chain and load custom firmware.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">JTAG, UART, & NAND Mirroring</h3>
+      <p>Hardware debug interfaces are disabled in production devices, but attacks like “checkm8” require no hardware modification — just USB. NAND mirroring (physically reading the storage chip) can bypass passcode limits, but it’s a destructive attack requiring expert soldering and chip‑off tools.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== APPLE ECOSYSTEM TAB ========== -->
+<div class="tab-content" id="tab-ecosystem">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🌐 Apple Ecosystem Attack Surface</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">iMessage, AirDrop, FaceTime</h3>
+      <p>iMessage is the #1 attack vector for zero‑clicks. AirDrop uses Wi‑Fi and Bluetooth; vulnerabilities have allowed kernel access from nearby devices. FaceTime bugs (e.g., Group FaceTime eavesdropping) demonstrate how complex protocols can fail.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">iCloud & Apple ID Phishing</h3>
+      <p>iCloud stores backups, photos, and messages. Attackers phish Apple ID credentials to access this data. Advanced persistent threats combine iCloud access with local exploits for full device compromise.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TOOLS TAB ========== -->
+<div class="tab-content" id="tab-tools">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧰 iOS Exploitation & Reversing Toolkit</h2>
+    <div class="tools-grid">
+      <div class="glass-card"><h3 class="text-neon-green">Frida / Objection</h3><p>Dynamic instrumentation & mobile exploration</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Ghidra / Hopper / IDA</h3><p>Disassemblers & decompilers for Mach‑O</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">class‑dump / jtool / otool</h3><p>Header dumping & Mach‑O analysis</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Corellium</h3><p>Virtualised iOS devices for research</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">checkra1n / palera1n</h3><p>checkm8‑based jailbreaks</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">mitmproxy / Burp Suite</h3><p>Network interception</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">dumpdecrypted / bagbak</h3><p>Decrypt App Store binaries</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Keychain Dumper / Objection</h3><p>Keychain extraction</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">RVICTL / Wireshark</h3><p>Remote virtual interface sniffing</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CASE STUDIES TAB ========== -->
+<div class="tab-content" id="tab-cases">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📖 Legendary iOS Exploit Cases</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Pegasus (FORCEDENTRY) – 2021</h3>
+      <p>NSO Group’s zero‑click iMessage exploit. Used a PDF‑rendering bug (CVE‑2021‑30860) to achieve RCE, then a sandbox escape and kernel exploit. Infected devices of journalists, activists, and politicians worldwide. Apple patched all CVEs within months, but the spyware industry continues to evolve.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">checkm8 (2019) – Eternal Bootrom Exploit</h3>
+      <p>A vulnerability in the USB DFU stack of A5‑A11 chips. Allows unsigned code execution at the earliest stage. This is unpatchable because it’s in ROM. Used by checkra1n and palera1n jailbreaks. It’s also used by forensic tools to extract data from locked iPhones.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Operation Triangulation (2023)</h3>
+      <p>An iMessage zero‑click chain discovered by Kaspersky. It used multiple exploits, including a kernel vulnerability and a PAC bypass. The attack deployed spyware that exfiltrated microphone recordings, location, and messages. Apple patched with iOS 16.5.1.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Lessons Learned</h3>
+      <p>Zero‑click attacks are the new normal. Defence requires Lockdown Mode, rapid patching, and hardware‑backed attestation. The cat‑and‑mouse game between Apple and exploit developers will never end.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MINDSET TAB ========== -->
+<div class="tab-content" id="tab-mindset">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧠 The iOS Exploit Researcher’s Mindset</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">“Where does Apple trust the kernel?”</h3>
+      <p>Every exploit starts with a trust boundary: userland → kernel, WebContent → GPU, iMessage → BlastDoor. Find where the system assumes safety, then break that assumption.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">“What if I corrupt this pointer?”</h3>
+      <p>PAC makes pointer corruption hard, but not impossible. Think about what data can be forged: file descriptors, Mach port rights, IOSurface references. Every object is a potential primitive.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">“How does this crash log reveal ASLR?”</h3>
+      <p>Crash logs contain register state and memory addresses. Use them to defeat Address Space Layout Randomisation. Combine a crash log with a known buffer overflow to build a deterministic exploit.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">The Elite Researcher’s Rule</h3>
+      <p>Never stop asking “Why?” — why does this API exist? Why is this entitlement allowed? Why is this buffer on the heap? The answers are where the bugs hide.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DEFENSE TAB ========== -->
+<div class="tab-content" id="tab-defense">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🛡️ Advanced iOS Defense & Hardening</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Lockdown Mode & BlastDoor</h3>
+      <p>Lockdown Mode restricts attack surface: disables complex WebKit features, blocks most iMessage attachments, and limits wired connections. BlastDoor filters iMessage content in a sandbox. These are the most powerful consumer‑grade protections available.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">MDM, App Attestation, & Enterprise Security</h3>
+      <p>Mobile Device Management (MDM) enforces policies. App Attestation validates app integrity before server trust. Use <span class="text-neon-green">DeviceCheck</span> to detect compromised devices. For enterprises, deploy hardware‑bound MFA and disable sideloading.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Rapid Security Responses & Patch Strategy</h3>
+      <p>Apple’s Rapid Security Response (RSR) delivers patches without full OS updates. Enable automatic updates. Monitor Apple’s security release page for CVE details and update within 24 hours of critical fixes.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== LABS TAB ========== -->
+<div class="tab-content" id="tab-labs">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧪 iOS Exploitation Labs & Practice</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Corellium – Virtual iPhone</h3>
+      <p>Corellium offers virtualised iOS devices for security research. Run any iOS version, take snapshots, and test exploits without a physical device. It’s the industry standard for professional iOS security research. Requires company verification.</p>
+      <a href="https://www.corellium.com/" target="_blank" class="text-neon-green">🔗 corellium.com</a>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Jailbroken Device Labs</h3>
+      <p>Use an old, dedicated iPhone (A11 or earlier for checkm8). Jailbreak with palera1n. Install Frida, Objection, class‑dump, and the full toolkit. Practise SSL pinning bypass, keychain dumping, and app reversing.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">OWASP iGoat & Vulnerable iOS Apps</h3>
+      <p>iGoat is an intentionally vulnerable iOS app for learning. Set up a local instance and practise finding hardcoded secrets, insecure storage, and broken auth. Combine with Frida to automate your analysis.</p>
+      <a href="https://github.com/OWASP/iGoat-Swift" target="_blank" class="text-neon-green">🔗 GitHub</a>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">WebKit Debugging & Exploit Practice</h3>
+      <p>Set up a local WebKit build with debug symbols. Use LLDB to step through JIT compilation. Write small JavaScript snippets to trigger edge cases and observe crashes. This is how you build intuition for browser exploits.</p>
+      <div class="code-block"><pre># Build WebKit from source (macOS)
+git clone https://github.com/WebKit/WebKit.git
+cd WebKit
+Tools/Scripts/build-webkit --debug --ios-simulator</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">The Lab’s Golden Rule</h3>
+      <p>Never test on a device you don’t own. Never use exploits against live targets without explicit written permission. The iOS security community is small; reputation is everything.</p>
+    </div>
+  </div>
+</div>

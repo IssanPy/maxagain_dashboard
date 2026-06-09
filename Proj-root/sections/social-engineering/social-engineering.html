@@ -1,0 +1,429 @@
+<!-- Social Engineering – The Human Attack Surface Academy -->
+<h2 class="section-title">🎭 Social Engineering – The Human Attack Surface</h2>
+
+<div class="server-tabs" id="se-tabs">
+  <div class="server-btn active" data-tab="intro">Intro</div>
+  <div class="server-btn" data-tab="osint">Advanced OSINT</div>
+  <div class="server-btn" data-tab="simulation">Adversary Simulation</div>
+  <div class="server-btn" data-tab="phishing">Phishing Infrastructure</div>
+  <div class="server-btn" data-tab="psychology">Human Psychology</div>
+  <div class="server-btn" data-tab="deepfake">Deepfake & AI</div>
+  <div class="server-btn" data-tab="physical">Physical SE</div>
+  <div class="server-btn" data-tab="enterprise">Enterprise Fraud</div>
+  <div class="server-btn" data-tab="identity">Identity Fabrication</div>
+  <div class="server-btn" data-tab="tools">Tools</div>
+  <div class="server-btn" data-tab="cases">Case Studies</div>
+  <div class="server-btn" data-tab="mindset">Mindset</div>
+  <div class="server-btn" data-tab="defense">Defense</div>
+  <div class="server-btn" data-tab="labs">Labs</div>
+</div>
+
+<!-- ========== INTRO TAB ========== -->
+<div class="tab-content active" id="tab-intro">
+  <div class="hero-container" style="text-align:center; padding-top:2rem;">
+    <h1 class="hero-title" style="font-size:3.5rem;">WELCOME TO THE <span class="text-cyber-red">MIND GAMES</span></h1>
+    <p class="hero-subtitle" style="font-size:1.3rem; color:#5ee0fa; margin-bottom:2rem;">
+      The most powerful exploit doesn't touch a keyboard – it touches a human. This is the complete adversary simulation and human‑risk research platform. From OSINT to deepfakes, from Cialdini to credential theft – we dissect how trust breaks.
+    </p>
+  </div>
+
+  <div class="tools-grid" style="margin-top:2rem;">
+    <div class="glass-card text-center"><h2 class="text-neon-green" style="font-size:2.5rem;">OSINT</h2><p>Corporate & Social Graph<br><span style="font-size:0.8rem; opacity:0.7;">LinkedIn, GitHub, EXIF</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-neon-blue" style="font-size:2.5rem;">Phishing</h2><p>Infrastructure & Detection<br><span style="font-size:0.8rem; opacity:0.7;">Homoglyph, MFA fatigue, kits</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-cyber-red" style="font-size:2.5rem;">Deepfake</h2><p>Voice & Video Cloning<br><span style="font-size:0.8rem; opacity:0.7;">CEO fraud, synthetic identities</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-neon-green" style="font-size:2.5rem;">Red Team</h2><p>Adversary Simulation<br><span style="font-size:0.8rem; opacity:0.7;">Pretext, trust chains, reporting</span></p></div>
+  </div>
+
+  <div class="sub-section" style="margin-top:3rem;">
+    <div class="glass-card">
+      <h3 class="text-neon-blue" style="font-size:1.6rem;">📋 Today’s Human Attack Map</h3>
+      <ul style="list-style:none; padding:0; font-size:1.1rem;">
+        <li>✅ <span class="text-neon-green">Advanced OSINT</span> – Org charts, vendor mapping, GitHub secrets, metadata, automation.</li>
+        <li>✅ <span class="text-neon-green">Adversary Simulation</span> – Recon → Persona → Contact → Escalation → Reporting.</li>
+        <li>✅ <span class="text-neon-green">Phishing Infrastructure</span> – Homoglyph domains, SPF/DKIM/DMARC gaps, reverse proxy detection.</li>
+        <li>✅ <span class="text-neon-green">Human Psychology</span> – Cialdini’s principles, cognitive biases, emotional hijacking.</li>
+        <li>✅ <span class="text-neon-green">Deepfake & AI Threats</span> – Voice cloning, AI phishing, LLM scams, synthetic identities.</li>
+        <li>✅ <span class="text-neon-green">Physical Social Engineering</span> – Tailgating, badge cloning, USB drops, visitor impersonation.</li>
+        <li>✅ <span class="text-neon-green">Enterprise Fraud & Identity Fabrication</span> – BEC, payroll diversion, synthetic profiles.</li>
+        <li>✅ <span class="text-neon-green">Tools, Case Studies, Mindset, Defense, Labs</span> – The complete human attack surface.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="text-align:center; margin-top:2rem; font-size:0.9rem; color:#888;">
+    <span class="text-cyber-red">Warning:</span> All techniques are for authorized red‑team exercises and defensive research. Unauthorized social engineering is illegal and ethically indefensible.
+  </p>
+</div>
+
+<!-- ========== ADVANCED OSINT TAB ========== -->
+<div class="tab-content" id="tab-osint">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔍 Advanced OSINT – Corporate & Social Graph Intelligence</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Corporate Hierarchy Mapping</h3>
+      <p>Reconstruct org charts from LinkedIn job titles, conference bios, and news articles. Identify decision‑makers, IT staff, finance, and HR – the primary targets for impersonation. Use <span class="text-neon-green">Maltego</span> transforms or <span class="text-neon-green">theHarvester</span> to correlate email patterns with roles.</p>
+      <div class="code-block"><pre># theHarvester for email discovery
+theHarvester -d target.com -b linkedin,google,crtsh -f results.html</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">GitHub, Jira & Cloud Leaks</h3>
+      <p>Search for internal documentation, API keys, Jira tickets, and Confluence pages exposed publicly. Use <span class="text-neon-green">truffleHog</span> on repositories and <span class="text-neon-green">google dorks</span> (filetype:pdf site:target.com internal).</p>
+      <div class="code-block"><pre># GitHub dork for secrets
+"target.com" filename:.npmrc_authToken</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Metadata Intelligence & Geolocation</h3>
+      <p>Extract EXIF data from employee photos (camera model, GPS coordinates). Document metadata reveals author usernames and software versions. Use <span class="text-neon-green">exiftool</span> and <span class="text-neon-green">PhoneInfoga</span>.</p>
+      <div class="code-block"><pre>exiftool employee_selfie.jpg
+# Look for GPSLatitude, GPSLongitude, Author, Software</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Social Graph & Relationship Mapping</h3>
+      <p>Analyze friends, family, travel patterns, and hobbies from public social media. Interaction patterns reveal trust relationships. Tools: <span class="text-neon-green">Creepy</span> (geolocation), <span class="text-neon-green">Holehe</span> (email footprint), <span class="text-neon-green">Maigret</span> (username search).</p>
+      <div class="code-block"><pre># Maigret: find social profiles by username
+maigret johndoe123 --all-sites</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">OSINT Automation Pipelines</h3>
+      <p>Chain <span class="text-neon-green">SpiderFoot</span>, <span class="text-neon-green">Recon‑ng</span>, and <span class="text-neon-green">IntelX</span> for continuous data aggregation. Schedule automated scans for new employee appearances or domain registrations.</p>
+      <div class="code-block"><pre># Recon‑ng workspace
+workspaces create target_corp
+add domains target.com
+modules load recon/domains-contacts/whois_pocs
+run</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ADVERSARY SIMULATION TAB ========== -->
+<div class="tab-content" id="tab-simulation">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🕵️ Adversary Simulation Methodology</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">The Professional Red‑Team SE Workflow</h3>
+      <ol style="margin-left:1.5rem;">
+        <li><span class="text-neon-green">Recon</span>: OSINT on targets, org chart, culture, current events.</li>
+        <li><span class="text-neon-green">Target Selection</span>: Identify high‑value individuals (finance, IT, executives).</li>
+        <li><span class="text-neon-green">Persona Building</span>: Create a believable identity (recruiter, vendor, IT support) with consistent backstory.</li>
+        <li><span class="text-neon-green">Trust Building</span>: Initial contact via LinkedIn/email, referencing real projects or colleagues.</li>
+        <li><span class="text-neon-green">Escalation</span>: Leverage authority, urgency, or reciprocity to request sensitive action.</li>
+        <li><span class="text-neon-green">Validation & Reporting</span>: Log all interactions, provide remediation guidance.</li>
+      </ol>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Example: Fake IT Support Call</h3>
+      <p>OSINT shows the target’s department recently migrated to a new VPN. Pretext: “Hi, this is Mark from IT. We noticed your token isn’t syncing. I’ll send a verification link.” The link is a fake login page that captures credentials. The call closes with “You’re all set!” – the victim never realises they were phished.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Adaptive Scripting & Linguistic Mirroring</h3>
+      <p>Match the target’s tone, pace, and vocabulary. If the target is formal, be formal. If they use emojis, mirror them. This builds subconscious rapport. Scripts should be a framework, not a rigid text.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PHISHING INFRASTRUCTURE TAB ========== -->
+<div class="tab-content" id="tab-phishing">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📧 Phishing Infrastructure – The Anatomy of a Campaign</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Homoglyph Domains & Unicode Spoofing</h3>
+      <p>Replace Latin characters with visually identical Unicode characters (e.g., ‘а’ Cyrillic vs ‘a’ Latin). Register <code>gооgle.com</code>. Tools: <span class="text-neon-green">dnstwist</span>, <span class="text-neon-green">evilginx3</span>.</p>
+      <div class="code-block"><pre>dnstwist --format list target.com</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">SPF/DKIM/DMARC Gaps & Email Header Analysis</h3>
+      <p>Missing or misconfigured DMARC allows domain spoofing. Use <span class="text-neon-green">MXToolbox</span> or <span class="text-neon-green">dmarcadvisor</span> to test. Analyse headers to trace email origin and identify impersonation.</p>
+      <div class="code-block"><pre># Check DMARC record
+dig _dmarc.target.com txt</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">MFA Fatigue & Reverse Proxy Phishing</h3>
+      <p>Overwhelm a target with push notifications until they accept (MFA bombing). Reverse proxy tools like <span class="text-neon-green">evilginx3</span> capture session tokens after MFA, bypassing 2FA entirely.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Browser‑in‑the‑Browser Attacks & Credential Harvesting</h3>
+      <p>Simulate a fake pop‑up browser window that looks identical to an OAuth login. The victim enters credentials, which are sent to the attacker. Detection: look for suspicious pop‑up positioning or missing browser chrome.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Phishing Kit Analysis</h3>
+      <p>Reverse‑engineer phishing kits to understand attacker infrastructure. Many kits include backdoors that allow the security community to hijack stolen credentials. Tools: <span class="text-neon-green">PhishStats</span>, <span class="text-neon-green">URLScan.io</span>.</p>
+      <div class="code-block"><pre>urlscan.io/search/#filename:".php" AND domain:target.com</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== HUMAN PSYCHOLOGY TAB ========== -->
+<div class="tab-content" id="tab-psychology">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧠 The Psychology of Influence – Cialdini & Beyond</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Cialdini’s 7 Principles of Persuasion</h3>
+      <ul>
+        <li><span class="text-neon-green">Reciprocity</span> – Give a small gift (free report), then ask for a large favour.</li>
+        <li><span class="text-neon-green">Commitment/Consistency</span> – Get a small ‘yes’ first, then escalate.</li>
+        <li><span class="text-neon-green">Social Proof</span> – “All your colleagues already confirmed their account.”</li>
+        <li><span class="text-neon-green">Authority</span> – Fake IT manager, fake CEO, fake police officer.</li>
+        <li><span class="text-neon-green">Liking</span> – Build rapport, find common interests.</li>
+        <li><span class="text-neon-green">Scarcity</span> – “Only 2 slots left! Act now!”</li>
+        <li><span class="text-neon-green">Unity</span> – We’re part of the same team/family.</li>
+      </ul>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Cognitive Biases That Enable Attacks</h3>
+      <p>Anchoring bias: the first number you see influences your decision. Confirmation bias: people believe what they want to believe. Halo effect: a single positive trait colours all judgement. Use these to lower the target’s defences.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Emotional Hijacking & Decision Fatigue</h3>
+      <p>Create fear (“Your account is compromised!”) or greed (“You won a prize!”) to force a snap decision. Late‑afternoon requests are more successful because the target’s willpower is depleted.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DEEPFAKE & AI TAB ========== -->
+<div class="tab-content" id="tab-deepfake">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🤖 Deepfake, AI & Modern Scam Ecosystems</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Voice Cloning & CEO Fraud</h3>
+      <p>An employee receives a WhatsApp voice message that sounds exactly like their CEO. The deepfake instructs them to urgently transfer $243,000 to a supplier’s new account. Real case: 2023, cloned CEO voice used for a $35M heist.</p>
+      <div class="code-block"><pre># Real‑time voice cloning tools (research only)
+# Examples: Descript Overdub, ElevenLabs, Resemble AI</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">AI‑Generated Phishing & LLM Scams</h3>
+      <p>GPT‑powered bots craft personalised phishing emails using the target’s LinkedIn profile, recent tweets, and company news. Romance scams use AI chatbots to build relationships over weeks before asking for money. Detection: generic emotional language, inconsistent details.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Fake Recruiter Ecosystems</h3>
+      <p>A threat actor creates a perfect LinkedIn profile of a FAANG recruiter. They message software engineers, conduct realistic interviews over Zoom (using deepfake video), and finally ask for a “background check form” that steals SSN and banking details.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Deepfake Detection & Verification Protocols</h3>
+      <p>Look for unnatural blinking, mismatched lip‑sync, or inconsistent lighting. For voice, use callback verification to a known number. For video, request a live action (e.g., wave hand) during the call.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PHYSICAL SE TAB ========== -->
+<div class="tab-content" id="tab-physical">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🚪 Physical Social Engineering – The Body in the Building</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Tailgating & Badge Cloning</h3>
+      <p>Follow an employee through a secure door while carrying a heavy box or coffee, relying on politeness. Badges can be cloned with a <span class="text-neon-green">Proxmark3</span> or <span class="text-neon-green">Flipper Zero</span> in seconds.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">USB Drops & Rogue Devices</h3>
+      <p>Leave infected USB drives in the parking lot labelled “Salary Adjustments 2026”. Curiosity gets the best of even security‑aware employees. A rogue Raspberry Pi plugged into a network port can be a persistent backdoor.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Visitor Impersonation & Shoulder Surfing</h3>
+      <p>Pretend to be a vendor, a job candidate, or a delivery person. Once inside, photograph sticky notes with passwords, watch screens for sensitive data, or plant devices.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Defensive Measures</h3>
+      <p>Challenge every unknown person, implement clean desk policies, use badge encryption, and install cameras at entry points. Run surprise drills.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ENTERPRISE FRAUD TAB ========== -->
+<div class="tab-content" id="tab-enterprise">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🏢 Enterprise Social Engineering & Financial Fraud</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Business Email Compromise (BEC)</h3>
+      <p>An attacker impersonates a CEO or vendor and sends an email to the finance department: “Please wire $150,000 to this new account for the upcoming project.” The email looks legitimate because the attacker has compromised a real mailbox or registered a look‑alike domain.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Payroll Diversion & Invoice Fraud</h3>
+      <p>Impersonate an employee and request a direct‑deposit change to a fraudster’s account. Fake invoices from known suppliers with altered bank details are another common tactic.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Helpdesk Impersonation & Password Reset Abuse</h3>
+      <p>An attacker calls the IT helpdesk, claiming to be a remote worker who forgot their VPN password. With a few pieces of OSINT‑derived information (employee ID, manager’s name), they convince the agent to reset the password over the phone.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Vendor & Partner Impersonation</h3>
+      <p>Attackers compromise a trusted supplier’s email and send poisoned attachments or fake invoices. They rely on the existing trust relationship to bypass suspicion.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== IDENTITY FABRICATION TAB ========== -->
+<div class="tab-content" id="tab-identity">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🪪 Identity Fabrication – Building Believable Lies</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Synthetic Identities & Burner Infrastructure</h3>
+      <p>Create a complete fake persona: LinkedIn profile with a realistic photo (AI‑generated), a matching Twitter account, a personal website, and even a fake job history. This persona can be used for weeks or months before the attack, building credibility.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Consistency Management & Behavioral Realism</h3>
+      <p>The persona must have consistent details across all platforms (education, location, writing style). They post occasionally, interact with real people, and build a social footprint. Tools: <span class="text-neon-green">Fake Name Generator</span>, <span class="text-neon-green">ThisPersonDoesNotExist.com</span> (research only).</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Fake Employment Trails & Social Proof</h3>
+      <p>Use a fake business registration, a basic website, and even a burner phone number to pass basic verification checks. The more layers of fake reality, the harder it is to detect.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TOOLS TAB ========== -->
+<div class="tab-content" id="tab-tools">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧰 The Social Engineer’s Intelligence Arsenal</h2>
+    <div class="tools-grid">
+      <div class="glass-card"><h3 class="text-neon-green">SpiderFoot</h3><p>Automated OSINT collection with 200+ modules</p><div class="code-block"><pre>pip install spiderfoot</pre></div></div>
+      <div class="glass-card"><h3 class="text-neon-green">Recon‑ng</h3><p>Modular reconnaissance framework</p><div class="code-block"><pre>git clone https://github.com/lanmaster53/recon-ng.git</pre></div></div>
+      <div class="glass-card"><h3 class="text-neon-green">Holehe / Maigret</h3><p>Find accounts by email or username across 500+ sites</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">IntelX / Intelligence X</h3><p>Search engine for dark‑web leaks and historical data</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">PhoneInfoga</h3><p>Phone number reconnaissance</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">dnstwist / evilginx3</h3><p>Domain spoofing detection & reverse proxy phishing (research)</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">ExifTool / Creepy</h3><p>Metadata extraction & geolocation analysis</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">theHarvester / Hunter.io</h3><p>Email and domain intelligence</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">OSRFramework</h3><p>Open‑source research tools for username and DNS lookups</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CASE STUDIES TAB ========== -->
+<div class="tab-content" id="tab-cases">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📖 Real‑World Social Engineering Breaches Dissected</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">MGM Resorts (2023)</h3>
+      <p>Attackers used a vishing call to the IT helpdesk, impersonating an employee found via LinkedIn. They tricked the agent into resetting the MFA token, leading to a ransomware attack that shut down slot machines and room key systems for days. Estimated loss: $100M+.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Twitter/X Employee Compromise (2020)</h3>
+      <p>A teenager and accomplices called Twitter employees, pretending to be IT support, and convinced them to hand over internal tool credentials. They hijacked high‑profile accounts (Elon Musk, Barack Obama) for a Bitcoin scam. The vulnerability: human trust in an internal help desk.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Uber (2022)</h3>
+      <p>The attacker used MFA fatigue – spamming an employee with push notifications until they accepted, then accessed internal systems including Slack, AWS, and vulnerability reports. The attacker’s edge: persistence and psychological pressure.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Common Thread</h3>
+      <p>In every case, the vulnerability was not a firewall or an exploit – it was a person who trusted, a process that was bypassed, or a moment of fatigue that was exploited. Human hardening is the final frontier.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MINDSET TAB ========== -->
+<div class="tab-content" id="tab-mindset">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧠 The Elite Social Engineer’s Mindset</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">“What would this person trust?”</h3>
+      <p>Every target has a trust framework: their boss, their IT department, their bank. Attackers map that framework and inject themselves into it. Always ask: “Who does this person never question?”</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">“What process can be abused?”</h3>
+      <p>Password resets, guest Wi‑Fi access, vendor onboarding – every organisation has processes that can be socially engineered. Look for the path of least resistance.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">“What emotional trigger works here?”</h3>
+      <p>Fear? Greed? Curiosity? Authority? Empathy? The most successful attacks match the trigger to the target’s personality and current life situation.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">The Golden Rule for Defenders</h3>
+      <p>Never trust an unsolicited request, no matter how convincing. Always verify through a separate, known channel. A 30‑second phone call can stop a million‑dollar breach.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DEFENSE TAB ========== -->
+<div class="tab-content" id="tab-defense">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🛡️ Human Risk Management & Defensive Culture</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Trust Verification Protocols</h3>
+      <p>Implement a policy: any request for sensitive data, payments, or credential changes must be verified through a second channel (e.g., a phone call to a known number). No exceptions, even for the CEO.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Phishing Simulation & Security Training</h3>
+      <p>Run regular, realistic simulations that teach employees how to spot manipulation. Reward those who report phishing, not those who simply avoid clicking. Create a blame‑free culture where people feel safe reporting mistakes.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Executive & High‑Value Target Protection</h3>
+      <p>Register look‑alike domains, monitor for deepfake content, and brief executives on voice‑cloning risks. Implement hardware MFA tokens (FIDO2) for all high‑privilege accounts.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Insider Threat Awareness & Incident Escalation</h3>
+      <p>Monitor for unusual data access patterns. Train HR and legal on how to handle social engineering incidents. Have a clear escalation path: report → investigate → contain → remediate.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== LABS TAB ========== -->
+<div class="tab-content" id="tab-labs">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧪 Human Attack Surface Labs</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">OSINT Challenges</h3>
+      <p>Set up a fake company website and challenge yourself to find as much information as possible in 30 minutes. Reconstruct the org chart, find employee personal emails, and map the technology stack.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Phishing Detection Drills</h3>
+      <p>Use open‑source phishing kits (PhishTank, URLScan.io) to analyse real phishing emails. Identify the red flags: sender address, link destination, urgency language. Build your own detection checklist.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Deepfake & AI Detection Labs</h3>
+      <p>Compare real and deepfake videos using tools like <span class="text-neon-green">Deepware</span> or <span class="text-neon-green">Sensity</span>. Train your eye to spot unnatural facial movements and audio inconsistencies.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Red‑Team Simulation Exercise</h3>
+      <p>With permission, run a simulated vishing campaign against your own organisation. Record the calls (with consent), analyse what worked, and present findings to leadership. This closes the loop between theory and practice.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">The Sacred Rule of Labs</h3>
+      <p>All exercises must be authorised, controlled, and debriefed. The goal is to strengthen the human firewall, not to shame or punish. Psychological safety is paramount.</p>
+    </div>
+  </div>
+</div>

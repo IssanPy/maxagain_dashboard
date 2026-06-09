@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>MaxAgain | Cyber Operations Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="Assets/CSS/style.css" />
+</head>
+<body>
+  <canvas id="gateway-canvas"></canvas>
+  <canvas id="matrix-canvas" style="display: none;"></canvas>
+
+  <!-- GATEWAY OVERLAY -->
+  <div class="gateway-container" id="gatewayOverlay">
+    <div class="gateway-card">
+      <div class="profile">
+        <img src="Assets/img/maxagain.jpeg" alt="MaxAgain" onerror="this.style.display='none'" />
+      </div>
+      <h1>Access Beyond Limits🌐</h1>
+      <div class="tagline">THE ONLY SOURCE YOU NEED FOR HUNTING YOUR DREAM BUGS ⚠️</div>
+
+      <!-- Simple hardcoded login form -->
+      <div id="loginForm">
+        <div class="input-group">
+          <label><i class="fas fa-user-secret"></i> OPERATOR ID</label>
+          <input type="text" id="username" placeholder="Username" autocomplete="off" />
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-key"></i> ACCESS CIPHER</label>
+          <input type="password" id="password" placeholder="••••••••" />
+        </div>
+        <button class="unlock-btn" id="unlockBtn">⚡ UNLOCK THE SYSTEM ⚡</button>
+        <p style="margin-top: 1rem; font-size: 0.75rem; color: #aaa;">
+          🔍 <em>Hint: Check the LinkedIn post or GitHub for credentials.</em>
+        </p>
+      </div>
+
+      <div class="error-msg" id="errorMsg"></div>
+    </div>
+  </div>
+
+  <!-- MAIN DASHBOARD (hidden until login) -->
+  <div id="app" class="app-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="profile-mini">
+          <img src="Assets/img/maxagain.jpeg" alt="operator" onerror="this.style.display='none'" />
+        </div>
+        <span class="sidebar-title">MAX_AGAIN</span>
+      </div>
+
+      <nav class="nav-main">
+        <a href="#" class="nav-item active" data-target="home"><i class="fas fa-home"></i> Home</a>
+        <a href="#" class="nav-item" data-target="web-attacks"><i class="fas fa-globe"></i> Web Attacks</a>
+        <a href="#" class="nav-item" data-target="network-attacks"><i class="fas fa-network-wired"></i> Network Attacks</a>
+        <a href="#" class="nav-item" data-target="api-exploits"><i class="fas fa-plug"></i> API Exploits</a>
+        <a href="#" class="nav-item" data-target="malwares"><i class="fas fa-bug"></i> Malwares</a>
+        <a href="#" class="nav-item" data-target="social-engineering"><i class="fas fa-user-secret"></i> Social Engineering</a>
+        <a href="#" class="nav-item" data-target="android-hacking"><i class="fab fa-android"></i> Android Hacking</a>
+        <a href="#" class="nav-item" data-target="ios-hacking"><i class="fab fa-apple"></i> iOS Hacking</a>
+        <a href="#" class="nav-item" data-target="encryptions"><i class="fas fa-lock"></i> CrYptohack</a>
+        <a href="#" class="nav-item" data-target="iot-5g"><i class="fas fa-wifi"></i> IoT & 5G Vulns</a>
+        <a href="#" class="nav-item" data-target="ddos"><i class="fas fa-skull"></i> DDoS</a>
+      </nav>
+
+      <div class="hamburger-dropdown">
+        <button id="hamburgerBtn" class="hamburger-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div id="extraMenu" class="extra-menu hidden">
+          <a href="#" class="nav-item" data-target="play-labs"><i class="fas fa-gamepad"></i> Play Labs</a>
+          <a href="#" class="nav-item" data-target="contact-admin"><i class="fas fa-user-shield"></i> Contact Admin</a>
+          <a href="#" class="nav-item" data-target="hackers-lounge"><i class="fas fa-user-ninja"></i> Hacker's Lounge</a>
+          <a href="#" class="nav-item" data-target="my-tools"><i class="fas fa-tools"></i> My Tools</a>
+          <a href="#" class="nav-item" id="logoutLink"><i class="fas fa-door-open"></i> Logout</a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="mainContent">
+      <section id="home-section" class="section-content active">
+        <div class="hero-container">
+          <h1 class="hero-title glitch" data-text="Hey There! 🫡">Hey There! <span class="blink-cursor">🫡</span></h1>
+          <p class="hero-subtitle" id="typing-text"></p>
+          <p class="site-desc">Your all‑in‑one hacker dashboard ;)</p>
+          <div class="mt-10">
+            <button class="cta-button navigate-btn glitch-hover" data-target="web-attacks">⚡ ENTER THE SYSTEM ⚡</button>
+          </div>
+        </div>
+      </section>
+      <div id="section-loader" class="section-content"></div>
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-database-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCHqvYvtGLI7hVNW314ZMDO2MFL0MPSK0M",
+      authDomain: "max-lounge.firebaseapp.com",
+      databaseURL: "https://max-lounge-default-rtdb.firebaseio.com",
+      projectId: "max-lounge",
+      storageBucket: "max-lounge.firebasestorage.app",
+      messagingSenderId: "633683345472",
+      appId: "1:633683345472:web:772c474523ec3606029fa5",
+      measurementId: "G-1SC42SBP9Y"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+  </script>
+  <script src="Assets/Js/script.js"></script>
+</body>
+</html>

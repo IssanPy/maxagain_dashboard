@@ -1,0 +1,452 @@
+<!-- ================= CONTACT ADMIN – FINAL ALIGNED VERSION ================= -->
+
+<style>
+/* ================= MAIN LAYOUT ================= */
+
+.contact-dashboard{
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+    padding: 2rem;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.contact-dashboard > *{
+    margin-bottom: 2rem;
+}
+
+.section-title{
+    margin-bottom: 2rem;
+    padding-left: 0.5rem;
+}
+
+/* ================= HERO LAYOUT ================= */
+
+.hero-layout{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+@media(max-width:900px){
+    .hero-layout{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================= PROFILE CARD ================= */
+
+.profile-card{
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 2.5rem;
+}
+
+/* ================= GRID SYSTEM ================= */
+
+.dashboard-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(420px,1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+/* ================= GLASS CARD ================= */
+
+.glass-card{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* ================= TERMINAL ================= */
+
+.terminal-section{
+    width: 100%;
+    padding: 2rem;
+}
+
+/* ================= SOCIALS ================= */
+
+.sub-section{
+    margin-top: 3rem;
+}
+
+.sub-section .glass-card{
+    padding: 1.5rem;
+}
+
+.sub-section .dashboard-grid a{
+    min-height: 180px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* ================= HOVER ================= */
+
+.glass-card a:hover{
+    transform: scale(1.03);
+}
+
+#terminal-output::after{
+    content:'█';
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+}
+</style>
+
+<div class="contact-dashboard">
+
+<!-- TITLE -->
+<h2 class="section-title">📬 Contact Admin – The Operator's Network</h2>
+
+<!-- HERO SECTION -->
+<div class="hero-layout">
+
+    <!-- PROFILE (FIXED IMAGE OVERFLOW) -->
+    <div class="glass-card profile-card" style="text-align:center;">
+
+        <div style="width:160px;height:160px;margin:0 auto 1rem;border-radius:50%;border:3px solid var(--neon-green);overflow:hidden;box-shadow:0 0 25px rgba(0,255,159,0.5);position:relative;">
+
+            <!-- SIMPLE SVG AVATAR – NO OVERFLOW, PERFECT FIT -->
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' fill='%23111'/%3E%3Ccircle cx='80' cy='80' r='70' fill='%2300ff9f' opacity='0.15'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%2300ff9f' font-family='monospace' font-size='32' font-weight='bold'%3EISSAN%3C/text%3E%3C/svg%3E"
+                 alt="Issan Panda"
+                 style="width:100%;height:100%;object-fit:cover; display:block;" />
+
+            <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(transparent 0%, rgba(0,255,159,0.15) 50%, transparent 100%);pointer-events:none;"></div>
+        </div>
+
+        <h3 class="text-neon-green" style="font-family:'Orbitron', monospace;margin:0.5rem 0;">
+            OPERATOR MAX
+        </h3>
+
+        <p style="color:#888;font-size:0.9rem;margin:0;">
+            Red Team Specialist · Bug Hunter · Reverse Engineer
+        </p>
+
+    </div>
+
+    <!-- STATUS + STATS -->
+    <div class="dashboard-grid">
+
+        <div class="glass-card">
+            <h3 class="text-neon-green">🟢 LIVE STATUS</h3>
+            <p id="status-line">☕ Probably reversing APKs</p>
+            <p id="playlist-line">🎧 Now Playing: HOME – Resonance</p>
+            <p id="uptime-line">💻 Terminal Uptime: <span id="uptime">0h 0m</span></p>
+        </div>
+
+        <div class="glass-card">
+            <h3 class="text-neon-blue">📊 OPERATOR STATS</h3>
+            <p>🧠 Labs Completed: 120+</p>
+            <p>📱 APKs Reversed: 50+</p>
+            <p>☕ Coffee Consumed: ∞</p>
+            <p>🎧 Coding Playlist: Synthwave.exe</p>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- QUOTES -->
+<div class="dashboard-grid">
+
+    <div class="glass-card">
+        <h3 class="text-cyber-red">💬 HACKER QUOTE</h3>
+        <p id="rotating-quote" style="font-style:italic;color:#ccc;">
+            "The quieter the packets, the louder the breach."
+        </p>
+    </div>
+
+    <div class="glass-card">
+        <h3 class="text-cyber-red">⚠ FUN FACT</h3>
+        <p id="fun-fact" style="color:#ccc;">
+            The first computer worm was released in 1988.
+        </p>
+    </div>
+
+</div>
+
+<!-- TERMINAL -->
+<div class="glass-card terminal-section">
+
+    <h3 class="text-neon-blue">💻 OPERATOR TERMINAL</h3>
+
+    <p style="font-family:'JetBrains Mono', monospace;color:#0f0;">
+        visitor@issanlab:~$
+        <span id="terminal-output"></span>
+    </p>
+
+    <div style="display:flex;gap:10px;">
+
+        <input type="text"
+               id="terminal-input"
+               placeholder="Type a command (e.g., help, socials)"
+               autocomplete="off"
+               style="flex:1;background:#0b0b18;border:1px solid var(--neon-blue);border-radius:20px;padding:6px 14px;color:#0f0;font-family:'JetBrains Mono', monospace;" />
+
+        <button id="terminal-btn"
+                class="server-btn"
+                style="background:var(--neon-blue);color:black;border:none;padding:6px 16px;border-radius:20px;cursor:pointer;">
+
+            ⏎
+
+        </button>
+
+    </div>
+
+    <p style="font-size:0.7rem;color:#555;margin-top:0.5rem;">
+        Try: help, socials, projects, latest, coffee, secrets
+    </p>
+
+</div>
+
+<!-- RESEARCH -->
+<div class="dashboard-grid">
+
+    <div class="glass-card">
+        <h3 class="text-neon-green">📚 CURRENT RESEARCH</h3>
+
+        <ul style="list-style:none;padding:0;">
+            <li>🔬 Android Binder Exploitation</li>
+            <li>🌐 Web Cache Poisoning</li>
+            <li>🧠 ARM64 Native Reversing</li>
+            <li>🤖 AI Malware Detection</li>
+        </ul>
+
+    </div>
+
+    <div class="glass-card">
+        <h3 class="text-cyber-red">🔐 SECURITY TIP OF THE DAY</h3>
+        <p id="security-tip">
+            Use a password manager. Your memory is not a secure vault.
+        </p>
+    </div>
+
+</div>
+
+<!-- MESSAGE -->
+<div class="dashboard-grid">
+
+    <div class="glass-card">
+        <h3 class="text-neon-blue">📜 MESSAGE FROM ISSAN</h3>
+
+        <p style="color:#ccc;">
+            Curiosity built every exploit. Discipline built every researcher. Stay ethical. Stay dangerous.
+        </p>
+    </div>
+
+    <div class="glass-card">
+        <h3 class="text-neon-green">😂 HACKER HUMOR</h3>
+
+        <p id="hacker-humor" style="color:#ccc;">
+            "99 little bugs in the code… patch one down, 127 vulnerabilities appear."
+        </p>
+    </div>
+
+</div>
+
+<!-- LEGENDS -->
+<div class="dashboard-grid">
+
+    <div class="glass-card">
+        <h3 class="text-neon-blue">🏛️ HALL OF LEGENDS</h3>
+
+        <p style="color:#ccc;">
+            Inspired by: LiveOverflow, Lostsec , John Hammond, PortSwigger Research, STÖK
+        </p>
+    </div>
+
+    <div class="glass-card">
+        <h3 class="text-neon-blue">🚀 HOW I STARTED</h3>
+
+        <p style="color:#ccc;">
+            ☕ curiosity → 💻 old laptops → 📚 endless PDFs → 🎧 late-night coding → 🧠 this dashboard
+        </p>
+    </div>
+
+</div>
+
+<!-- SOCIALS (UPDATED with Issan's links only, style untouched) -->
+<div class="sub-section">
+
+    <h3 class="text-neon-green">📡 CONNECT WITH ISSAN</h3>
+
+    <div class="dashboard-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+
+        <a href="https://www.linkedin.com/in/issan-panda-432831232" class="glass-card" target="_blank"
+           style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:1.5rem;text-decoration:none;min-height:140px;">
+            <span style="font-size:2rem;">💼</span>
+            <span style="color:#0a66c2;font-family:'Orbitron',monospace;font-size:0.85rem;">LinkedIn</span>
+            <span style="color:#888;font-size:0.75rem;font-family:monospace;">issan-panda</span>
+        </a>
+
+        <a href="https://github.com/IssanPy" class="glass-card" target="_blank"
+           style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:1.5rem;text-decoration:none;min-height:140px;">
+            <span style="font-size:2rem;">🐙</span>
+            <span class="text-neon-green" style="font-family:'Orbitron',monospace;font-size:0.85rem;">GitHub</span>
+            <span style="color:#888;font-size:0.75rem;font-family:monospace;">IssanPy</span>
+        </a>
+
+        <a href="mailto:issanpanda@gmail.com" class="glass-card"
+           style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:1.5rem;text-decoration:none;min-height:140px;">
+            <span style="font-size:2rem;">📧</span>
+            <span class="text-neon-blue" style="font-family:'Orbitron',monospace;font-size:0.85rem;">Email</span>
+            <span style="color:#888;font-size:0.75rem;font-family:monospace;">issanpanda@gmail.com</span>
+        </a>
+
+        <a href="https://medium.com/@issanpanda" class="glass-card" target="_blank"
+           style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:1.5rem;text-decoration:none;min-height:140px;">
+            <span style="font-size:2rem;">📝</span>
+            <span class="text-cyber-red" style="font-family:'Orbitron',monospace;font-size:0.85rem;">Medium</span>
+            <span style="color:#888;font-size:0.75rem;font-family:monospace;">@issanpanda</span>
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+<script>
+// Terminal commands (updated socials response)
+const terminalInput = document.getElementById('terminal-input');
+const terminalBtn = document.getElementById('terminal-btn');
+const terminalOutputSpan = document.getElementById('terminal-output');
+
+function showOutput(msg, isError = false) {
+    terminalOutputSpan.innerText = msg;
+    setTimeout(() => {
+        if (terminalOutputSpan.innerText === msg) terminalOutputSpan.innerText = "";
+    }, 4000);
+}
+
+function handleCommand(cmd) {
+    const c = cmd.trim().toLowerCase();
+    if (c === "help") {
+        showOutput("Available: help, socials, projects, latest, coffee, secrets");
+    } else if (c === "socials") {
+        showOutput("LinkedIn: linkedin.com/in/issan-panda-432831232 | GitHub: github.com/IssanPy | Email: issanpanda@gmail.com | Medium: medium.com/@issanpanda");
+    } else if (c === "projects") {
+        showOutput("🔧 Active: Web Cache Poisoning toolkit, Android Reverse Lab, CTF automation scripts.");
+    } else if (c === "latest") {
+        showOutput("📡 Latest blog: 'Exploiting Race Conditions in Modern APIs' on Medium → medium.com/@issanpanda");
+    } else if (c === "coffee") {
+        showOutput("☕ Espresso tonic, 2 sugars. And a side of kernel exploits.");
+    } else if (c === "secrets") {
+        showOutput("🤫 /etc/passwd? nice try. But the real secret is persistence and curiosity.");
+    } else {
+        showOutput(`Unknown command: ${cmd}. Try 'help'`, true);
+    }
+    terminalInput.value = "";
+}
+
+terminalBtn.addEventListener('click', () => handleCommand(terminalInput.value));
+terminalInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        handleCommand(terminalInput.value);
+    }
+});
+
+// Uptime
+const startTime = Date.now();
+function updateUptime() {
+    const elapsed = Math.floor((Date.now() - startTime) / 1000);
+    const hours = Math.floor(elapsed / 3600);
+    const minutes = Math.floor((elapsed % 3600) / 60);
+    const uptimeSpan = document.getElementById('uptime');
+    if (uptimeSpan) uptimeSpan.innerText = `${hours}h ${minutes}m`;
+}
+setInterval(updateUptime, 60000);
+updateUptime();
+
+// Rotating quotes, facts, tip, humor (keep same as before, just change strings if needed)
+const quotes = [
+    "“The quieter the packets, the louder the breach.”",
+    "“Hackers don’t break in, they log in.”",
+    "“Trust, but verify. Then audit.”",
+    "“Exploitation is just creative debugging.”"
+];
+const facts = [
+    "The first computer worm (Morris) infected 10% of the internet in 1988.",
+    "The word 'phishing' was coined in 1996.",
+    "A hacker can crack 8-character password in < 2 hours with GPU.",
+    "Over 90% of cyber attacks start with a phishing email."
+];
+let quoteIdx = 0, factIdx = 0;
+function rotateQuote() {
+    const q = document.getElementById('rotating-quote');
+    if (q) { quoteIdx = (quoteIdx + 1) % quotes.length; q.innerText = quotes[quoteIdx]; }
+}
+function rotateFact() {
+    const f = document.getElementById('fun-fact');
+    if (f) { factIdx = (factIdx + 1) % facts.length; f.innerText = facts[factIdx]; }
+}
+setInterval(rotateQuote, 12000);
+setInterval(rotateFact, 14000);
+
+const tips = [
+    "Use a password manager. Your memory is not a secure vault.",
+    "Enable 2FA everywhere: SMS is better than nothing, but TOTP is best.",
+    "Keep your OS and browsers updated – 0days love old software.",
+    "Don't reuse passwords: credential stuffing is real."
+];
+let tipIdx = 0;
+function rotateTip() {
+    const t = document.getElementById('security-tip');
+    if (t) { tipIdx = (tipIdx + 1) % tips.length; t.innerText = tips[tipIdx]; }
+}
+setInterval(rotateTip, 15000);
+
+const humorList = [
+    "“99 little bugs in the code… patch one down, 127 vulnerabilities appear.”",
+    "“I’m not antisocial, I’m just anti-weak security.”",
+    "“How many hackers does it take to change a lightbulb? None, they just exploit the socket.”"
+];
+let humorIdx = 0;
+function rotateHumor() {
+    const h = document.getElementById('hacker-humor');
+    if (h) { humorIdx = (humorIdx + 1) % humorList.length; h.innerText = humorList[humorIdx]; }
+}
+setInterval(rotateHumor, 18000);
+
+const statuses = [
+    "☕ Probably reversing APKs",
+    "🔍 Hunting SSRF & cloud metadata",
+    "📝 Writing exploit dev notes",
+    "🎯 Analyzing latest CVE-2026-xxxx",
+    "🧪 Testing prototype pollution gadgets"
+];
+let statusIdx = 0;
+function updateLiveStatus() {
+    const s = document.getElementById('status-line');
+    if (s) { statusIdx = (statusIdx + 1) % statuses.length; s.innerText = statuses[statusIdx]; }
+}
+setInterval(updateLiveStatus, 10000);
+
+const playlists = [
+    "🎧 Now Playing: HOME – Resonance",
+    "🎧 Now Playing: Carpenter Brut – Turbo Killer",
+    "🎧 Now Playing: Waveshaper – 66 MHz",
+    "🎧 Now Playing: Perturbator – Venger"
+];
+let playIdx = 0;
+function updatePlaylist() {
+    const p = document.getElementById('playlist-line');
+    if (p) { playIdx = (playIdx + 1) % playlists.length; p.innerText = playlists[playIdx]; }
+}
+setInterval(updatePlaylist, 22000);
+</script>

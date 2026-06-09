@@ -1,0 +1,534 @@
+<!-- DDoS – The Internet Warfare Academy -->
+<h2 class="section-title">💣 DDoS – The Internet Warfare Academy</h2>
+
+<div class="server-tabs" id="ddos-tabs">
+  <div class="server-btn active" data-tab="intro">Intro</div>
+  <div class="server-btn" data-tab="tcpip">TCP/IP Internals</div>
+  <div class="server-btn" data-tab="http2quic">HTTP/2 & QUIC</div>
+  <div class="server-btn" data-tab="anycast">Anycast & CDN</div>
+  <div class="server-btn" data-tab="bgp">BGP & Routing</div>
+  <div class="server-btn" data-tab="kernel">Kernel Networking</div>
+  <div class="server-btn" data-tab="botnetops">Botnet Operations</div>
+  <div class="server-btn" data-tab="amplification">Amplification Science</div>
+  <div class="server-btn" data-tab="layer7">Layer 7 Exhaustion</div>
+  <div class="server-btn" data-tab="aidriven">AI‑Driven DDoS</div>
+  <div class="server-btn" data-tab="isp">ISP & Carrier Mitigation</div>
+  <div class="server-btn" data-tab="telecom">Telecom & 5G DDoS</div>
+  <div class="server-btn" data-tab="cloudddos">Cloud DDoS</div>
+  <div class="server-btn" data-tab="economics">Attack Economics</div>
+  <div class="server-btn" data-tab="forensics">Packet Forensics</div>
+  <div class="server-btn" data-tab="evasion">Evasion</div>
+  <div class="server-btn" data-tab="dns">DNS Infrastructure</div>
+  <div class="server-btn" data-tab="tools">Tools</div>
+  <div class="server-btn" data-tab="cases">Real‑World Incidents</div>
+  <div class="server-btn" data-tab="mindset">Mindset</div>
+  <div class="server-btn" data-tab="defense">Advanced Defense</div>
+  <div class="server-btn" data-tab="labs">Labs</div>
+</div>
+
+<!-- ========== INTRO TAB ========== -->
+<div class="tab-content active" id="tab-intro">
+  <div class="hero-container" style="text-align:center; padding-top:2rem;">
+    <h1 class="hero-title" style="font-size:3.5rem;">WELCOME TO THE <span class="text-cyber-red">INTERNET WAR ROOM</span></h1>
+    <p class="hero-subtitle" style="font-size:1.3rem; color:#5ee0fa; margin-bottom:2rem;">
+      DDoS isn't just flooding packets – it's the art of collapsing globally distributed systems under adversarial traffic. From TCP state machines to Anycast diffusion, from botnet logistics to BGP blackholing, this academy teaches you how the internet itself breaks.
+    </p>
+  </div>
+
+  <div class="tools-grid" style="margin-top:2rem;">
+    <div class="glass-card text-center"><h2 class="text-neon-green" style="font-size:2.5rem;">TCP</h2><p>SYN queues, retransmissions<br><span style="font-size:0.8rem; opacity:0.7;">State exhaustion</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-neon-blue" style="font-size:2.5rem;">QUIC</h2><p>HTTP/3 Rapid Reset<br><span style="font-size:0.8rem; opacity:0.7;">Stream abuse</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-cyber-red" style="font-size:2.5rem;">BGP</h2><p>Route hijacking & blackholing<br><span style="font-size:0.8rem; opacity:0.7;">Internet routing</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-neon-green" style="font-size:2.5rem;">eBPF/XDP</h2><p>Kernel‑speed mitigation<br><span style="font-size:0.8rem; opacity:0.7;">Programmable defense</span></p></div>
+  </div>
+
+  <div class="sub-section" style="margin-top:3rem;">
+    <div class="glass-card">
+      <h3 class="text-neon-blue" style="font-size:1.6rem;">📋 War Room Agenda</h3>
+      <ul style="list-style:none; padding:0; font-size:1.1rem;">
+        <li>✅ <span class="text-neon-green">TCP/IP & Kernel Stacks</span> – Backlog exhaustion, SYN cookies, conntrack, eBPF.</li>
+        <li>✅ <span class="text-neon-green">HTTP/2, QUIC, CDN & Anycast</span> – Rapid Reset, stream abuse, cache bypass, origin shielding.</li>
+        <li>✅ <span class="text-neon-green">BGP & Routing</span> – Flowspec, RTBH, route leaks, internet topology.</li>
+        <li>✅ <span class="text-neon-green">Botnet Operations & Amplification Science</span> – Loader infrastructure, DGA, recursive amplification, CLDAP, WS‑Discovery.</li>
+        <li>✅ <span class="text-neon-green">Layer 7 & AI‑Driven Attacks</span> – Regex bombs, GraphQL exhaustion, adaptive attack tuning.</li>
+        <li>✅ <span class="text-neon-green">ISP, Telecom & Cloud Mitigation</span> – Scrubbing centers, GTP flooding, AWS Shield internals.</li>
+        <li>✅ <span class="text-neon-green">Attack Economics & Evasion</span> – Booter ecosystems, residential proxies, TLS fingerprint rotation.</li>
+        <li>✅ <span class="text-neon-green">Packet Forensics, Tools, Real‑World Incidents</span> – Zeek, Scapy, TCPreplay, Dyn, GitHub, Cloudflare 398M rps.</li>
+        <li>✅ <span class="text-neon-green">Mindset, Advanced Defense & Labs</span> – XDP filtering, behavioral fingerprinting, custom test environments.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="text-align:center; margin-top:2rem; font-size:0.9rem; color:#888;">
+    <span class="text-cyber-red">Warning:</span> DDoS tools and techniques are for authorized research, stress‑testing your own infrastructure, and red‑team engagements. Unauthorized attacks are criminal.
+  </p>
+</div>
+
+<!-- ========== TCP/IP INTERNALS TAB ========== -->
+<div class="tab-content" id="tab-tcpip">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧠 TCP/IP Stack Internals – The Exhaustion Point</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">TCP State Machine & SYN Queue</h3>
+      <p>The TCP three‑way handshake allocates memory in the SYN backlog. When an attacker sends a flood of SYN packets without completing the handshake (half‑open connections), the backlog fills, and legitimate clients can no longer connect. This is the classic SYN flood.</p>
+      <div class="code-block"><pre># Check SYN backlog size
+sysctl net.ipv4.tcp_max_syn_backlog</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Retransmissions & Congestion Collapse</h3>
+      <p>TCP retransmits lost packets, doubling the backoff timer each time (exponential backoff). Attackers can trigger excessive retransmissions by dropping selective ACKs or manipulating RTT. Congestion collapse happens when the network spends all bandwidth on retransmissions.</p>
+      <div class="code-block"><pre># Simulate packet loss with netem
+tc qdisc add dev eth0 root netem loss 10%</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Conntrack Table & Socket Exhaustion</h3>
+      <p>The kernel's connection tracking table (conntrack) has a finite size. Once full, new connections are dropped. Attackers can exhaust it by spoofing many unique source IPs. TIME_WAIT states also consume memory.</p>
+      <div class="code-block"><pre># Monitor conntrack usage
+conntrack -C
+sysctl net.netfilter.nf_conntrack_max</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">SYN Cookies & Mitigations</h3>
+      <p>SYN cookies encode the initial sequence number cryptographically, avoiding the need to store half‑open connections. This is the kernel's built‑in defense against SYN floods. Enable it with <code>sysctl net.ipv4.tcp_syncookies=1</code>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== HTTP/2 & QUIC TAB ========== -->
+<div class="tab-content" id="tab-http2quic">
+  <div class="sub-section">
+    <h2 class="sub-section-title">⚡ HTTP/2 & QUIC/HTTP3 – The Modern Flood</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">HTTP/2 Rapid Reset Attack (CVE‑2023‑44487)</h3>
+      <p>An attacker opens a single HTTP/2 connection, creates thousands of streams, and immediately sends RST_STREAM for each. The server processes every stream request before the reset, exhausting CPU. Cloudflare, AWS, and Google were hit by attacks exceeding 398 million requests per second using this technique.</p>
+      <div class="code-block"><pre># Conceptual: rapid stream creation and cancellation
+for i in range(0, 1000):
+    send_headers(stream_id=i)
+    send_rst_stream(stream_id=i)</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">QUIC Connection Migration & Handshake Abuse</h3>
+      <p>QUIC uses connection IDs, allowing clients to change IP addresses without renegotiation. Attackers can spoof migration packets, causing the server to spend resources verifying them. Initial handshake packets can also be amplified.</p>
+      <div class="code-block"><pre># QUIC amplification test
+hping3 -2 -p 443 -a <spoofed_ip> --flood <target_ip></pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">HPACK/QPACK Compression Abuse</h3>
+      <p>HTTP/2 and HTTP/3 use HPACK and QPACK for header compression. Attackers can send many headers with high entropy, causing the compressor to allocate excessive memory or CPU.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ANYCAST & CDN TAB ========== -->
+<div class="tab-content" id="tab-anycast">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🌍 Anycast, CDN & Edge Architecture</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Anycast Routing & Traffic Diffusion</h3>
+      <p>Anycast allows multiple servers around the world to share the same IP address. BGP routes traffic to the nearest (topologically) instance. This naturally diffuses volumetric attacks, as the flood is divided among many data centers.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Edge Shielding & Cache Bypass</h3>
+      <p>CDNs protect origin servers with edge caches. Attackers use cache‑busting techniques (random query parameters, different URL paths) to force every request to the origin, bypassing the CDN entirely. This is a "cache miss storm."</p>
+      <div class="code-block"><pre># Cache bypass via random parameters
+for i in range(0, 100000):
+    send_get("/page?nocache=" + str(i))</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">BGP Propagation & Internet Topology</h3>
+      <p>Anycast depends on BGP announcements. Attackers can potentially hijack the prefix with a more specific route (BGP hijack) to redirect traffic to their own infrastructure. Understanding internet topology is key to understanding Anycast resilience.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== BGP & ROUTING TAB ========== -->
+<div class="tab-content" id="tab-bgp">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🗺️ BGP & Internet Routing Warfare</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Route Hijacking & Leaks</h3>
+      <p>Malicious ASes can announce more specific prefixes, stealing traffic meant for the victim. Route leaks can cause traffic to take longer, congested paths. Both have been used as DDoS amplifiers.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">RTBH & Flowspec for Mitigation</h3>
+      <p>Remotely Triggered Black Hole (RTBH) uses BGP to drop all traffic to a target at the network edge. Flowspec allows more granular filtering based on packet characteristics. These are the backbone of carrier‑grade DDoS mitigation.</p>
+      <div class="code-block"><pre># RTBH configuration (conceptual)
+router bgp 65001
+network 192.0.2.1/32 route-map blackhole</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Internet Exchange Points & Transit</h3>
+      <p>IXPs provide peering; transit providers carry global traffic. DDoS can saturate peering links, forcing traffic through expensive transit. Understanding this helps target attacks where they hurt most.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== KERNEL NETWORKING TAB ========== -->
+<div class="tab-content" id="tab-kernel">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧠 Kernel Network Stacks – eBPF & XDP</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">epoll, Socket Exhaustion & Conntrack</h3>
+      <p>Servers use epoll for high‑performance I/O, but file descriptor limits and socket buffers can be exhausted. Conntrack table overflow is a classic DDoS vector. Modern kernels use eBPF to offload filtering to the earliest possible point.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">XDP – Express Data Path</h3>
+      <p>XDP allows packet filtering directly in the NIC driver, before the kernel allocates any memory. It can drop malicious traffic at line rate (millions of packets per second per core). This is how hyperscale defenders survive Tbps attacks.</p>
+      <div class="code-block"><pre># Simple XDP program (C)
+SEC("xdp")
+int xdp_drop(struct xdp_md *ctx) {
+    return XDP_DROP;
+}</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">DPDK & NIC Offloading</h3>
+      <p>Data Plane Development Kit (DPDK) bypasses the kernel entirely, processing packets in userspace at 100+ Gbps. Combined with XDP, it forms the backbone of modern mitigation appliances.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== BOTNET OPERATIONS TAB ========== -->
+<div class="tab-content" id="tab-botnetops">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🤖 Botnet Operations Masterclass</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Loader Infrastructure & Propagation</h3>
+      <p>Botnets use loaders (cgi‑bin scripts, Telnet brute‑forcers) to infect new devices. Once enrolled, the bot beacons to a C2 server. Mirai's loader was a simple binary that brute‑forced 61 default credentials.</p>
+      <div class="code-block"><pre># Mirai credential list snippet
+root:xc3511
+root:vizxv
+root:admin</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Domain Generation Algorithms (DGA) & P2P Resilience</h3>
+      <p>DGAs generate pseudo‑random domain names daily, making takedowns difficult. P2P botnets (e.g., Mozi) communicate directly between peers, eliminating central C2 entirely. Both require advanced tracking and sinkholing.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Monetization – Proxies, DDoS‑for‑Hire, Credential Stuffing</h3>
+      <p>Botnets are businesses. Residential proxy services (e.g., Faceless, 911.re) rent out infected IoT devices. Booter services sell DDoS attacks by the minute. Stolen credentials are brute‑forced across banking sites. The economics drive the infections.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== AMPLIFICATION SCIENCE TAB ========== -->
+<div class="tab-content" id="tab-amplification">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📈 Amplification Attack Science</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Reflection & Amplification Mechanics</h3>
+      <p>Attacker spoofs victim's IP, sends a small request to a vulnerable server (DNS, NTP, Memcached). The server sends a much larger response to the victim, multiplying the traffic.</p>
+      <div class="code-block"><pre># DNS amplification: 64‑byte query → 3000‑byte response
+dig ANY isc.org @open_resolver -b <spoofed_ip></pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Recursive Amplification Chains</h3>
+      <p>Attackers chain multiple reflectors together, creating exponential traffic growth. For example, a single packet to a CHARGEN server can trigger an infinite loop between two misconfigured hosts.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Modern Amplification Vectors</h3>
+      <ul>
+        <li>CLDAP – up to 70× amplification</li>
+        <li>WS‑Discovery – up to 150×</li>
+        <li>SSDP – up to 30×</li>
+        <li>QUIC reflection – emerging</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== LAYER 7 EXHAUSTION TAB ========== -->
+<div class="tab-content" id="tab-layer7">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🕸️ Layer 7 Resource Exhaustion – Killing Logic</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Thread Pool & DB Connection Exhaustion</h3>
+      <p>Attackers send slow HTTP POST requests (R.U.D.Y.), keeping all server threads busy. Alternatively, they flood expensive database queries (e.g., a recursive search) until the DB collapses.</p>
+      <div class="code-block"><pre># Slow POST attack (R.U.D.Y.)
+while (true) send_byte_at_random_interval();</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Expensive Regex & GraphQL Query Bombs</h3>
+      <p>Regular expressions with catastrophic backtracking (ReDoS) can kill a server with a single request. GraphQL queries with deep nesting can cause exponential processing.</p>
+      <div class="code-block"><pre># Deeply nested GraphQL query
+query {
+  user(id:1) { friends { friends { friends { friends { id } } } } }
+}</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">WebSocket & Realtime App Exhaustion</h3>
+      <p>Opening thousands of WebSocket connections and sending fragmented frames keeps servers busy. Idle connection starvation eventually kicks legitimate users off.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== AI‑DRIVEN DDoS TAB ========== -->
+<div class="tab-content" id="tab-aidriven">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🤖 AI‑Driven DDoS Warfare</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Adaptive Attack Tuning & ML Evasion</h3>
+      <p>AI bots analyze the target's defenses in real time, adjusting attack patterns to evade mitigation. Traffic is shaped to mimic legitimate user behavior, defeating rate limiting and behavioral detection. Reinforcement learning agents optimise attack vectors for maximum damage.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Synthetic Traffic Generation</h3>
+      <p>Generative AI creates realistic HTTP headers, user agents, and mouse movements, making it nearly impossible to distinguish bots from humans. TLS fingerprint rotation further complicates detection.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ISP & CARRIER MITIGATION TAB ========== -->
+<div class="tab-content" id="tab-isp">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🏢 ISP & Carrier‑Grade Defense</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Scrubbing Centers & Arbor Networks</h3>
+      <p>ISPs operate massive scrubbing centers that filter attack traffic using DPI and behavioral analysis. Solutions like Arbor Networks Peakflow redirect traffic via BGP and GRE tunnels, clean it, and reinject it.</p>
+      <div class="code-block"><pre># GRE tunnel to scrubbing center
+ip tunnel add scrub0 mode gre remote <scrubber_ip> local <your_ip></pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Carrier Filtering & Blackholing</h3>
+      <p>Upstream providers can blackhole entire /32 prefixes during an attack. This sacrifices the target but protects the rest of the network. More advanced filtering uses Flowspec to drop only specific protocols or packet sizes.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TELECOM & 5G DDoS TAB ========== -->
+<div class="tab-content" id="tab-telecom">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📶 Telecom & 5G DDoS</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">GTP Flooding & PFCP Exhaustion</h3>
+      <p>GTP (GPRS Tunneling Protocol) carries user traffic in mobile cores. An attacker on the S5/S8 interface can flood the SGW/PGW with GTP echo requests or modify session keys, crashing the data plane. PFCP (Packet Forwarding Control Protocol) can be abused to redirect traffic or exhaust UPF resources.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">SCTP Attacks & Signaling Storms</h3>
+      <p>SCTP (Stream Control Transmission Protocol) is used for signaling between 5G core functions. An unauthenticated attacker can send malformed SCTP packets to crash the AMF or SMF, disabling entire network slices.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">RAN Congestion & UPF Overload</h3>
+      <p>Massive device registrations can overload the RAN (Radio Access Network) or UPF (User Plane Function). 5G's network slicing can be exploited: a compromised eMBB slice can exhaust shared UPF resources, impacting uRLLC slices.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CLOUD DDoS TAB ========== -->
+<div class="tab-content" id="tab-cloudddos">
+  <div class="sub-section">
+    <h2 class="sub-section-title">☁️ Cloud DDoS Engineering</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">AWS Shield Advanced & Google Cloud Armor</h3>
+      <p>AWS Shield provides layer 3/4 protection and DDoS cost protection. Google Cloud Armor integrates with Cloud Load Balancing for adaptive protection. Both can absorb massive volumetric attacks.</p>
+      <div class="code-block"><pre># AWS Shield Advanced metrics
+aws cloudwatch get-metric-statistics --namespace AWS/DDoSProtection --metric-name DDoSAttackBitsPerSecond</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Autoscaling Collapse & Serverless Exhaustion</h3>
+      <p>Attackers can trigger rapid autoscaling, costing millions in cloud resources. Serverless functions (AWS Lambda) can be invoked recursively until the account is throttled. Cloud DDoS becomes a financial attack.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Kubernetes API Exhaustion & Ingress Overload</h3>
+      <p>Overloading the kube‑apiserver or ingress controller can take down an entire cluster. Use rate‑limiting annotations and dedicated ingress nodes.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ATTACK ECONOMICS TAB ========== -->
+<div class="tab-content" id="tab-economics">
+  <div class="sub-section">
+    <h2 class="sub-section-title">💰 DDoS Economics – Why Attacks Happen</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Booter/Stresser Ecosystems</h3>
+      <p>Booter services sell DDoS attacks for as little as $5. They operate on top of compromised botnets or rented cloud resources. Many are used by gamers to kick opponents offline, but the infrastructure is the same used for extortion.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Ransom DDoS & Extortion</h3>
+      <p>Attackers send a threatening email: "Pay 10 BTC or we'll take your site offline." They demonstrate a small attack, then demand payment. Most are bluffs, but some are backed by real capability.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Residential Proxy Monetization</h3>
+      <p>Infected IoT devices are rented as residential proxies, allowing attackers to bypass geo‑restrictions and avoid IP blacklisting. This is a multi‑billion dollar illicit industry.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PACKET FORENSICS TAB ========== -->
+<div class="tab-content" id="tab-forensics">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔬 Packet Capture & Attack Forensics</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">PCAP Analysis & Flow Reconstruction</h3>
+      <p>Use tcpdump to capture attack traffic, then analyze with Wireshark or Zeek. Reconstruct flows to identify spoofed IPs, amplification protocols, and attack signatures. NetFlow/IPFIX provides aggregated flow data without capturing every packet.</p>
+      <div class="code-block"><pre>tcpdump -i eth0 -w attack.pcap
+zeek -r attack.pcap</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Attack Fingerprinting & Entropy Analysis</h3>
+      <p>Different bot families have unique packet patterns (TTL values, window sizes, TCP options). Use entropy analysis to detect randomized fields. Tools like <span class="text-neon-green">FastNetMon</span> provide real‑time detection.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== Evasion TECHNIQUES TAB ========== -->
+<div class="tab-content" id="tab-evasion">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🕵️ Evasion Techniques – Hiding in Plain Sight</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Low‑and‑Slow Attacks & Randomized Headers</h3>
+      <p>Instead of high‑volume floods, send requests at a rate just above the detection threshold, blending with normal traffic. Randomize User‑Agent, Accept headers, and use residential proxies to appear as legitimate users.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">TLS Fingerprint Rotation & CAPTCHA Bypass</h3>
+      <p>Modern DDoS tools emulate browser TLS fingerprints (JA3/JA4) to avoid being flagged as bots. CAPTCHA farms and AI‑powered solvers defeat challenge‑response systems at scale.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DNS INFRASTRUCTURE TAB ========== -->
+<div class="tab-content" id="tab-dns">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📡 DNS Infrastructure Attacks</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Authoritative DNS Exhaustion & NXDOMAIN Floods</h3>
+      <p>Flooding authoritative DNS servers with queries for nonexistent domains (random subdomains) forces them to process NXDOMAIN responses, exhausting resources. This is how the 2016 Dyn attack took down major sites.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">DNSSEC Overhead & Recursive Resolver Abuse</h3>
+      <p>DNSSEC validation adds cryptographic overhead. Attackers can flood resolvers with signed queries for zones with complex chains, causing CPU exhaustion. Recursive resolvers can also be used for amplification.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TOOLS TAB ========== -->
+<div class="tab-content" id="tab-tools">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧰 The Network Warfare Toolkit</h2>
+    <div class="tools-grid">
+      <div class="glass-card"><h3 class="text-neon-green">hping3 / Scapy</h3><p>Custom packet crafting</p><div class="code-block"><pre>hping3 -S --flood -p 80 target</pre></div></div>
+      <div class="glass-card"><h3 class="text-neon-green">Mausezahn / Ostinato</h3><p>Hardware‑accelerated traffic gen</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">TRex / DPDK pktgen</h3><p>Stateful traffic generation at 200 Gbps</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Slowloris / GoldenEye</h3><p>Application‑layer exhaustion</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Zeek / ntopng</h3><p>Network traffic analysis & detection</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">FastNetMon / Arbor Peakflow</h3><p>Real‑time DDoS detection</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Wireshark / tcpdump</h3><p>Packet capture & analysis</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Scapy‑radio / GNU Radio</h3><p>RF‑layer traffic generation</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== REAL‑WORLD INCIDENTS TAB ========== -->
+<div class="tab-content" id="tab-cases">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📖 Internet‑Scale DDoS Incidents Dissected</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Dyn DNS Attack (2016) – 1.2 Tbps Mirai</h3>
+      <p>A Mirai botnet of ~100,000 IoT devices flooded Dyn's managed DNS infrastructure, taking down Twitter, Netflix, Reddit, and GitHub across the US East Coast. The attack used DNS water torture – random subdomain queries to bypass caching.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">GitHub Memcached Amplification (2018) – 1.35 Tbps</h3>
+      <p>Attackers exploited misconfigured Memcached servers with a 51,000× amplification factor. GitHub's DDoS protection (Akamai Prolexic) quickly rerouted traffic to scrubbing centers, mitigating the attack in under 10 minutes.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Cloudflare HTTP/2 Rapid Reset (2023) – 398M rps</h3>
+      <p>The largest ever recorded application‑layer attack. Exploited HTTP/2 stream cancellation to overwhelm Cloudflare's edge servers. Cloudflare mitigated using targeted configuration changes and upstream collaboration.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Google DDoS Defense (2020) – 2.54 Tbps</h3>
+      <p>A state‑sponsored actor launched a multi‑vector attack combining HTTP floods, DNS floods, and TCP SYN floods. Google's global load‑balancing and Maglev infrastructure absorbed it without service interruption.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Lessons from Every Incident</h3>
+      <p>Anycast, real‑time monitoring, pre‑planned BGP blackholing, and kernel‑level filtering (XDP) are essential. Never rely on a single layer of defense.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MINDSET TAB ========== -->
+<div class="tab-content" id="tab-mindset">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧠 The Network War Researcher's Mindset</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">“What resource is being exhausted?”</h3>
+      <p>Always identify the bottleneck: SYN queue, conntrack table, thread pool, DB connections, upstream bandwidth. The entire attack vector is chosen to saturate that specific resource.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">“What happens under partial exhaustion?”</h3>
+      <p>Systems degrade gracefully or collapse catastrophically. Test your infrastructure by incrementally increasing load until failure. Understand the shape of the degradation curve.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">“What assumptions does the protocol make?”</h3>
+      <p>TCP assumes clients are honest. QUIC assumes connection migration is rare. DNS assumes queries are legitimate. Break those assumptions and the protocol fails.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">The Network Warrior's Golden Rule</h3>
+      <p>Defense is asymmetric: you must be right every time; an attacker only needs to succeed once. Design for resilience, not perfection. Practice chaos engineering.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ADVANCED DEFENSE TAB ========== -->
+<div class="tab-content" id="tab-defense">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🛡️ Advanced Hyperscale Defense Engineering</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">XDP Filtering & DPDK Mitigation</h3>
+      <p>Drop malicious packets at the NIC level with XDP programs. Use DPDK to process good traffic in userspace at line rate. These techniques allow 100+ Gbps mitigation on a single commodity server.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Adaptive Rate Limiting & ML Detection</h3>
+      <p>Use algorithms like leaky bucket and token bucket. Machine learning models detect attacks in real time by analyzing entropy, packet inter‑arrival times, and header patterns. Combine with behavioral fingerprinting.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Autonomous Mitigation Pipelines</h3>
+      <p>Integrate attack detection (NetFlow, Zeek) with automated BGP Flowspec announcements to instantly drop attack traffic. Close the loop between detection and mitigation in under 10 seconds.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Challenge‑Response & Proof‑of‑Work</h3>
+      <p>Use cryptographic puzzles (like Cloudflare's "I Am Under Attack" mode) to force clients to solve a problem before connecting. This slows down botnets but also annoys legitimate users.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== LABS TAB ========== -->
+<div class="tab-content" id="tab-labs">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧪 DDoS Research & Simulation Labs</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">TCP SYN Backlog Exhaustion Lab</h3>
+      <p>Set up a local nginx server. Use hping3 to flood it with SYN packets and observe the backlog filling (<code>ss -s</code>). Enable SYN cookies and see the difference.</p>
+      <div class="code-block"><pre>ss -s
+sysctl -w net.ipv4.tcp_syncookies=1</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">QUIC/HTTP3 Traffic Analysis Lab</h3>
+      <p>Capture a QUIC handshake with <code>tcpdump</code> and analyse it in Wireshark. Understand connection IDs and migration. Experiment with a local QUIC server using <code>quiche</code> or <code>lsquic</code>.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Anycast Simulation Lab</h3>
+      <p>Deploy multiple VMs with the same IP address using loopback and advertise with a software BGP speaker (<code>bird</code>). Test how traffic is distributed and what happens when one node fails.</p>
+      <div class="code-block"><pre>apt install bird
+# Configure Anycast loopback and BGP</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Zeek Detection & NetFlow Anomaly Lab</h3>
+      <p>Install Zeek, generate attack traffic with hping3, and write Zeek scripts to detect SYN floods or DNS amplification. Visualise with Elasticsearch or Grafana.</p>
+      <div class="code-block"><pre>zeek -C -r attack.pcap detection.zeek</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">XDP Filtering Practice</h3>
+      <p>Write a simple XDP program to drop UDP packets on port 80. Compile with clang, load with <code>ip link set dev eth0 xdp obj prog.o</code>. Measure throughput with pktgen.</p>
+      <div class="code-block"><pre>clang -O2 -target bpf -c xdp_drop.c -o xdp_drop.o
+ip link set dev eth0 xdp obj xdp_drop.o</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Lab Safety Rule</h3>
+      <p>All DDoS experiments must be conducted in isolated, air‑gapped environments. Never test against live systems without explicit permission. The internet does not forgive accidental floods.</p>
+    </div>
+  </div>
+</div>

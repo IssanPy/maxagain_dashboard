@@ -1,0 +1,157 @@
+<!-- MY TOOLS – MaxMap Arsenal -->
+<div class="tools-section-container">
+  <div class="glitch-wrapper">
+    <h1 class="glitch-tools-title" data-text="MAXMAP">MAXMAP</h1>
+  </div>
+
+  <p class="tools-tagline">
+    ⚡ Automated Reconnaissance Pipeline<br>
+    <span class="tools-sub">Zero-interruption · Production-grade · 100% Bash</span>
+  </p>
+
+  <!-- MaxMap Card -->
+  <div class="maxmap-card glass-card">
+    <div class="card-header">
+      <i class="fas fa-terminal card-icon"></i>
+      <span class="card-version">v1.0 PRO</span>
+    </div>
+    <div class="card-body">
+      <p>Subdomain discovery, port scanning, JS harvesting, parameter mining, live probing – all in one command.</p>
+      <div class="code-block relative">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText(`git clone https://github.com/IssanPy/MAXMAP.git && cd MAXMAP && chmod +x maxmap.sh && ./maxmap.sh example.com`)">📋</button>
+        <pre>git clone https://github.com/IssanPy/MAXMAP.git
+cd MAXMAP
+chmod +x maxmap.sh
+./maxmap.sh example.com</pre>
+      </div>
+      <a href="https://github.com/IssanPy/MAXMAP" target="_blank" class="cta-button maxmap-btn">
+        <i class="fab fa-github"></i> Fork the Recon
+      </a>
+    </div>
+  </div>
+
+  <!-- Placeholder for future tools -->
+  <div class="future-tools glass-card">
+    <p><i class="fas fa-flask"></i> More tools dropping soon…</p>
+  </div>
+</div>
+
+<style>
+  /* Container */
+  .tools-section-container {
+    padding: 2rem;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Glitch title */
+  .glitch-wrapper { margin-bottom: 1.5rem; }
+  .glitch-tools-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--neon-green);
+    text-shadow: 0 0 20px var(--neon-green);
+    position: relative;
+    display: inline-block;
+  }
+  .glitch-tools-title::before,
+  .glitch-tools-title::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+  }
+  .glitch-tools-title::before {
+    color: #ff0044;
+    animation: glitchTools 0.2s infinite alternate-reverse;
+  }
+  .glitch-tools-title::after {
+    color: #00ffff;
+    animation: glitchTools 0.25s infinite alternate;
+  }
+  @keyframes glitchTools {
+    0% { transform: translate(0); }
+    20% { transform: translate(-4px, 4px); }
+    40% { transform: translate(4px, -4px); }
+    60% { transform: translate(-2px, -2px); }
+    80% { transform: translate(2px, 2px); }
+    100% { transform: translate(0); }
+  }
+
+  .tools-tagline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.3rem;
+    color: #ccc;
+    text-align: center;
+    margin: 0.5rem 0 2rem;
+    line-height: 1.6;
+  }
+  .tools-sub {
+    color: #5ee0fa;
+    font-size: 0.9rem;
+  }
+
+  /* MaxMap card */
+  .maxmap-card {
+    max-width: 700px;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px dashed var(--neon-green);
+  }
+  .card-icon {
+    font-size: 2rem;
+    color: var(--neon-green);
+  }
+  .card-version {
+    font-family: 'JetBrains Mono', monospace;
+    color: #aaa;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+  .card-body p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #ddd;
+  }
+
+  .maxmap-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--neon-green), var(--neon-blue));
+    color: black;
+    font-weight: bold;
+    border-radius: 60px;
+    box-shadow: 0 0 25px var(--neon-green);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+  }
+  .maxmap-btn:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 40px var(--neon-green);
+  }
+
+  .future-tools {
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    color: #888;
+    opacity: 0.7;
+  }
+</style>

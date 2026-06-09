@@ -1,0 +1,683 @@
+<!-- Cryptography – The Cipher Temple Academy -->
+<h2 class="section-title">🔐 Cryptography – The Cipher Temple Academy</h2>
+
+<div class="server-tabs" id="crypto-tabs">
+  <div class="server-btn active" data-tab="intro">Intro</div>
+  <div class="server-btn" data-tab="cryptanalysis">Cryptanalysis</div>
+  <div class="server-btn" data-tab="sidechannel">Side‑Channel</div>
+  <div class="server-btn" data-tab="rng">RNG Failures</div>
+  <div class="server-btn" data-tab="tls">TLS & HTTPS</div>
+  <div class="server-btn" data-tab="protocols">Protocol Failures</div>
+  <div class="server-btn" data-tab="rsa-attacks">RSA Attacks</div>
+  <div class="server-btn" data-tab="ecc-attacks">ECC Attacks</div>
+  <div class="server-btn" data-tab="pqc">Post‑Quantum</div>
+  <div class="server-btn" data-tab="blockchain">Blockchain Crypto</div>
+  <div class="server-btn" data-tab="zkp">Zero‑Knowledge</div>
+  <div class="server-btn" data-tab="password">Password Storage</div>
+  <div class="server-btn" data-tab="hardware">Hardware Crypto</div>
+  <div class="server-btn" data-tab="hashing">Advanced Hashing</div>
+  <div class="server-btn" data-tab="mac">MAC & Auth</div>
+  <div class="server-btn" data-tab="aead">Authenticated Encryption</div>
+  <div class="server-btn" data-tab="protocol-design">Protocol Design</div>
+  <div class="server-btn" data-tab="certificates">Certificates</div>
+  <div class="server-btn" data-tab="messaging">Secure Messaging</div>
+  <div class="server-btn" data-tab="implementation">Implementation Security</div>
+  <div class="server-btn" data-tab="tools">Tools</div>
+  <div class="server-btn" data-tab="cases">Real‑World Breaches</div>
+  <div class="server-btn" data-tab="mindset">Mindset</div>
+  <div class="server-btn" data-tab="defense">Defense</div>
+  <div class="server-btn" data-tab="labs">Labs</div>
+</div>
+
+<!-- ========== INTRO TAB ========== -->
+<div class="tab-content active" id="tab-intro">
+  <div class="hero-container" style="text-align:center; padding-top:2rem;">
+    <h1 class="hero-title" style="font-size:3.5rem;">WELCOME TO THE <span class="text-cyber-red">CIPHER TEMPLE</span></h1>
+    <p class="hero-subtitle" style="font-size:1.3rem; color:#5ee0fa; margin-bottom:2rem;">
+      Cryptography isn't magic—it's engineering under adversarial pressure. From padding oracles to lattice attacks, from TLS decryption to nonce reuse catastrophes, this academy teaches you how real‑world systems break.
+    </p>
+  </div>
+
+  <div class="tools-grid" style="margin-top:2rem;">
+    <div class="glass-card text-center"><h2 class="text-neon-green" style="font-size:2.5rem;">Heartbleed</h2><p>Memory Leak<br><span style="font-size:0.8rem; opacity:0.7;">TLS heartbeat overflow</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-neon-blue" style="font-size:2.5rem;">POODLE</h2><p>Downgrade Attack<br><span style="font-size:0.8rem; opacity:0.7;">SSLv3 padding oracle</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-cyber-red" style="font-size:2.5rem;">BEAST</h2><p>Chosen Plaintext<br><span style="font-size:0.8rem; opacity:0.7;">CBC IV weakness</span></p></div>
+    <div class="glass-card text-center"><h2 class="text-neon-green" style="font-size:2.5rem;">Nonce Reuse</h2><p>Total Collapse<br><span style="font-size:0.8rem; opacity:0.7;">ECDSA/stream cipher doom</span></p></div>
+  </div>
+
+  <div class="sub-section" style="margin-top:3rem;">
+    <div class="glass-card">
+      <h3 class="text-neon-blue" style="font-size:1.6rem;">📋 Today’s Cipher Agenda</h3>
+      <ul style="list-style:none; padding:0; font-size:1.1rem;">
+        <li>✅ <span class="text-neon-green">Cryptanalysis & Side‑Channel</span> – Differential, timing, power, cache, fault injection.</li>
+        <li>✅ <span class="text-neon-green">RNG, TLS, Protocol Failures</span> – Entropy collapse, Heartbleed, POODLE, CRIME, BREACH.</li>
+        <li>✅ <span class="text-neon-green">RSA & ECC Attacks</span> – Wiener, Boneh‑Durfee, Bleichenbacher, invalid curve, nonce reuse.</li>
+        <li>✅ <span class="text-neon-green">Post‑Quantum & Blockchain</span> – Kyber, Dilithium, wallet derivation, secp256k1, Merkle trees.</li>
+        <li>✅ <span class="text-neon-green">Zero‑Knowledge, Password Storage, Hardware</span> – zk‑SNARKs, Argon2, TPMs, YubiKeys.</li>
+        <li>✅ <span class="text-neon-green">Hashing, MAC, AEAD, Protocol Design</span> – Length extension, HMAC, GCM, key exchange.</li>
+        <li>✅ <span class="text-neon-green">Certificates, Messaging, Implementation</span> – X.509, Signal Protocol, constant‑time code.</li>
+        <li>✅ <span class="text-neon-green">Tools, Cases, Mindset, Defense, Labs</span> – SageMath, Wireshark, padding oracle, CTF challenges.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="text-align:center; margin-top:2rem; font-size:0.9rem; color:#888;">
+    <span class="text-cyber-red">Warning:</span> Cryptographic attacks are for ethical research, CTF competitions, and authorised penetration tests. Exploiting real systems without permission is illegal.
+  </p>
+</div>
+
+<!-- ========== CRYPTANALYSIS TAB ========== -->
+<div class="tab-content" id="tab-cryptanalysis">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔍 Modern Cryptanalysis – Breaking the Math</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Differential & Linear Cryptanalysis</h3>
+      <p>Differential cryptanalysis studies how differences in plaintext pairs propagate through a cipher to find correlations with the key. Linear cryptanalysis approximates non‑linear components with linear functions, then solves for key bits. Both were discovered by academic researchers—not intelligence agencies—and forced a massive redesign of symmetric ciphers.</p>
+      <div class="code-block"><pre># Differential analysis concept (simplified)
+# For a block cipher, we feed many chosen plaintext pairs with known input differences
+# and observe output differences. A high‑probability path leaks key info.
+for (p1, p2) in pairs:
+    if (p1 XOR p2) == delta_input:
+        count output differences; pick key with highest bias</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Biclique, Slide, and Meet‑in‑the‑Middle</h3>
+      <p>Biclique attacks break full‑round AES with a slight complexity improvement. Slide attacks exploit identical round functions. Meet‑in‑the‑middle splits the cipher in half, computing from both ends and matching in the middle. These are not practical yet, but they reduce the security margin.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SIDE‑CHANNEL TAB ========== -->
+<div class="tab-content" id="tab-sidechannel">
+  <div class="sub-section">
+    <h2 class="sub-section-title">⚡ Side‑Channel Attacks – Leaking Through Physics</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Timing & Cache Attacks</h3>
+      <p>If an RSA decryption takes slightly different time based on the key bit, an attacker can measure those nanoseconds and recover the private key. Cache attacks (Flush+Reload, Prime+Probe) spy on the CPU cache to see which AES S‑box entries are accessed, revealing the key.</p>
+      <div class="code-block"><pre># Simple timing oracle (pseudocode)
+def check_bit(key_bit):
+    start = time()
+    decrypt_with_bit(ciphertext, key_bit)
+    return time() - start</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Power Analysis & Fault Injection</h3>
+      <p>Simple Power Analysis (SPA) and Differential Power Analysis (DPA) measure power consumption during encryption. Fault injection (voltage glitching, EM pulses) flips bits in the computation, causing errors that reveal the key. These techniques have broken smart cards, TPMs, and even hardware wallets.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Real‑World Example: Meltdown & Spectre</h3>
+      <p>Speculative execution in CPUs can leak kernel memory across security boundaries. While not strictly cryptographic, these attacks demonstrated that hardware assumptions about isolation are fundamentally broken.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== RNG FAILURES TAB ========== -->
+<div class="tab-content" id="tab-rng">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🎲 Random Number Generator Catastrophes</h2>
+    <div class="glass-card">
+      <h3 class="text-cyber-red">The Debian OpenSSL Bug (2008)</h3>
+      <p>A Debian maintainer removed a line of code that seeded the OpenSSL PRNG with uninitialised memory, reducing the entropy to just 15 bits. Every SSH key, SSL certificate, and DSA signature generated on Debian‑based systems for two years was trivially brute‑forceable.</p>
+      <div class="code-block"><pre># Check for weak Debian SSH keys
+ssh-vulnkey /etc/ssh/ssh_host_rsa_key</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Android Bitcoin Wallet Nonce Reuse</h3>
+      <p>In 2013, several Android Bitcoin wallets reused the same nonce (random k) for ECDSA signatures due to a flawed RNG. This allowed attackers to recover the private key from two transactions with the same k. Over 55 BTC were stolen before the vulnerability was fixed.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Entropy Starvation in VMs & IoT</h3>
+      <p>Virtual machines and embedded devices often boot with insufficient entropy. If a device generates an RSA key immediately after boot, the key can be predicted. Always use hardware‑backed RNGs (like Intel RDRAND or ARM TRNG) and seed with multiple entropy sources.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TLS & HTTPS TAB ========== -->
+<div class="tab-content" id="tab-tls">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔒 TLS & HTTPS – The Complete Dissection</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">TLS 1.3 Handshake</h3>
+      <p>Client sends a ClientHello with supported cipher suites and a key share (ECDHE). Server responds with ServerHello, certificate, and its own key share. Both derive session keys via HKDF. Forward secrecy is mandatory. No more RSA key transport — all ephemeral DH.</p>
+      <div class="code-block"><pre># Test TLS 1.3 support
+openssl s_client -connect example.com:443 -tls1_3</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Downgrade Attacks & Cipher Suite Selection</h3>
+      <p>FREAK and Logjam forced servers to use weak export‑grade encryption. BEAST exploited CBC IV predictability. Always enforce strong cipher suites and disable legacy protocols.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Certificate Transparency & OCSP Stapling</h3>
+      <p>Certificate Transparency logs all issued certificates, allowing domain owners to detect rogue certificates. OCSP stapling allows the server to provide a pre‑signed certificate status, eliminating the need for the client to query the CA.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Heartbleed (2014)</h3>
+      <p>An OpenSSL bug allowed attackers to read up to 64KB of server memory by sending a malicious TLS heartbeat request. This leaked private keys, session cookies, and passwords. It was patched within days, but not before millions of servers were exposed.</p>
+      <div class="code-block"><pre># Heartbleed test (metasploit)
+use auxiliary/scanner/ssl/openssl_heartbleed
+set RHOSTS target.com
+run</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PROTOCOL FAILURES TAB ========== -->
+<div class="tab-content" id="tab-protocols">
+  <div class="sub-section">
+    <h2 class="sub-section-title">💀 Legendary Cryptographic Protocol Failures</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">POODLE (Padding Oracle On Downgraded Legacy Encryption) – 2014</h3>
+      <p>Attackers forced a connection to use SSLv3, then exploited a padding oracle in CBC mode to decrypt cookies one byte at a time. Solution: disable SSLv3 entirely.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">CRIME & BREACH – Compression Oracles</h3>
+      <p>If HTTP compression is enabled, the length of the encrypted response depends on the plaintext. By injecting guesses into the request and measuring response size, attackers can recover secrets like CSRF tokens or session cookies.</p>
+      <div class="code-block"><pre># Concept: inject "Cookie: session=GUESS" and observe response length
+# If GUESS is correct, compression reduces size.</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Lucky13 & ROBOT Attack</h3>
+      <p>Lucky13 exploited timing differences in CBC‑mode decryption padding checks. ROBOT (Return Of Bleichenbacher's Oracle Threat) revived the 1998 Bleichenbacher attack against RSA PKCS#1 v1.5 encryption. Both allowed private key recovery.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Log4Shell – Crypto Implications</h3>
+      <p>While not crypto‑specific, Log4Shell (CVE‑2021‑44228) leaked environment variables containing AWS secrets and private keys. Crypto systems are only as strong as the infrastructure around them.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ADVANCED RSA ATTACKS TAB ========== -->
+<div class="tab-content" id="tab-rsa-attacks">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧠 Advanced RSA Attacks – Beyond Textbook RSA</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Wiener's Attack (Small Private Exponent)</h3>
+      <p>If the private exponent d is less than n<sup>1/4</sup>, it can be recovered efficiently using continued fractions. This is why d must be large, even if e is small.</p>
+      <div class="code-block"><pre># Wiener's attack using RsaCtfTool
+python3 RsaCtfTool.py -n N -e E --attack wiener</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Boneh‑Durfee & Coppersmith Attacks</h3>
+      <p>Boneh‑Durfee extends Wiener's bound to d < n<sup>0.292</sup>. Coppersmith's method finds small roots of modular polynomials, enabling attacks when the high bits of a factor are known or when the encryption exponent is very small with a short message.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Bleichenbacher's Padding Oracle</h3>
+      <p>When a server responds differently to correctly vs. incorrectly padded RSA ciphertexts (PKCS#1 v1.5), an attacker can send millions of modified ciphertexts to decrypt a target ciphertext without the private key. This attack has repeatedly resurfaced (ROBOT, 2018).</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">CRT Fault Injection</h3>
+      <p>If a hardware fault causes a single error during RSA‑CRT decryption, the resulting faulty signature reveals the private key in a single computation.</p>
+      <div class="code-block"><pre># Faulty signature s' (if error in one branch)
+q = gcd(s'^e - m, N)</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ECC ATTACKS TAB ========== -->
+<div class="tab-content" id="tab-ecc-attacks">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🌀 Elliptic Curve Cryptanalysis</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Invalid Curve Attack</h3>
+      <p>If the implementation doesn't verify that a point lies on the correct curve, an attacker can send a point on a different, weaker curve and recover the private key through repeated queries. This requires the server to compute scalar multiplication with the attacker's point.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Nonce Reuse (ECDSA)</h3>
+      <p>If the same ephemeral key k is used to sign two different messages, anyone can compute the private key:</p>
+      <div class="code-block"><pre># Given (r, s1) and (r, s2) with same k
+k = (z1 - z2) * (s1 - s2)^(-1) mod n
+d = (s1*k - z1) * r^(-1) mod n</pre></div>
+      <p>This is how Sony PlayStation 3 keys were extracted in 2010, permanently breaking its security.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Pollard's Rho & Pohlig‑Hellman</h3>
+      <p>Pollard's rho solves ECDLP in O(√n) time. If the curve order has small factors, Pohlig‑Hellman decomposes the problem into smaller, solvable pieces.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== POST‑QUANTUM TAB ========== -->
+<div class="tab-content" id="tab-pqc">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔮 Post‑Quantum Cryptography – The Next War</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Shor's Algorithm & the Quantum Threat</h3>
+      <p>A sufficiently large quantum computer running Shor's algorithm can factor RSA and solve discrete logs in polynomial time, completely breaking RSA, DSA, and ECDSA. Grover's algorithm reduces symmetric key security by half (AES‑256 → effectively 128‑bit).</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">NIST PQC Finalists</h3>
+      <p>Kyber (lattice‑based KEM) and Dilithium (lattice‑based signatures) are the primary recommended replacements for key exchange and digital signatures. Falcon (also lattice‑based) and SPHINCS+ (hash‑based) are alternatives. TLS 1.3 now supports hybrid key exchange with these algorithms.</p>
+      <div class="code-block"><pre># OpenSSL with OQS provider (conceptual)
+openssl s_client -connect example.com:443 -curves kyber512:x25519</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Hash‑Based & Code‑Based Schemes</h3>
+      <p>SPHINCS+ (stateless hash‑based signatures) offers extreme security but large signature sizes. Classic McEliece (code‑based) has tiny ciphertexts but massive public keys. These are backups in case lattice assumptions fail.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== BLOCKCHAIN CRYPTO TAB ========== -->
+<div class="tab-content" id="tab-blockchain">
+  <div class="sub-section">
+    <h2 class="sub-section-title">⛓️ Blockchain Cryptography – The Trust Machine</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Secp256k1 & Bitcoin Signatures</h3>
+      <p>Bitcoin uses the secp256k1 curve (not secp256r1 used by NIST). Every transaction is an ECDSA signature. The public key is hashed (SHA‑256 → RIPEMD‑160) to create an address. HD wallets derive child keys from a master seed using HMAC‑SHA512.</p>
+      <div class="code-block"><pre># Derive a Bitcoin address from private key (simplified)
+private_key = 0x0123456789abcdef...
+public_key = scalar_mult(private_key, G)  # ECDSA point
+address = base58(ripemd160(sha256(public_key)))</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Merkle Trees & zk‑Rollups</h3>
+      <p>Merkle trees commit to a large set of transactions with a single root hash. Zero‑knowledge rollups (zk‑rollups) use SNARKs to prove that a batch of transactions is valid, compressing the on‑chain data by 100x.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Smart Contract Signature Pitfalls</h3>
+      <p>Improper signature verification in smart contracts (e.g., missing ecrecover validation) can allow attackers to forge authorisations and drain funds. Always verify that the recovered address matches the expected signer.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ZERO‑KNOWLEDGE TAB ========== -->
+<div class="tab-content" id="tab-zkp">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🕶️ Zero‑Knowledge Proofs – Proving Without Revealing</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">zk‑SNARKs & Fiat‑Shamir</h3>
+      <p>zk‑SNARKs (Zero‑Knowledge Succinct Non‑interactive ARguments of Knowledge) allow a prover to demonstrate knowledge of a secret without revealing it. The Fiat‑Shamir heuristic transforms an interactive proof into a non‑interactive one using a hash function.</p>
+      <div class="code-block"><pre># Toy example: proving you know x such that g^x = y (Schnorr protocol)
+t = random(); R = g^t
+challenge = Hash(R)
+response = t + challenge * x mod q
+# Verify: g^response == R * y^challenge</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Bulletproofs & Range Proofs</h3>
+      <p>Bulletproofs are short zero‑knowledge proofs for range statements (e.g., proving a committed value is in [0, 2^n]) without a trusted setup. Used in Monero for confidential transactions.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Vulnerabilities: Trusted Setup & Implementation Bugs</h3>
+      <p>If the toxic waste from a SNARK trusted setup is not destroyed, anyone can forge proofs. Implementation bugs (e.g., missing input checks) can allow attackers to generate fake proofs and steal funds. Audit ZKP circuits like any other critical code.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PASSWORD STORAGE TAB ========== -->
+<div class="tab-content" id="tab-password">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔐 Password Hashing & Cracking Engineering</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Argon2 – The Memory‑Hard Champion</h3>
+      <p>Argon2id is the winner of the Password Hashing Competition. It combines time, memory, and parallelism resistance to defeat GPU brute‑forcing. Use it everywhere: web apps, mobile apps, and disk encryption.</p>
+      <div class="code-block"><pre># Python: argon2‑cffi
+from argon2 import PasswordHasher
+ph = PasswordHasher()
+hash = ph.hash("correct horse battery staple")</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Rainbow Tables & Salting</h3>
+      <p>A rainbow table is a precomputed lookup table of hashes → passwords. A random salt makes every password unique, rendering rainbow tables useless. Peppering (a secret key added to all hashes) provides an additional layer against database leaks.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">GPU Cracking with hashcat</h3>
+      <p>Modern GPUs (RTX 4090) can test 164 billion MD5 hashes per second. bcrypt is slower (~30k H/s), Argon2 is even slower (~1k H/s). Choose algorithms that make cracking economically infeasible.</p>
+      <div class="code-block"><pre>hashcat -m 3200 -a 0 hash.txt rockyou.txt   # bcrypt</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== HARDWARE CRYPTO TAB ========== -->
+<div class="tab-content" id="tab-hardware">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🔧 Hardware Cryptography – Chips, TPMs, and YubiKeys</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">TPM & Trusted Execution Environments</h3>
+      <p>Trusted Platform Modules store keys and perform crypto operations in a tamper‑resistant chip. Intel SGX and Arm TrustZone create isolated execution environments. These protect keys even if the OS is compromised.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">YubiKeys & FIDO2 / WebAuthn</h3>
+      <p>Hardware security keys use asymmetric cryptography for multi‑factor authentication. The private key never leaves the device. FIDO2 provides phishing‑resistant authentication. Store your SSH and PGP keys on a YubiKey for ultimate protection.</p>
+      <div class="code-block"><pre># Generate an SSH key on a YubiKey
+ssh-keygen -t ecdsa-sk -f ~/.ssh/id_ecdsa_sk</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">HSMs & PKCS#11 Abuse</h3>
+      <p>Hardware Security Modules (HSMs) are used by banks and cloud providers. Misconfigured PKCS#11 interfaces can leak keys or allow unauthorized operations. Attacks on HSM firmware are an elite research field.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ADVANCED HASHING TAB ========== -->
+<div class="tab-content" id="tab-hashing">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧪 Advanced Hashing & Sponge Constructions</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Length Extension Attacks (SHA‑256)</h3>
+      <p>SHA‑256 uses the Merkle‑Damgård construction. Given H(m) and len(m), an attacker can compute H(m || padding || append) without knowing m. This breaks naive MAC constructions like H(secret || message). Use HMAC instead.</p>
+      <div class="code-block"><pre># HashPump: length extension attack
+hashpump -s 'original_hash' -d 'original_data' -a 'append_data' -k key_length</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">SHA‑3 (Keccak) & BLAKE3</h3>
+      <p>SHA‑3 uses a sponge construction, immune to length extension. BLAKE3 is a modern tree‑based hash function that is faster than SHA‑256 and supports parallel hashing. Use SHA‑3 or BLAKE3 in new designs.</p>
+      <div class="code-block"><pre># Python: hashlib.blake2b
+import hashlib
+h = hashlib.blake2b(b"message", digest_size=32).hexdigest()</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Hash Flooding Attacks</h3>
+      <p>If an application uses a hash table with a weak hash function (e.g., Python's built‑in hash for strings), an attacker can create thousands of collisions, degrading performance to O(n) per insert and causing a denial of service.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MAC & AUTH TAB ========== -->
+<div class="tab-content" id="tab-mac">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📜 Message Authentication Codes & Replay Protection</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">HMAC – The Standard</h3>
+      <p>HMAC = H(key XOR opad || H(key XOR ipad || message)). It provides integrity and authenticity, even with a weak hash function. Never use H(key || message) — it's vulnerable to length extension.</p>
+      <div class="code-block"><pre># Python HMAC‑SHA256
+import hmac, hashlib
+tag = hmac.new(key, message, hashlib.sha256).hexdigest()</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Poly1305 & CMAC</h3>
+      <p>Poly1305 is a fast, constant‑time MAC used with ChaCha20. CMAC is a block‑cipher‑based MAC for AES. Both are secure when implemented correctly.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Replay Attacks & Nonce Management</h3>
+      <p>MACs alone don't prevent replay. Always include a unique nonce or timestamp in the authenticated data. TLS uses sequence numbers. Payment protocols use cryptographic nonces. Replay a valid MAC without context and you can transfer money twice.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== AUTHENTICATED ENCRYPTION TAB ========== -->
+<div class="tab-content" id="tab-aead">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🛡️ Authenticated Encryption (AEAD)</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">AES‑GCM & ChaCha20‑Poly1305</h3>
+      <p>GCM (Galois/Counter Mode) encrypts and authenticates in one pass. ChaCha20‑Poly1305 is faster on mobile devices without AES‑NI. Both provide confidentiality, integrity, and authenticity. Never use encryption without authentication — it leads to padding oracle attacks.</p>
+      <div class="code-block"><pre># Python: AES‑GCM
+from Crypto.Cipher import AES
+cipher = AES.new(key, AES.MODE_GCM, nonce=nonce)
+ciphertext, tag = cipher.encrypt_and_digest(plaintext)</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Nonce Reuse in GCM is Fatal</h3>
+      <p>If the same key and nonce are used twice, the XOR of the two plaintexts is revealed, and the authentication key is compromised, allowing forgery of any ciphertext. Always use a cryptographically random nonce or a hardware counter.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Misuse‑Resistant AEAD</h3>
+      <p>Algorithms like AES‑GCM‑SIV and Deoxys‑II are resistant to nonce reuse — they degrade to nonce‑misuse resistance rather than catastrophic failure. Use them in environments where nonce uniqueness is hard to guarantee.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PROTOCOL DESIGN TAB ========== -->
+<div class="tab-content" id="tab-protocol-design">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🏗️ Cryptographic Protocol Design & State Machines</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Key Exchange, Replay Prevention, and Forward Secrecy</h3>
+      <p>A secure protocol must: 1) establish a shared secret via authenticated key exchange (e.g., ECDHE), 2) prevent replay attacks with unique session identifiers, 3) provide forward secrecy so past sessions are safe even if long‑term keys are later compromised.</p>
+      <div class="code-block"><pre># TLS 1.3 session key derivation (conceptual)
+early_secret = HKDF(0, PSK)
+handshake_secret = HKDF(early_secret, DH_shared)
+master_secret = HKDF(handshake_secret, 0)
+session_keys = HKDF(master_secret, transcript_hash)</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Challenge‑Response Systems & State Machines</h3>
+      <p>A challenge (random nonce) sent by the verifier ensures freshness. A response proves possession of the secret key. Model protocols as state machines; any missing transition can be a vulnerability (e.g., accepting a response without a preceding challenge).</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CERTIFICATES TAB ========== -->
+<div class="tab-content" id="tab-certificates">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📜 X.509 Certificates & PKI – The Web’s Trust Backbone</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Certificate Chains & Validation</h3>
+      <p>A certificate is signed by a Certificate Authority (CA). Browsers trust root CAs, which sign intermediate CAs, which sign end‑entity certificates. Validation checks: expiration, revocation (CRL/OCSP), domain match, and chain of trust. Any failure can be exploited.</p>
+      <div class="code-block"><pre># View certificate chain
+openssl s_client -connect example.com:443 -showcerts</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Rogue & Mis‑issued Certificates</h3>
+      <p>If a CA is compromised (e.g., DigiNotar 2011), attackers can issue fake certificates for any domain. Certificate Transparency (CT) logs all issued certs, allowing domain owners to monitor for mis‑issuance. Always require CT for TLS certificates.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">mTLS (Mutual TLS)</h3>
+      <p>In mTLS, both client and server present certificates. Used for service‑to‑service authentication in zero‑trust architectures. Client certificates provide strong machine identity, eliminating the need for API keys.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SECURE MESSAGING TAB ========== -->
+<div class="tab-content" id="tab-messaging">
+  <div class="sub-section">
+    <h2 class="sub-section-title">💬 Secure Messaging – Signal Protocol & Double Ratchet</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">X3DH (Extended Triple Diffie‑Hellman)</h3>
+      <p>X3DH establishes a shared secret between two parties who may be offline. It combines long‑term identity keys with ephemeral keys for forward secrecy. The result is a master secret that seeds the Double Ratchet.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Double Ratchet Algorithm</h3>
+      <p>Each message advances a symmetric ratchet (using HMAC‑based KDF) and a DH ratchet (using new ephemeral keys). This provides forward secrecy (past messages safe if keys stolen) and post‑compromise security (future messages safe after key compromise). Used by Signal, WhatsApp, and Matrix.</p>
+      <div class="code-block"><pre># Simplified ratchet step
+root_key, chain_key = HKDF(root_key, dh_shared)
+message_key, chain_key = HKDF(chain_key, constant)</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Deniability & Session Management</h3>
+      <p>Signal provides deniability: message authentication codes are not digital signatures — they cannot be verified by a third party. Session state must be carefully managed to prevent replay attacks across network disruptions.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== IMPLEMENTATION SECURITY TAB ========== -->
+<div class="tab-content" id="tab-implementation">
+  <div class="sub-section">
+    <h2 class="sub-section-title">⚙️ Implementation Security – Constant‑Time & Side‑Channel‑Free Code</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Constant‑Time Comparisons</h3>
+      <p>Never use <code>memcmp</code> for secrets; it returns early on first byte difference, leaking position via timing. Use <code>CRYPTO_memcmp</code> (OpenSSL) or write a constant‑time loop that XORs all bytes and checks the final result.</p>
+      <div class="code-block"><pre>// Constant‑time comparison (simplified)
+int result = 0;
+for (size_t i = 0; i < len; i++) {
+    result |= a[i] ^ b[i];
+}
+return result == 0;</pre></div>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Compiler Optimizations Can Kill Security</h3>
+      <p>The compiler may remove "useless" zeroing of memory (dead store elimination). Use <code>volatile</code> or <code>explicit_bzero</code> to force memory clearing. Always test your binary with <code>checksec</code> and <code>valgrind</code>.</p>
+      <div class="code-block"><pre># Force memory wiping
+explicit_bzero(sensitive_data, sizeof(sensitive_data));</pre></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TOOLS TAB ========== -->
+<div class="tab-content" id="tab-tools">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧰 Elite Cryptanalysis Toolbox</h2>
+    <div class="tools-grid">
+      <div class="glass-card"><h3 class="text-neon-green">SageMath</h3><p>Symbolic math for crypto research</p><div class="code-block"><pre>sage: factor(123456789)</pre></div></div>
+      <div class="glass-card"><h3 class="text-neon-green">RsaCtfTool</h3><p>Automated RSA attacks</p><div class="code-block"><pre>python3 RsaCtfTool.py -n N -e E --attack all</pre></div></div>
+      <div class="glass-card"><h3 class="text-neon-green">hashcat / John Jumbo</h3><p>GPU password cracking</p><div class="code-block"><pre>hashcat -m 22000 hash.hc22000 rockyou.txt</pre></div></div>
+      <div class="glass-card"><h3 class="text-neon-green">testssl.sh / TLS‑Attacker</h3><p>TLS vulnerability scanning & attack simulation</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">Wireshark / tshark</h3><p>TLS decryption & protocol analysis</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">ChipWhisperer / Riscure</h3><p>Side‑channel analysis hardware</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">CrypTool / Cryptol</h3><p>Educational cryptanalysis & formal verification</p></div>
+      <div class="glass-card"><h3 class="text-neon-green">z3 Solver / Proverif</h3><p>Constraint solving & protocol verification</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== REAL‑WORLD BREACHES TAB ========== -->
+<div class="tab-content" id="tab-cases">
+  <div class="sub-section">
+    <h2 class="sub-section-title">📖 Real‑World Cryptographic Breaches Dissected</h2>
+
+    <div class="glass-card">
+      <h3 class="text-cyber-red">Heartbleed (2014) – OpenSSL Memory Leak</h3>
+      <p>A missing bounds check in the TLS heartbeat extension allowed reading 64KB chunks of server memory. Leaked private keys, session cookies, and user credentials. One of the most devastating crypto implementation bugs ever.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Sony PlayStation 3 (2010) – ECDSA Nonce Reuse</h3>
+      <p>Sony's bootloader used the same ECDSA nonce k for every signature. Attackers computed the private key from two signatures, gaining complete control over the console. The key is permanently compromised.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Debian OpenSSL (2006‑2008) – Predictable PRNG</h3>
+      <p>A Debian maintainer removed the only source of entropy in the OpenSSL PRNG while fixing a Valgrind warning. The result: all keys generated on Debian‑based systems for two years were predictable. Thousands of SSH and SSL keys were compromised.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Cloudflare Reverse Proxy Bug (2017) – Uninitialised Memory Leak</h3>
+      <p>A buffer overflow in Cloudflare's edge servers leaked uninitialised memory in HTTP responses. This memory contained private keys, cookies, and passwords from other Cloudflare customers. The bug was triggered by a specific HTML pattern.</p>
+    </div>
+
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Common Thread: Implementation, Not Algorithm</h3>
+      <p>In every case, the algorithm itself was secure. The implementation was broken. Crypto is only as strong as its weakest line of code. Audit your implementations, use vetted libraries, and never roll your own crypto.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MINDSET TAB ========== -->
+<div class="tab-content" id="tab-mindset">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧠 The Elite Cryptographer's Mindset</h2>
+
+    <div class="glass-card">
+      <h3 class="text-neon-blue">“Where does the randomness come from?”</h3>
+      <p>Every nonce, every session key, every IV relies on randomness. If the entropy source is weak (or missing), the entire system collapses. Always verify your RNG. Check for predictable seeds in embedded devices.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">“What if the nonce repeats?”</h3>
+      <p>A single repeated nonce in GCM, ECDSA, or stream ciphers can completely destroy security. Assume it will happen and design for it (e.g., misuse‑resistant AEAD, deterministic signatures).</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">“What leaks through the side channel?”</h3>
+      <p>Every physical implementation leaks: timing, power, cache, EM. Test your code on real hardware. Use constant‑time libraries. Assume the attacker has an oscilloscope.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">The Cryptographer's Golden Rule</h3>
+      <p>Never invent your own algorithm. Never implement your own primitives in production. Use libsodium, OpenSSL, or NIST‑approved libraries. Then try to break them in your lab.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DEFENSE TAB ========== -->
+<div class="tab-content" id="tab-defense">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🛡️ Cryptographic Defense & Modern Hardening</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">Secure Key Management & Rotation</h3>
+      <p>Store keys in HSMs, TPMs, or Secrets Managers (Vault, AWS KMS). Rotate keys automatically. Use per‑session keys with forward secrecy. Never hardcode keys in source code or configuration files.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Cryptographic Agility & PQC Migration</h3>
+      <p>Design systems to support algorithm upgrades. Test with hybrid schemes (classical + post‑quantum) during the transition. Start planning for PQC migration now; your encrypted data today will be decrypted by quantum computers tomorrow.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Audit, Fuzz, and Verify</h3>
+      <p>Use formal verification (ProVerif, Tamarin) for protocol designs. Fuzz your implementations with AFL or libFuzzer. Conduct regular penetration tests focusing on cryptographic boundaries (padding oracles, downgrade attacks, nonce mismanagement).</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== LABS TAB ========== -->
+<div class="tab-content" id="tab-labs">
+  <div class="sub-section">
+    <h2 class="sub-section-title">🧪 Cryptographic Attack Labs & CTF Challenges</h2>
+    <div class="glass-card">
+      <h3 class="text-neon-blue">CBC Padding Oracle Lab</h3>
+      <p>Set up a vulnerable server that leaks padding errors. Write a script that sends modified ciphertexts and decrypts the message byte‑by‑byte. This is the classic crypto attack; master it.</p>
+      <div class="code-block"><pre># Padding oracle concept (pseudocode)
+for guess in 0..255:
+    modified_ct = ct[:pos] + guess + ct[pos+1:]
+    if server says "padding valid":
+        plaintext[pos] = guess ^ 0x01 ^ original_ct[pos]</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">ECDSA Nonce Recovery Lab</h3>
+      <p>Sign two messages with the same nonce (intentionally). Use the formulas to recover the private key. This teaches why nonce uniqueness is sacred.</p>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Lattice Attack on RSA</h3>
+      <p>Use SageMath to implement Wiener's attack on a key with small d. Understand how continued fractions break RSA. Then try Boneh‑Durfee using LLL reduction.</p>
+      <div class="code-block"><pre>sage: d = wiener_attack(e, n)</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">TLS Handshake Analysis</h3>
+      <p>Capture a TLS 1.3 handshake with Wireshark. Extract the key share, verify the transcript hash, and derive the session keys manually. Use the pre‑master secret log from a browser to decrypt the traffic.</p>
+      <div class="code-block"><pre># Export SSLKEYLOGFILE in browser
+export SSLKEYLOGFILE=/tmp/ssl.log
+# Load in Wireshark: Edit → Preferences → TLS → (Pre)-Master-Secret log filename</pre></div>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-neon-blue">Cryptopals & CryptoHack</h3>
+      <p>The definitive hands‑on crypto learning paths. Implement and break crypto primitives from scratch. Solve challenges ranging from XOR cracking to lattice attacks.</p>
+      <a href="https://cryptopals.com/" target="_blank" class="text-neon-green">🔗 cryptopals.com</a> / <a href="https://cryptohack.org/" target="_blank" class="text-neon-green">🔗 cryptohack.org</a>
+    </div>
+    <div class="glass-card mt-3">
+      <h3 class="text-cyber-red">Lab Golden Rule</h3>
+      <p>All crypto attacks in this lab should be performed on intentionally vulnerable environments or in CTF competitions. Never test against live systems without explicit permission.</p>
+    </div>
+  </div>
+</div>
