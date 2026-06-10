@@ -134,6 +134,7 @@ h1 {
   padding: 2rem 1rem;
   z-index: 110;
   overflow-y: auto;
+  transition: transform 0.3s ease;
 }
 .sidebar-header {
   display: flex; align-items: center; gap: 12px; margin-bottom: 2rem;
@@ -321,39 +322,6 @@ h1 {
 ::-webkit-scrollbar { width: 8px; background: #050510; }
 ::-webkit-scrollbar-thumb { background: var(--neon-green); border-radius: 10px; box-shadow: 0 0 5px var(--neon-green); }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .sidebar { width: 200px; padding: 1.5rem 0.8rem; }
-  .main-content { padding: 1.5rem 2rem; }
-  .hero-title { font-size: 3rem; }
-}
-@media (max-width: 768px) {
-  .app-container { flex-direction: column; }
-  .sidebar {
-    width: 100%; height: auto;
-    flex-direction: row; flex-wrap: wrap;
-    padding: 0.8rem; overflow-y: visible;
-    border-right: none; border-bottom: 1px solid var(--neon-green);
-  }
-  .sidebar-header { display: none; }
-  .nav-main { flex-direction: row; flex-wrap: wrap; gap: 8px; }
-  .nav-item { padding: 8px 12px; font-size: 0.8rem; }
-  .hamburger-dropdown { width: 100%; }
-  .main-content { padding: 1rem; }
-  .hero-title { font-size: 2.5rem; }
-}
-.extra-links {
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.extra-links.active {
-  display: flex;
-}
-.tab-content { display: none; }
-.tab-content.active { display: block; }
 /* ========== HOME PAGE EXTRA STYLES ========== */
 .site-desc {
   font-family: 'Orbitron', monospace;
@@ -418,4 +386,149 @@ h1 {
 }
 #home-section {
   padding-top: 8rem;
+}
+
+.extra-links {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.extra-links.active {
+  display: flex;
+}
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* =====================================================
+   🚀 RESPONSIVE MAGIC – TABLETS & PHONES
+   ===================================================== */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+    padding: 1.5rem 0.8rem;
+  }
+  .main-content {
+    padding: 1.5rem 2rem;
+  }
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Stack layout vertically */
+  .app-container {
+    flex-direction: column;
+  }
+  /* Sidebar becomes a top horizontal bar */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0.8rem;
+    overflow-y: visible;
+    border-right: none;
+    border-bottom: 1px solid var(--neon-green);
+    align-items: center;
+  }
+  .sidebar-header {
+    display: none; /* hide profile on mobile – you can keep it if you want */
+  }
+  .nav-main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 0;
+  }
+  .nav-item {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+  .hamburger-dropdown {
+    width: 100%;
+    margin-top: 8px;
+  }
+  .hamburger-btn {
+    width: auto;
+    padding: 6px 12px;
+    font-size: 1.2rem;
+  }
+  /* Main content */
+  .main-content {
+    padding: 1rem;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  .site-desc {
+    font-size: 1rem;
+  }
+  #home-section {
+    padding-top: 2rem;
+  }
+  /* Gateway card */
+  .gateway-card {
+    padding: 1.8rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .tagline {
+    font-size: 0.9rem;
+  }
+  /* Tools grid */
+  .tools-grid, .payload-grid, .resources-grid {
+    grid-template-columns: 1fr;
+  }
+  /* Lounge: force full-width cards */
+  .lounge-card {
+    max-width: 95% !important;
+    padding: 1.5rem !important;
+  }
+  .lounge-container {
+    min-height: 70vh;
+  }
+  #alias-input {
+    width: 95% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .cta-button {
+    padding: 0.7rem 1.8rem;
+    font-size: 0.9rem;
+  }
+  .gateway-card {
+    padding: 1.2rem;
+  }
+  .profile {
+    width: 100px; height: 100px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  .input-group input {
+    padding: 10px 14px;
+  }
+  .unlock-btn {
+    padding: 12px;
+    font-size: 1rem;
+  }
+  /* Sidebar on very small screens: even tighter */
+  .nav-item {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
 }
