@@ -1,4 +1,4 @@
-// ====================== FINAL SCRIPT – SINGLE USER + LOUNGE (ALIAS PERSISTS UNTIL LOGOUT) ======================
+// ====================== FINAL SCRIPT – SINGLE USER + MINIMAL LOUNGE ======================
 (function () {
   window.addEventListener('DOMContentLoaded', () => {
     // ---------- DOM elements ----------
@@ -166,7 +166,7 @@
     }
     function clearCurrentUser() {
       localStorage.removeItem('maxagain_current_user');
-      localStorage.removeItem('lounge_alias'); // clear lounge alias on logout
+      localStorage.removeItem('lounge_alias');
     }
 
     function handleLogin() {
@@ -219,7 +219,6 @@
       });
     }
 
-    // Auto‑login if already authenticated
     const currentUser = getCurrentUser();
     if (currentUser && currentUser.username === 'issan') {
       window.addEventListener('load', () => {
@@ -362,33 +361,19 @@
       }
     });
 
-    // ---------- HACKER'S LOUNGE (FINAL: alias persists until logout) ----------
+        // ---------- HACKER'S LOUNGE (ALIAS EVERY VISIT, NO PERSISTENCE) ----------
     function initHackersLounge() {
       const nameEntry = document.getElementById('lounge-name-entry');
-      const keyDiv = document.getElementById('lounge-key');
-      const verifyDiv = document.getElementById('lounge-verify');
       const chatDiv = document.getElementById('lounge-chat');
-
       const aliasInput = document.getElementById('alias-input');
       const aliasError = document.getElementById('alias-error');
-      const generateBtn = document.getElementById('generate-key-btn');
-      const generatedKeySpan = document.getElementById('generated-key');
       const enterLoungeBtn = document.getElementById('enter-lounge-btn');
-      const verifyAliasDisplay = document.getElementById('verify-alias-display');
-      const keyInput = document.getElementById('key-input');
-      const verifyBtn = document.getElementById('verify-btn');
-      const verifyError = document.getElementById('verify-error');
-
-      let currentKey = '';
+      
       let operatorAlias = '';
 
-      // Check localStorage for saved alias (persists until logout)
-      const savedAlias = localStorage.getItem('lounge_alias');
-      if (savedAlias) {
-        operatorAlias = savedAlias;
-        showChat();
-        return;
-      }
+      // Always show alias page first
+      if (nameEntry) nameEntry.classList.remove('hidden');
+      if (chatDiv) chatDiv.classList.add('hidden');
 
       // Particle background
       const canvas = document.getElementById('lounge-particles');
@@ -423,55 +408,30 @@
         animate();
       }
 
-      generateBtn.addEventListener('click', () => {
-        const alias = aliasInput.value.trim();
-        if (!alias) {
-          aliasError.textContent = 'Please enter a name.';
-          return;
-        }
-        operatorAlias = alias;
-        aliasError.textContent = '';
-        // generate 4-char key
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        currentKey = '';
-        for (let i = 0; i < 4; i++) {
-          currentKey += chars.charAt(Math.floor(Math.random() * chars.length));
-        }
-        generatedKeySpan.textContent = currentKey;
-        nameEntry.classList.add('hidden');
-        keyDiv.classList.remove('hidden');
-      });
-
-      enterLoungeBtn.addEventListener('click', () => {
-        keyDiv.classList.add('hidden');
-        verifyDiv.classList.remove('hidden');
-        verifyAliasDisplay.textContent = operatorAlias;
-        keyInput.value = '';
-        verifyError.textContent = '';
-        keyInput.focus();
-      });
-
-      verifyBtn.addEventListener('click', () => {
-        if (keyInput.value.trim() === currentKey) {
-          localStorage.setItem('lounge_alias', operatorAlias);
-          showChat();
-        } else {
-          verifyError.textContent = '⛔ Wrong key. Try again.';
-          keyInput.value = '';
-          keyInput.focus();
-        }
-      });
-
-      keyInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') verifyBtn.click();
-      });
-
-      function showChat() {
-        verifyDiv.classList.add('hidden');
-        chatDiv.classList.remove('hidden');
-        initChat();
+      // Enter lounge button
+      if (enterLoungeBtn) {
+        enterLoungeBtn.addEventListener('click', () => {
+          const alias = aliasInput.value.trim();
+          if (!alias) {
+            aliasError.textContent = 'Please enter a name.';
+            return;
+          }
+          operatorAlias = alias;
+          aliasError.textContent = '';
+          nameEntry.classList.add('hidden');
+          chatDiv.classList.remove('hidden');
+          initChat();
+        });
       }
 
+      // Allow Enter key
+      if (aliasInput) {
+        aliasInput.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter' && enterLoungeBtn) enterLoungeBtn.click();
+        });
+      }
+
+      // Chat initialization
       function initChat() {
         const messagesRef = db.ref('lounge/messages');
         const messagesList = document.getElementById('messages-list');
@@ -505,8 +465,62 @@
           messagesRef.once('value', (snapshot) => {
             const count = snapshot.numChildren();
             if (count > 100) {
-              const firstChild = Object.keys(snapshot.val())[0];
-              if (firstChild) messagesRef.child(firstChild).remove();
+              const oldestKey = Object.keys(snapshot.val())[0];
+              if (oldestKey) messagesRef.child(oldestKey).remove();
+            }
+          });
+        }
+
+        function sendMessage() {
+          const text = chatInput.value.trim();
+          if (!text) return;
+          const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+          messagesRef.push({ sender: operatorAlias, text, timestamp }).then(() => enforceMessageLimit());
+          chatInput.value = '';
+        }
+
+        sendBtn.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
+        enforceMessageLimit();
+      }
+    
+
+      // ---------- Chat initialization (only once) ----------
+      function initChat() {
+        const messagesRef = db.ref('lounge/messages');
+        const messagesList = document.getElementById('messages-list');
+        const chatInput = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('send-btn');
+        if (!messagesList || !chatInput || !sendBtn) return;
+
+        messagesRef.limitToLast(50).on('child_added', (snapshot) => {
+          const msg = snapshot.val();
+          addMessageToUI(msg);
+          const container = document.getElementById('chat-messages');
+          if (container) container.scrollTop = container.scrollHeight;
+        });
+
+        function addMessageToUI(msg) {
+          const div = document.createElement('div');
+          div.style.marginBottom = '6px';
+          div.style.padding = '4px 8px';
+          div.style.borderRadius = '8px';
+          div.style.background = 'rgba(0, 255, 159, 0.05)';
+          div.innerHTML = `<span style="color: var(--neon-green); font-weight: 600;">${escapeHtml(msg.sender)}</span> <span style="color: #888; font-size: 0.7rem;">${msg.timestamp}</span><br><span style="color: #ddd;">${escapeHtml(msg.text)}</span>`;
+          messagesList.appendChild(div);
+        }
+
+        function escapeHtml(text) {
+          const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+          return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        function enforceMessageLimit() {
+          messagesRef.once('value', (snapshot) => {
+            const count = snapshot.numChildren();
+            if (count > 100) {
+              const oldestKey = Object.keys(snapshot.val())[0];
+              if (oldestKey) messagesRef.child(oldestKey).remove();
             }
           });
         }
@@ -528,11 +542,11 @@
     // ---------- CONTACT ADMIN ----------
     function initContactAdmin() {
       const quotes = [
-        "“The quieter the packets, the louder the breach.”",
-        "“Every app is secure until a curious mind arrives.”",
-        "“Logs don’t lie. Developers sometimes do.”",
-        "“There’s always another hidden endpoint.”",
-        "“Trust is the biggest vulnerability.”"
+        "The quieter the packets, the louder the breach.",
+        "Every app is secure until a curious mind arrives.",
+        "Logs don't lie. Developers sometimes do.",
+        "There's always another hidden endpoint.",
+        "Trust is the biggest vulnerability."
       ];
       let quoteIdx = 0;
       const quoteEl = document.getElementById('rotating-quote');
@@ -561,17 +575,17 @@
       if (tipEl) setInterval(() => { tipIdx = (tipIdx + 1) % tips.length; tipEl.textContent = tips[tipIdx]; }, 8000);
 
       const jokes = [
-        "“99 little bugs in the code… patch one down, 127 vulnerabilities appear.”",
-        "“Works on my machine ≠ secure.”",
-        "“Turning it off and on again fixes surprisingly many things.”",
-        "“There’s no cloud, it’s just someone else’s computer.”",
-        "“A SQL query walks into a bar, joins two tables and returns nothing.”"
+        "99 little bugs in the code… patch one down, 127 vulnerabilities appear.",
+        "Works on my machine != secure.",
+        "Turning it off and on again fixes surprisingly many things.",
+        "There's no cloud, it's just someone else's computer.",
+        "A SQL query walks into a bar, joins two tables and returns nothing."
       ];
       let jokeIdx = 0;
       const jokeEl = document.getElementById('hacker-humor');
       if (jokeEl) setInterval(() => { jokeIdx = (jokeIdx + 1) % jokes.length; jokeEl.textContent = jokes[jokeIdx]; }, 7000);
 
-      const statuses = ["☕ Probably reversing APKs", "🛠️ Writing exploits", "📡 Sniffing packets", "🎧 Listening to synthwave", "💤 Offline (rarely)"];
+      const statuses = ["Probably reversing APKs", "Writing exploits", "Sniffing packets", "Listening to synthwave", "Offline (rarely)"];
       let statusIdx = 0;
       const statusEl = document.getElementById('status-line');
       if (statusEl) setInterval(() => { statusIdx = (statusIdx + 1) % statuses.length; statusEl.textContent = statuses[statusIdx]; }, 4000);
@@ -597,9 +611,9 @@
         switch(cmd) {
           case 'help': response = 'Available commands: help, socials, projects, latest, coffee, secrets'; break;
           case 'socials': response = 'Instagram, LinkedIn, Telegram, Twitter, GitHub, Email – all links below.'; break;
-          case 'projects': response = 'This dashboard, bug bounty tools, Android reversing lab, Wi‑Fi pentest framework.'; break;
+          case 'projects': response = 'This dashboard, bug bounty tools, Android reversing lab, Wi-Fi pentest framework.'; break;
           case 'latest': response = 'Currently reversing Android Binder & studying web cache poisoning.'; break;
-          case 'coffee': response = '☕ Coffee counter overflow. Infinite cups consumed.'; break;
+          case 'coffee': response = 'Coffee counter overflow. Infinite cups consumed.'; break;
           case 'secrets': response = 'Access denied. Nice try though :)'; break;
           case 'matrix': document.body.style.background = '#000'; response = 'Matrix mode activated. Refresh to return.'; break;
           default: response = `Command not found: ${cmd}. Try 'help'.`;

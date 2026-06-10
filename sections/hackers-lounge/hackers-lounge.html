@@ -1,45 +1,21 @@
-<!-- Hacker's Lounge – Name → Key → Verify → Chat -->
+<!-- Hacker's Lounge – Minimal: Alias → Chat -->
 <div class="lounge-container">
-  <!-- STAGE 1: Name Entry -->
-  <div id="lounge-name-entry">
+  <!-- Page 1: Alias (hidden by default) -->
+  <div id="lounge-name-entry" class="hidden">
     <canvas id="lounge-particles"></canvas>
     <div class="lounge-card" style="max-width: 500px; padding: 3rem;">
       <h1 class="lounge-title glitch-text" data-text="HACKER'S LOUNGE">HACKER'S LOUNGE</h1>
       <p style="margin: 2rem 0 1.5rem; color: #ccc; font-family: 'JetBrains Mono', monospace;">
-        What shall we call you?
+        Choose your alias
       </p>
       <input type="text" id="alias-input" placeholder="e.g. Ghost, Byte... or keep it real" 
              style="width: 80%; background: #0a0a0a; border: 1px solid #00ff9f; border-radius: 40px; padding: 10px 20px; color: #00ff9f; font-family: 'JetBrains Mono', monospace; font-size: 1rem; margin-bottom: 1.5rem;" autocomplete="off" />
-      <button id="generate-key-btn" class="lounge-btn">🔑 GENERATE ACCESS KEY</button>
+      <button id="enter-lounge-btn" class="lounge-btn">🚪 ENTER LOUNGE</button>
       <p class="error-msg" id="alias-error" style="min-height: 1.2em;"></p>
     </div>
   </div>
 
-  <!-- STAGE 2: Key Display -->
-  <div id="lounge-key" class="hidden">
-    <div class="lounge-card" style="max-width: 600px; padding: 2.5rem;">
-      <div class="key-screen">
-        <div class="scan-line"></div>
-        <p class="key-label">YOUR LOUNGE ACCESS KEY</p>
-        <h2 class="key-value" id="generated-key"></h2>
-        <p class="key-warning">⚠️ MEMORISE IT. YOU’LL NEED IT IN A SECOND.</p>
-      </div>
-      <button id="enter-lounge-btn" class="lounge-btn">🚪 ENTER LOUNGE</button>
-    </div>
-  </div>
-
-  <!-- STAGE 3: Verify Key -->
-  <div id="lounge-verify" class="hidden">
-    <div class="lounge-card" style="max-width: 500px; padding: 2rem;">
-      <h2>🔐 VERIFY YOUR KEY</h2>
-      <p style="color: #aaa; margin: 1rem 0;">Welcome, <strong id="verify-alias-display"></strong></p>
-      <input type="text" id="key-input" placeholder="Paste your key..." autocomplete="off" />
-      <button id="verify-btn" class="lounge-btn">✅ CONFIRM</button>
-      <p class="error-msg" id="verify-error"></p>
-    </div>
-  </div>
-
-  <!-- STAGE 4: Chat -->
+  <!-- Page 2: Chat (hidden by default) -->
   <div id="lounge-chat" class="hidden" style="height: 100%; display: flex; flex-direction: column; width: 100%;">
     <h2 class="section-title" style="flex-shrink: 0;">💬 Hacker's Lounge – Live Hangout</h2>
     <div class="glass-card" style="flex: 1; margin: 0 auto; width: 100%; padding: 1.5rem; display: flex; flex-direction: column;">
@@ -92,26 +68,11 @@
   }
   .lounge-btn:hover { transform: scale(1.05); box-shadow: 0 0 35px #00ff9f; }
   .hidden { display: none !important; }
-  .key-screen {
-    background: #000; border: 2px solid #00ff9f; border-radius: 12px; padding: 1.8rem;
-    margin: 1rem 0; position: relative; overflow: hidden;
-  }
-  .scan-line {
-    position: absolute; top: 0; left: 0; width: 100%; height: 2px;
-    background: linear-gradient(90deg, transparent, #00ff9f, transparent); animation: scan 2s linear infinite;
-  }
-  @keyframes scan { 0% { top: 0; } 100% { top: 100%; } }
-  .key-label { font-family: 'Orbitron', monospace; color: #00ff9f; margin-bottom: 0.5rem; }
-  .key-value {
-    font-family: 'JetBrains Mono', monospace; font-size: 2.5rem; color: #00ff9f;
-    text-shadow: 0 0 10px #00ff9f; margin: 0.5rem 0; letter-spacing: 4px;
-  }
-  .key-warning { font-size: 0.8rem; color: #ff5555; }
-  #key-input {
+  #alias-input {
     background: #0a0a0a; border: 1px solid #00ff9f; padding: 0.8rem 1.5rem; border-radius: 40px;
     color: #00ff9f; font-family: 'JetBrains Mono', monospace; font-size: 1rem; width: 80%;
     margin: 0.8rem 0; text-align: center;
   }
-  #key-input:focus { outline: none; box-shadow: 0 0 10px #00ff9f; }
+  #alias-input:focus { outline: none; box-shadow: 0 0 10px #00ff9f; }
   .error-msg { color: #ff5555; font-size: 0.8rem; margin-top: 0.5rem; }
 </style>
