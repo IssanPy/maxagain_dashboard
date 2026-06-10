@@ -1,4 +1,4 @@
-# ⚡ MAX_AGAIN  
+# ⚡ MAXAGAIN_DASHBOARD  
 *Everything you need as a hacker. In one place. No fluff.*
 
 <p align="center">
