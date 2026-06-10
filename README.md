@@ -11,6 +11,8 @@
 ## 🌍 Live Website
 
 🔗 https://issanpy.github.io/maxagain_dashboard/
+OPERATOR ID: issan 
+ACCESS CIPHER: max
 
 ---
 
